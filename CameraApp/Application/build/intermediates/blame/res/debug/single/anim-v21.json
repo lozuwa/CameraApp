@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",

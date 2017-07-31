@@ -4,16 +4,20 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_track.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
@@ -42,6 +46,14 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_spinner.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
@@ -84,8 +96,16 @@
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
@@ -94,6 +114,10 @@
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
@@ -106,6 +130,10 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
@@ -130,6 +158,10 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
@@ -172,6 +204,10 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_search_url_text.xml"
+    },
+    {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_secondary_text_material_dark.xml"
     },
@@ -186,6 +222,10 @@
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
@@ -206,6 +246,10 @@
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
@@ -232,8 +276,20 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_default.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
@@ -288,8 +344,24 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_default.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
@@ -302,5 +374,9 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\color\\abc_tint_edittext.xml"
     }
 ]

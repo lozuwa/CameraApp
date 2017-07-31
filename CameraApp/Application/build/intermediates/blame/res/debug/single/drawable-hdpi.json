@@ -20,6 +20,10 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_info.png"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tile.9.png",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
     },
@@ -28,12 +32,20 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_info.png",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_info.png"
+    },
+    {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_info.png",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_info.png"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
         "source": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tile.9.png",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
     },
     {
         "merged": "C:\\home\\rodrigoloza\\AndroidApps\\GoogleCameraBackup\\C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tile.9.png",

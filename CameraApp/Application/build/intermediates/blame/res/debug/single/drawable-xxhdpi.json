@@ -20,6 +20,10 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_info.png",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\CameraApp\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_info.png"
     },
@@ -30,5 +34,9 @@
     {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher.png",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\GoogleCameraBackup\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_info.png",
+        "source": "C:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_info.png"
     }
 ]
