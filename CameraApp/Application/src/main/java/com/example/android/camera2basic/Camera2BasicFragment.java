@@ -490,10 +490,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(getActivity(), "tcp://192.168.3.174", clientId);
-        // tcp://10.42.0.1
-        // tcp://test.mosquitto.org
-        // tcp://192.168.3.193
-        // tcp://192.168.3.174
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
@@ -668,7 +664,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         /** Start Threads for Camera and APIs */
         startCameraThread();
         startPOSTThread();
-
         startPOSTMessageThread();
 
         // When the screen is turned off and turned back on, the SurfaceTexture is already
@@ -697,7 +692,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         //closeCamera();
         //stopBackgroundThread();
     }
-
     /**************************************************************************************************************/
 
     /********************************************Permissions*******************************************************/
@@ -769,7 +763,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         POSTMessagerunnable = new Runnable() {
             @Override
             public void run() {
-                PostMessage("ttitle", "...");
+                PostMessage("title", "...");
             }
         };
     }
@@ -1079,10 +1073,10 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                                 /*mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
                                         CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);*/
 
-                                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_VIDEO);
+                                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_MACRO);
                                 /*mPreviewRequestBuilder.set(CaptureRequest.CONTROL_MODE, CaptureRequest.CONTROL_MODE_OFF);
                                 mPreviewRequestBuilder.set(CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE, CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE_OFF);
-                                mPreviewRequestBuilder.set(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE_OFF);
+                                mPreview RequestBuilder.set(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE_OFF);
                                 mPreviewRequestBuilder.set(CaptureRequest.LENS_FOCUS_DISTANCE, .2f);
                                 mPreviewRequestBuilder.set(CaptureRequest.SENSOR_EXPOSURE_TIME, 1000000L);*/
 
@@ -1118,7 +1112,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * @param viewWidth  The width of `mTextureView`
      * @param viewHeight The height of `mTextureView`
      */
-                                public void configureTransform(int viewWidth, int viewHeight) {
+     public void configureTransform(int viewWidth, int viewHeight) {
         Activity activity = getActivity();
         if (null == mTextureView || null == mPreviewSize || null == activity) {
             return;
@@ -1251,7 +1245,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
             /********************RUN IN THREAD TO POST*************************/
             mPOSTHandler.post(POSTrunnable);
-            /***********************************************/
+            /*****************************************************************/
 
         } catch (CameraAccessException e) {
             e.printStackTrace();
@@ -1262,10 +1256,10 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.picture: {
-                takePicture();
+                //takePicture();
                 /********************RUN IN THREAD TO POST*************************/
-                //mPOSTMessageHandler.post(POSTMessagerunnable);
-                /***********************************************/
+                mPOSTMessageHandler.post(POSTMessagerunnable);
+                /****************************************************************/
                 break;
             }
         }
