@@ -9,7 +9,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc037d60-3030-49ce-8226-49dbb20cfca1" name="Default" comment="" />
+    <list default="true" id="bc037d60-3030-49ce-8226-49dbb20cfca1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
     <ignored path="GoogleCameraBackup.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,29 +46,21 @@
       <file leaf-file-name="Camera2BasicFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="552" column="52" selection-start-line="552" selection-start-column="52" selection-end-line="552" selection-end-column="52" />
+            <state relative-caret-position="224">
+              <caret line="1239" column="43" selection-start-line="1239" selection-start-column="43" selection-end-line="1239" selection-end-column="43" />
               <folding>
-                <element signature="e#0#58516#0" expanded="true" />
+                <element signature="e#0#58912#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="class#5449:6058" expanded="false" />
                 <element signature="method#onSurfaceTextureAvailable#0;class#5449:6058" expanded="false" />
-                <element signature="e#5916#5917#0" expanded="true" />
-                <element signature="e#5951#5952#0" expanded="true" />
                 <element signature="class#6723:7639" expanded="false" />
                 <element signature="method#onOpened#0;class#6723:7639" expanded="false" />
-                <element signature="e#8112#8334#0" expanded="true" />
-                <element signature="e#8333#8334#0" expanded="true" />
                 <element signature="class#9468:12370" expanded="false" />
                 <element signature="method#process#0;class#9468:12370" expanded="false" />
                 <element signature="method#showToast#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#chooseOptimalSize#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#15450#15451#0" expanded="true" />
-                <element signature="e#15499#15500#0" expanded="true" />
                 <element signature="method#onCreateView#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#onViewCreated#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#16419#19399#0" expanded="true" />
-                <element signature="e#19398#19399#0" expanded="true" />
                 <element signature="method#onActivityCreated#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#connectionLost#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#getFingerSpacing#0;class#Camera2BasicFragment#0" expanded="false" />
@@ -77,25 +72,15 @@
                 <element signature="method#requestCameraPermission#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#requestReadExternalMemoryPermission#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#onRequestPermissionsResult#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#29706#29744#0" expanded="true" />
                 <element signature="method#startCameraThread#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#startPOSTThread#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#30799#30922#0" expanded="true" />
-                <element signature="e#30921#30922#0" expanded="true" />
                 <element signature="method#startPOSTMessageThread#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#31308#31447#0" expanded="true" />
-                <element signature="e#31446#31447#0" expanded="true" />
                 <element signature="method#stopBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#PostImage#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#34017#34293#0" expanded="true" />
-                <element signature="e#34292#34293#0" expanded="true" />
-                <element signature="e#34565#34802#0" expanded="true" />
-                <element signature="e#34801#34802#0" expanded="true" />
                 <element signature="method#PostMessage#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="class#35032:35549" expanded="false" />
-                <element signature="method#onResponse#0;class#35032:35549" expanded="false" />
+                <element signature="class#35403:35920" expanded="false" />
+                <element signature="method#onResponse#0;class#35403:35920" expanded="false" />
                 <element signature="method#setUpCameraOutputs#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#41121#41153#0" expanded="true" />
                 <element signature="method#openCamera#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#closeCamera#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#createCameraPreviewSession#0;class#Camera2BasicFragment#0" expanded="false" />
@@ -103,23 +88,14 @@
                 <element signature="method#takePicture#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#lockFocus#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="method#runPrecaptureSequence#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#captureStillPicture#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#51207#51696#0" expanded="true" />
-                <element signature="e#51695#51696#0" expanded="true" />
+                <element signature="e#51578#52096#0" expanded="true" />
+                <element signature="e#52095#52096#0" expanded="true" />
                 <element signature="method#getOrientation#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#52163#52247#0" expanded="false" />
-                <element signature="method#unlockFocus#0;class#Camera2BasicFragment#0" expanded="false" />
+                <element signature="e#52563#52647#0" expanded="false" />
                 <element signature="method#onClick#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
                 <element signature="class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#56620#56874#0" expanded="true" />
-                <element signature="e#56873#56874#0" expanded="true" />
                 <element signature="class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#57297#57324#0" expanded="true" />
-                <element signature="e#57386#57800#0" expanded="true" />
-                <element signature="e#57799#57800#0" expanded="true" />
-                <element signature="e#57894#58363#0" expanded="true" />
-                <element signature="e#58362#58363#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,7 +170,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -1950,7 +1926,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2093,17 +2074,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.2.0" />
-    <property name="device.picker.selection" value="4200b0f5d4e454c9" />
+    <property name="device.picker.selection" value="5203f7094986a3a3" />
     <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic" />
@@ -2453,21 +2429,21 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0784983" sideWeight="0.5408472" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7201365" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12116041" sideWeight="0.5121029" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12116041" sideWeight="0.48789713" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17397882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2697,29 +2673,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="552" column="52" selection-start-line="552" selection-start-column="52" selection-end-line="552" selection-end-column="52" />
+        <state relative-caret-position="224">
+          <caret line="1239" column="43" selection-start-line="1239" selection-start-column="43" selection-end-line="1239" selection-end-column="43" />
           <folding>
-            <element signature="e#0#58516#0" expanded="true" />
+            <element signature="e#0#58912#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#5449:6058" expanded="false" />
             <element signature="method#onSurfaceTextureAvailable#0;class#5449:6058" expanded="false" />
-            <element signature="e#5916#5917#0" expanded="true" />
-            <element signature="e#5951#5952#0" expanded="true" />
             <element signature="class#6723:7639" expanded="false" />
             <element signature="method#onOpened#0;class#6723:7639" expanded="false" />
-            <element signature="e#8112#8334#0" expanded="true" />
-            <element signature="e#8333#8334#0" expanded="true" />
             <element signature="class#9468:12370" expanded="false" />
             <element signature="method#process#0;class#9468:12370" expanded="false" />
             <element signature="method#showToast#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#15450#15451#0" expanded="true" />
-            <element signature="e#15499#15500#0" expanded="true" />
             <element signature="method#onCreateView#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#onViewCreated#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#16419#19399#0" expanded="true" />
-            <element signature="e#19398#19399#0" expanded="true" />
             <element signature="method#onActivityCreated#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#connectionLost#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#getFingerSpacing#0;class#Camera2BasicFragment#0" expanded="false" />
@@ -2731,25 +2699,15 @@
             <element signature="method#requestCameraPermission#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#requestReadExternalMemoryPermission#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#29706#29744#0" expanded="true" />
             <element signature="method#startCameraThread#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#startPOSTThread#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#30799#30922#0" expanded="true" />
-            <element signature="e#30921#30922#0" expanded="true" />
             <element signature="method#startPOSTMessageThread#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#31308#31447#0" expanded="true" />
-            <element signature="e#31446#31447#0" expanded="true" />
             <element signature="method#stopBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#PostImage#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#34017#34293#0" expanded="true" />
-            <element signature="e#34292#34293#0" expanded="true" />
-            <element signature="e#34565#34802#0" expanded="true" />
-            <element signature="e#34801#34802#0" expanded="true" />
             <element signature="method#PostMessage#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="class#35032:35549" expanded="false" />
-            <element signature="method#onResponse#0;class#35032:35549" expanded="false" />
+            <element signature="class#35403:35920" expanded="false" />
+            <element signature="method#onResponse#0;class#35403:35920" expanded="false" />
             <element signature="method#setUpCameraOutputs#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#41121#41153#0" expanded="true" />
             <element signature="method#openCamera#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#closeCamera#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#Camera2BasicFragment#0" expanded="false" />
@@ -2757,23 +2715,14 @@
             <element signature="method#takePicture#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#lockFocus#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#runPrecaptureSequence#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#51207#51696#0" expanded="true" />
-            <element signature="e#51695#51696#0" expanded="true" />
+            <element signature="e#51578#52096#0" expanded="true" />
+            <element signature="e#52095#52096#0" expanded="true" />
             <element signature="method#getOrientation#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#52163#52247#0" expanded="false" />
-            <element signature="method#unlockFocus#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#52563#52647#0" expanded="false" />
             <element signature="method#onClick#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#56620#56874#0" expanded="true" />
-            <element signature="e#56873#56874#0" expanded="true" />
             <element signature="class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#57297#57324#0" expanded="true" />
-            <element signature="e#57386#57800#0" expanded="true" />
-            <element signature="e#57799#57800#0" expanded="true" />
-            <element signature="e#57894#58363#0" expanded="true" />
-            <element signature="e#58362#58363#0" expanded="true" />
           </folding>
         </state>
       </provider>

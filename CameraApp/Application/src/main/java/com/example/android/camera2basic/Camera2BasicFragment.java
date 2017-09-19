@@ -545,14 +545,19 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         if (c > 0) {
             if (params_payload[0].equals("pic")) {
                 mFile_name = params_payload[1];
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                String dateTime = sdf.format(Calendar.getInstance().getTime()); // reading local time in the system
-                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKEN" + dateTime + ".jpg");
+                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENFocused" + timestamp + ".jpg");
                 //mFile = new File(Environment.getExternalStorageState(), mFile_name + ".jpg");
                 takePicture();
             } else if (params_payload[0].equals("z")) {
                 zoom_level = Integer.valueOf((int) ((Double.valueOf(params_payload[1]) / 100) * 50));
                 update_zoom();
+            } else if (params_payload[0].equals("picDefocused")) {
+                mFile_name = params_payload[1];
+                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENDefocused" + timestamp + ".jpg");
+                //mFile = new File(Environment.getExternalStorageState(), mFile_name + ".jpg");
+                takePicture();
             } else {
                 //showToast("Topic:" + topic + "\nMessage:" + payload);
             }
@@ -1193,7 +1198,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 public void onCaptureCompleted(@NonNull CameraCaptureSession session,
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
-                    showToast("Saved: " + mFile);
+                    showToast("Saved: " + mFile.toString().split("files")[1]);
                     Log.d(TAG, mFile.toString());
                     unlockFocus();
                 }
@@ -1225,16 +1230,13 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
             setAutoFlash(mPreviewRequestBuilder);
             mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
-                    mCameraHandler);
+                                    mCameraHandler);
             // After this, the camera will go back to the normal state of preview.
             mState = STATE_PREVIEW;
-            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback,
-                    mCameraHandler);
-
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mCameraHandler);
             /********************RUN IN THREAD TO POST*************************/
-            mPOSTHandler.post(POSTrunnable);
+            //mPOSTHandler.post(POSTrunnable);
             /*****************************************************************/
-
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
