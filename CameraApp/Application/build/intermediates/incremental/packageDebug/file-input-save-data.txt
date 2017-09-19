@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Sep 19 14:50:43 BOT 2017
+#Tue Sep 19 17:16:15 BOT 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abc_tint_btn_checkable.xml

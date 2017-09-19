@@ -477,8 +477,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         options.setKeepAliveInterval(500);
         options.setCleanSession(false);
         String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(getActivity(), "tcp://192.168.3.193:1883", clientId);
-        //tcp://192.168.3.174
+        client = new MqttAndroidClient(getActivity(), "tcp://192.168.0.103:1883", clientId);
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
@@ -555,7 +554,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             } else if (params_payload[0].equals("picDefocused")) {
                 mFile_name = params_payload[1];
                 String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
-                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENDefocused" + timestamp + ".jpg");
+                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENUnfocused" + timestamp + ".jpg");
                 //mFile = new File(Environment.getExternalStorageState(), mFile_name + ".jpg");
                 takePicture();
             } else {
@@ -1227,7 +1226,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         try {
             // Reset the auto-focus trigger
             mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
-                    CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+                                        CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
             setAutoFlash(mPreviewRequestBuilder);
             mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
                                     mCameraHandler);
@@ -1264,7 +1263,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     /*** Saves a JPEG {@link Image} into the specified {@link File}.*/
     public static class ImageSaver implements Runnable {
-
         /**
          * The JPEG image
          */
@@ -1273,12 +1271,10 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
          * The file we save the image into.
          */
         public final File mFile;
-
         public ImageSaver(Image image, File file) {
             mImage = image;
             mFile = file;
         }
-
         @Override
         public void run() {
             ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
@@ -1302,7 +1298,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 }
             }
         }
-
     }
 
     /*** Compares two {@code Size}s based on their areas.*/

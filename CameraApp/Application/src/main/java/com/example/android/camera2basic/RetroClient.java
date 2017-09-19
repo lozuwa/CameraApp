@@ -5,10 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClient {
     /** URL of the upload folder*/
-    private static final String ROOT_URL = "http://192.168.3.118:5000/";
-    //http://192.168.3.213:5000/
-    //http://192.168.3.174:5000/
-    //http://10.42.0.1:5000
+    public static String IP = "http://192.168.0.104:5000/";
+    private static final String ROOT_URL = IP;
 
     public RetroClient() {}
 
@@ -21,6 +19,7 @@ public class RetroClient {
                             .build();
     }
 
+    /*** Api service */
     public static ApiService getApiService() {
         return getRetroClient().create(ApiService.class);
     }
