@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClient {
     /** URL of the upload folder*/
-    public static String IP = "http://192.168.0.104:5000/";
+    public static String IP = "http://192.168.0.105:5000/";
     private static final String ROOT_URL = IP;
 
     public RetroClient() {}

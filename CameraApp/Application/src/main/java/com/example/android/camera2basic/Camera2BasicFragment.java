@@ -100,7 +100,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Camera2BasicFragment extends Fragment implements View.OnClickListener, FragmentCompat.OnRequestPermissionsResultCallback, MqttCallback{
+public class Camera2BasicFragment extends Fragment implements View.OnClickListener,
+                                                                FragmentCompat.OnRequestPermissionsResultCallback,
+                                                                MqttCallback{
 
     /*** Conversion from screen rotation to JPEG orientation.*/
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
@@ -116,6 +118,9 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     }
 
     private static final String TAG = "Camera2BasicFragment";
+
+    /** Counter pictures */
+    public int COUNTER = 0;
 
     /** Camera state: Showing camera preview.*/
     private static final int STATE_PREVIEW = 0;
@@ -388,19 +393,18 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+        Bundle bundle = this.getArguments();
+        FOLDER = bundle.getString("Folder");
+        BROKER = "tcp://" + bundle.getString("Broker") + ":1883";
+        //"tcp://192.168.0.104:1883"
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
     }
 
-    public Button picButton;
     @Override
     public void onViewCreated(final View view,
                               Bundle savedInstanceState) {
-        //picButton = (Button)view.findViewById(R.id.picture);
-        //picButton.setOnClickListener(this);
-        //view.findViewById(R.id.picture).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-
         mTextureView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -409,15 +413,12 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
                     CameraCharacteristics characteristics = manager.getCameraCharacteristics(mCameraId);
                     float maxzoom = (characteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM))*10;
-
                     Rect m = characteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);
                     int action = event.getAction();
                     float current_finger_spacing;
-
                     if (event.getPointerCount() > 1) {
                         // Multi touch logic
                         current_finger_spacing = getFingerSpacing(event);
-
                         if(finger_spacing != 0){
                             if(current_finger_spacing > finger_spacing && maxzoom > zoom_level){
                                 zoom_level++;
@@ -445,22 +446,18 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     }
 
                     try {
-                        mCaptureSession.setRepeatingRequest(mPreviewRequestBuilder.build(), mCaptureCallback,
-                                null);
+                        mCaptureSession.setRepeatingRequest(mPreviewRequestBuilder.build(), mCaptureCallback, null);
                     }
                     catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
-                    catch (NullPointerException ex)
-                    {
+                    catch (NullPointerException ex) {
                         ex.printStackTrace();
                     }
                 }
-                catch (CameraAccessException e)
-                {
+                catch (CameraAccessException e) {
                     throw new RuntimeException("can not access camera.", e);
                 }
-
                 return true;
             }
         });
@@ -468,7 +465,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     public MqttAndroidClient client;
     public MqttConnectOptions options;
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -477,7 +473,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         options.setKeepAliveInterval(500);
         options.setCleanSession(false);
         String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(getActivity(), "tcp://192.168.0.103:1883", clientId);
+        client = new MqttAndroidClient(getActivity(), BROKER, clientId);
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
@@ -532,36 +528,33 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         //client.registerResources( getActivity() );
     }
 
-    public int c = 0;
-
+    public String FOLDER;
+    public String BROKER;
     @Override
     public void messageArrived(String topic,
                                MqttMessage message) throws Exception {
         String payload = new String(message.getPayload());
         String[] params_payload = payload.split(";");
         //showToast("Topic:"+topic+"\nMessage:"+payload);
-
-        if (c > 0) {
-            if (params_payload[0].equals("pic")) {
-                mFile_name = params_payload[1];
-                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
-                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENFocused" + timestamp + ".jpg");
-                //mFile = new File(Environment.getExternalStorageState(), mFile_name + ".jpg");
-                takePicture();
-            } else if (params_payload[0].equals("z")) {
-                zoom_level = Integer.valueOf((int) ((Double.valueOf(params_payload[1]) / 100) * 50));
-                update_zoom();
-            } else if (params_payload[0].equals("picDefocused")) {
-                mFile_name = params_payload[1];
-                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
-                mFile = new File(getActivity().getExternalFilesDir(null), mFile_name + "TOKENUnfocused" + timestamp + ".jpg");
-                //mFile = new File(Environment.getExternalStorageState(), mFile_name + ".jpg");
-                takePicture();
-            } else {
-                //showToast("Topic:" + topic + "\nMessage:" + payload);
-            }
+        if (params_payload[0].equals("pic")) {
+            mFile_name = params_payload[1];
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+            mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENFocused" + String.valueOf(COUNTER) + ".jpg");
+            takePicture();
+        } else if (params_payload[0].equals("z")) {
+            zoom_level = Integer.valueOf((int) ((Double.valueOf(params_payload[1]) / 100) * 50));
+            update_zoom();
         }
-        c++;
+        else if (params_payload[0].equals("picDefocused")) {
+            mFile_name = params_payload[1];
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+            mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENUnfocused" + String.valueOf(COUNTER) + ".jpg");
+            takePicture();
+            COUNTER += 1;
+        }
+        else {
+            //showToast("Topic:" + topic + "\nMessage:" + payload);
+        }
     }
 
     @Override
@@ -570,7 +563,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /************************************************************************************************************/
 
     /*****************************************UPDATE ZOOM*********************************************************/
-    public float getFingerSpacing(MotionEvent event){
+    public float getFingerSpacing(MotionEvent event) {
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
         return (float) Math.sqrt(x*x + y*y);
@@ -696,7 +689,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         }
     }
 
-    public void requestReadExternalMemoryPermission(){
+    public void requestReadExternalMemoryPermission() {
         if (FragmentCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
             new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
         }
@@ -1197,7 +1190,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 public void onCaptureCompleted(@NonNull CameraCaptureSession session,
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
-                    showToast("Saved: " + mFile.toString().split("files")[1]);
+                    showToast("Saved: " + mFile); //.toString().split("files")[1]);
                     Log.d(TAG, mFile.toString());
                     unlockFocus();
                 }
@@ -1335,8 +1328,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                         public void onClick(DialogInterface dialogInterface, int i) {
                             activity.finish();
                         }
-                    })
-                    .create();
+                    }).create();
         }
 
     }
