@@ -81,6 +81,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -322,19 +323,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     };
 
-    /*** Shows a message using a Toast */
-    public void showToast(final String text) {
-        final Activity activity = getActivity();
-        if (activity != null) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
-
     /**
      * Given {@code choices} of {@code Size}s supported by a camera, choose the smallest one that
      * is at least as large as the respective texture view size, and that is at most as large as the
@@ -388,15 +376,35 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         return new Camera2BasicFragment();
     }
 
+    /*** Function that shows a message in the for*/
+    /**
+     * Shows a {@link Toast} on the UI thread.
+     *
+     * @param text The message to show
+     */
+    private void showToast(final String text) {
+        final Activity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
     /**********************************************Constructors***************************************************/
+    public String FOLDER;
+    public String BROKER;
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle bundle = this.getArguments();
         FOLDER = bundle.getString("Folder");
-        BROKER = "tcp://" + bundle.getString("Broker") + ":1883";
-        //"tcp://192.168.0.104:1883"
+        //BROKER = "tcp://" + "192.168.0.104" + ":1883";
+        BROKER = "tcp://" + bundle.getString("Broker").toString() + ":1883";
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
     }
@@ -473,17 +481,19 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         options.setKeepAliveInterval(500);
         options.setCleanSession(false);
         String clientId = MqttClient.generateClientId();
+        //showToast("Connecting to " + BROKER);
+        //client = new MqttAndroidClient(getActivity(), "tcp://" + "192.168.0.104:1883", clientId);
         client = new MqttAndroidClient(getActivity(), BROKER, clientId);
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    showToast("Connection successful");
+                    showToast("Connection successful to " + BROKER);
                     client.setCallback(Camera2BasicFragment.this);
                     /******************************Subscribe topics******************************************/
                     final String topic = "/microscope";
-                    int qos = 1;
+                    int qos = 2;
                     try {
                         IMqttToken subToken = client.subscribe(topic, qos);
                         subToken.setActionCallback(new IMqttActionListener(){
@@ -505,7 +515,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 }
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    showToast("Connection failed");
+                    showToast("Connection failed to " +
+                            "" + BROKER);
                 }
             });
         } catch (MqttException e) {
@@ -528,37 +539,63 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         //client.registerResources( getActivity() );
     }
 
-    public String FOLDER;
-    public String BROKER;
     @Override
     public void messageArrived(String topic,
                                MqttMessage message) throws Exception {
         String payload = new String(message.getPayload());
         String[] params_payload = payload.split(";");
         //showToast("Topic:"+topic+"\nMessage:"+payload);
-        if (params_payload[0].equals("pic")) {
+        if (FOLDER.equals("a")) {
             mFile_name = params_payload[1];
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
-            mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENFocused" + String.valueOf(COUNTER) + ".jpg");
+            mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + String.valueOf(COUNTER) + ".jpg");
             takePicture();
-        } else if (params_payload[0].equals("z")) {
-            zoom_level = Integer.valueOf((int) ((Double.valueOf(params_payload[1]) / 100) * 50));
-            update_zoom();
-        }
-        else if (params_payload[0].equals("picDefocused")) {
-            mFile_name = params_payload[1];
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
-            mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENUnfocused" + String.valueOf(COUNTER) + ".jpg");
-            takePicture();
-            COUNTER += 1;
+            COUNTER++;
         }
         else {
-            //showToast("Topic:" + topic + "\nMessage:" + payload);
+            /** In the case a picture needs to be taken /*/
+            if (params_payload[0].equals("pic")) {
+                mFile_name = params_payload[1];
+                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+                mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENFocused" + String.valueOf(COUNTER) + ".jpg");
+                takePicture();
+            }
+            else if (params_payload[0].equals("picDefocused")) {
+                mFile_name = params_payload[1];
+                String timestamp = new SimpleDateFormat("yyyyMMdd_HH_mm_ss").format(new Date());
+                mFile = new File(getActivity().getExternalFilesDir(null) + File.separator + FOLDER + File.separator + mFile_name + "TOKENUnfocused" + String.valueOf(COUNTER) + ".jpg");
+                takePicture();
+                COUNTER += 1;
+            }
+            /** In the case a new folder has to be created */
+            else if (params_payload[0].equals("createFolder")) {
+
+            }
+            /** In the case zoom needs to be controlled */
+            else if (params_payload[0].equals("z")) {
+                zoom_level = Integer.valueOf((int) ((Double.valueOf(params_payload[1]) / 100) * 50));
+                update_zoom();
+            }
+            else {
+                //showToast("Topic:" + topic + "\nMessage:" + payload);
+            }
         }
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken token) {
+    }
+
+    /*** Publishes a mqtt message */
+    public void publishMessage(String topic, String payload) {
+        byte[] encodedPayload = new byte[0];
+        try {
+            encodedPayload = payload.getBytes("UTF-8");
+            MqttMessage message = new MqttMessage(encodedPayload);
+            message.setRetained(false);
+            client.publish(topic, message);
+        } catch (UnsupportedEncodingException | MqttException e) {
+            e.printStackTrace();
+        }
     }
     /************************************************************************************************************/
 
@@ -612,34 +649,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /*************************************************************************************************************/
 
     /**************************************Resume, pause, stop*****************************************************/
-    public class AsyncTaskRunner extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            publishProgress("Sleeping..."); // Calls onProgressUpdate()
-            try {
-                int time = Integer.parseInt(params[0])*100;
-                //getCamState();
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return "ok";
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            // execution of result of Long time consuming operation
-            AsyncTaskRunner runner = new AsyncTaskRunner();
-            runner.execute("1");
-        }
-
-        @Override
-        protected void onPreExecute() {}
-
-        @Override
-        protected void onProgressUpdate(String... text) {}
-    }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -740,7 +749,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     public HandlerThread mPostMessageThread;
     public Handler mPOSTMessageHandler;
     public Runnable POSTMessagerunnable;
-
     public void startPOSTMessageThread() {
         mPostMessageThread = new HandlerThread("RESTPOSTThread");
         mPostMessageThread.start();
@@ -797,7 +805,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /******************************************************************************************************************/
 
     /**************************************Thread support functions****************************************************/
-
     public void PostImage() {
         final Activity activity = getActivity();
         if (activity != null) {activity.runOnUiThread(new Runnable() {
@@ -861,7 +868,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             }
         });
     }
-
     /********************************************************************************************************************/
 
     /**************************************Camera 2 API****************************************************/
@@ -1185,17 +1191,15 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
             CameraCaptureSession.CaptureCallback CaptureCallback
                     = new CameraCaptureSession.CaptureCallback() {
-
                 @Override
                 public void onCaptureCompleted(@NonNull CameraCaptureSession session,
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
-                    showToast("Saved: " + mFile); //.toString().split("files")[1]);
-                    Log.d(TAG, mFile.toString());
+                    //showToast("Saved: " + mFile); //.toString().split("files")[1]);
+                    Log.i(TAG, "Saved: " + mFile);
                     unlockFocus();
                 }
             };
-
             mCaptureSession.stopRepeating();
             mCaptureSession.capture(captureBuilder.build(), CaptureCallback, null);
         } catch (CameraAccessException e) {
@@ -1221,13 +1225,17 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
                                         CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
             setAutoFlash(mPreviewRequestBuilder);
-            mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
+            mCaptureSession.capture(mPreviewRequestBuilder.build(),
+                                    mCaptureCallback,
                                     mCameraHandler);
             // After this, the camera will go back to the normal state of preview.
             mState = STATE_PREVIEW;
             mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mCameraHandler);
             /********************RUN IN THREAD TO POST*************************/
             //mPOSTHandler.post(POSTrunnable);
+            /*****************************************************************/
+            /**********************PUBLISH MESSAGE********************************/
+            publishMessage("/move", "..");
             /*****************************************************************/
         } catch (CameraAccessException e) {
             e.printStackTrace();
@@ -1364,4 +1372,5 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     }
 
     /**********************************************************************************************/
+
 }

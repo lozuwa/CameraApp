@@ -25,6 +25,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -40,8 +45,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.eclipse.paho.android.service.MqttService" >
-        </service>
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+        <activity
+            android:name="com.example.android.camera2basic.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
