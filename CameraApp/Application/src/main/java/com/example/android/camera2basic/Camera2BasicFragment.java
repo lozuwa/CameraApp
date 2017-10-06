@@ -402,8 +402,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                              ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle bundle = this.getArguments();
-        FOLDER = bundle.getString("Folder");
-        //BROKER = "tcp://" + "192.168.0.104" + ":1883";
+        FOLDER = "a"; //bundle.getString("Folder");
         BROKER = "tcp://" + bundle.getString("Broker").toString() + ":1883";
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
