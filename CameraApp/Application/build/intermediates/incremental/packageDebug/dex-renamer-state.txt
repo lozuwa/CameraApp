@@ -1,4 +1,0 @@
-#Mon Oct 02 17:20:56 BOT 2017
-base.0=C\:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\Users\\HP\\Dropbox\\pfm\\Apps\\CameraApp\\CameraApp\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
