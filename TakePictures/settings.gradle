@@ -1,4 +1,1 @@
 include 'Application'
-//include ':mqttservice'
-//project(':mqttservice').projectDir = file('/c/Users/HP/Dropbox/pfm/Apps/RemoteControllerApp/android-mqtt-service/mqttservice')
-

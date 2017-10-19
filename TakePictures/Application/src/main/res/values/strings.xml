@@ -13,9 +13,21 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
+
 <resources>
+    <string name="take_picture">Take picture</string>
+
+    <!-- App others -->
     <string name="picture">Picture</string>
     <string name="description_info">Info</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="title_activity_create_patient">Sign in</string>
+
+    <!-- Strings related to user creation -->
+    <string name="prompt_username">Patients name</string>
+    <string name="automatic_analysis">Automatic</string>
+    <string name="manual_analysis">Manual</string>
+    <string name="prompt_write_name">Write name here</string>
+    <string name="error_field_required">Error</string>
 </resources>

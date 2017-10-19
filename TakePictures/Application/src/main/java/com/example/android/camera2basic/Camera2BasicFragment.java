@@ -66,23 +66,18 @@ import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -93,14 +88,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-public class Camera2BasicFragment extends Fragment implements View.OnClickListener,
-                                                            FragmentCompat.OnRequestPermissionsResultCallback,
-                                                            MqttCallback {
+import net.igenius.mqttservice.MQTTService;
+import net.igenius.mqttservice.MQTTServiceCommand;
+import net.igenius.mqttservice.MQTTServiceReceiver;
 
+public class Camera2BasicFragment extends Fragment implements View.OnClickListener,
+                                                            FragmentCompat.OnRequestPermissionsResultCallback {
+
+    /*************************************************CAMERA VARIABLES**************************************************************************/
     /**
      * Conversion from screen rotation to JPEG orientation.
      */
@@ -166,7 +167,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {
             /**Fix**/
             Log.d(TAG, "TextureView.SurfaceTextureListener.onSurfaceTextureDestroyed called");
-            //setSurfaceTextureListener(null);
             closeCamera();
             /*******/
             return true;
@@ -174,6 +174,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         @Override
         public void onSurfaceTextureUpdated(SurfaceTexture texture) {
+
         }
 
     };
@@ -187,16 +188,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * An {@link AutoFitTextureView} for camera preview.
      */
     private AutoFitTextureView mTextureView;
-
-    /**
-     * A {@Link progressBar} for background tasks
-     * */
-    public ProgressBar progressBar;
-
-    /**
-     * A {@Link textView} to show the number of fields being captured
-     * */
-    public TextView textView;
 
     /**
      * A {@link CameraCaptureSession } for camera preview.
@@ -262,11 +253,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     private ImageReader mImageReader;
 
     /**
-     * This is the output file for our picture.
-     */
-    private File mFile;
-
-    /**
      * This a callback object for the {@link ImageReader}. "onImageAvailable" will be called when a
      * still image is ready to be saved.
      */
@@ -306,25 +292,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * Orientation of the camera sensor
      */
     private int mSensorOrientation;
-
-    /**
-     * MQTT Thread handler and constants
-     * */
-    public HandlerThread mMqttKeepAlive;
-    public Handler mMqttHandler;
-    public Runnable Mqttrunnable;
-    public int TIME_CHECK_CONNECTION = 30000;
-
-    /**
-     * MQTT Topics
-     * */
-    static public String CAMERA_APP_TOPIC = "/cameraApp";
-    static public String AUTHENTICATE_TOPIC = "/authenticate";
-
-    /**
-     * Counter for taking pictures
-     * */
-    public int COUNTER_REMOTE_CONTROLLER = 0;
 
     /**
      * A {@link CameraCaptureSession.CaptureCallback} that handles events related to JPEG capture.
@@ -367,23 +334,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     };
 
     /**
-     * Shows a {@link Toast} on the UI thread.
-     *
-     * @param text The message to show
-     */
-    private void showToast(final String text) {
-        final Activity activity = getActivity();
-        if (activity != null) {
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
-
-    /**
      * Given {@code choices} of {@code Size}s supported by a camera, choose the smallest one that
      * is at least as large as the respective texture view size, and that is at most as large as the
      * respective max size, and whose aspect ratio matches with the specified value. If such size
@@ -400,7 +350,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * @return The optimal {@code Size}, or an arbitrary one if none were big enough
      */
     private static Size chooseOptimalSize(Size[] choices, int textureViewWidth,
-            int textureViewHeight, int maxWidth, int maxHeight, Size aspectRatio) {
+                                          int textureViewHeight, int maxWidth, int maxHeight, Size aspectRatio) {
 
         // Collect the supported resolutions that are at least as big as the preview Surface
         List<Size> bigEnough = new ArrayList<>();
@@ -412,7 +362,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             if (option.getWidth() <= maxWidth && option.getHeight() <= maxHeight &&
                     option.getHeight() == option.getWidth() * h / w) {
                 if (option.getWidth() >= textureViewWidth &&
-                    option.getHeight() >= textureViewHeight) {
+                        option.getHeight() >= textureViewHeight) {
                     bigEnough.add(option);
                 } else {
                     notBigEnough.add(option);
@@ -435,13 +385,54 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     public static Camera2BasicFragment newInstance() {
         return new Camera2BasicFragment();
     }
+    /**************************************************************************************************************************************/
 
+    /*************************************************VARIABLES*************************************************************************/
+    /**
+     * This is the output file for our picture.
+     */
+    private File mFile;
+
+    /**
+     * Variables for folder and image name
+     * */
+    public String FOLDER_NAME = "";
+    public String IMG_NAME;
+
+    /**
+     * Counter for taking pictures
+     * */
+    public int COUNTER_REMOTE_CONTROLLER = 0;
+
+    /**
+     * MQTT Topics
+     * */
+    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
+    static public String CAMERA_APP_TOPIC = "/cameraApp";
+    static public String ZDOWN_TOPIC = "/zd";
+    static public String ZUP_TOPIC = "/zu";
+    static public String XRIGHT_TOPIC = "/xr";
+    static public String XLEFT_TOPIC = "/xl";
+    static public String YUP_TOPIC = "/yu";
+    static public String YDOWN_TOPIC = "/yd";
+    static public String EXTRA_ACTIONS_TOPIC = "/extra";
+
+    /** Movement states */
+    boolean movingXRight = false;
+    boolean movingXLeft = false;
+    boolean movingYUp = false;
+    boolean movingYDown = false;
+    /**************************************************************************************************************************************/
+
+    /**********************************************************Constructor*****************************************************************/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        /** Get bundle objective */
+        //String strtext = getArguments().getString("edttext");
+        /** Contents */
         return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
     }
-
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
@@ -451,185 +442,55 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-        //progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+            public void onSwipeTop() {
+                publishMessage(YUP_TOPIC, "1");
+                movingYUp = true;
+            }
+            public void onSwipeRight() {
+                publishMessage(XRIGHT_TOPIC, "1");
+                movingYDown = true;
+            }
+            public void onSwipeLeft() {
+                publishMessage(XLEFT_TOPIC, "1");
+                movingXLeft = true;
+            }
+            public void onSwipeBottom() {
+                publishMessage(YDOWN_TOPIC, "1");
+                movingXRight = true;
+            }
+            public void onClick() {
+                if (movingYUp){
+                    publishMessage(YUP_TOPIC, "0");
+                    movingYUp = false;
+                }
+                else if (movingYDown){
+                    publishMessage(YDOWN_TOPIC, "0");
+                    movingYDown = false;
+                }
+                else if (movingXRight){
+                    publishMessage(YDOWN_TOPIC, "0");
+                    movingXRight = false;
+                }
+                else if (movingXLeft) {
+                    publishMessage(XLEFT_TOPIC, "0");
+                    movingXLeft = false;
+                }
+            }
+
+            public void onDoubleClick() {
+            }
+
+            public void onLongClick() {
+            }
+
+
+        });
     }
 
-    public MqttAndroidClient client;
-    public MqttConnectOptions options;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        /** Connect to mqtt */
-        connectMQTT();
-    }
-
-    public void connectMQTT(){
-        final String BROKER = "tcp://192.168.0.105:1883";
-        options = new MqttConnectOptions();
-        options.setMqttVersion(4);
-        options.setKeepAliveInterval(20);
-        options.setCleanSession(false);
-        String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(getActivity(), BROKER, clientId);
-        try {
-            IMqttToken token = client.connect(options);
-            token.setActionCallback(new IMqttActionListener() {
-                @Override
-                public void onSuccess(IMqttToken asyncActionToken) {
-                    showToast("Connection successful to " + BROKER);
-                    client.setCallback(Camera2BasicFragment.this);
-                    int qos = 2;
-                    try {
-                        IMqttToken subToken = client.subscribe(CAMERA_APP_TOPIC, qos);
-                        subToken.setActionCallback(new IMqttActionListener(){
-                            @Override
-                            public void onSuccess(IMqttToken asyncActionToken){
-                                /** If application connects, then authenticate to server */
-                                publishMessage(AUTHENTICATE_TOPIC, "oath;cameraApp");
-                            }
-                            @Override
-                            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                                showToast("Could not subscribe to the topic");
-                            }
-                        });
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
-                    /*******************************************************************************/
-                    catch (NullPointerException e) {
-                        e.printStackTrace();
-                    }
-                }
-                @Override
-                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    showToast("Connection failed to " + BROKER);
-                }
-            });
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void connectionLost(Throwable cause) {
-
-    }
-
-    public String FOLDER_NAME = "";
-    public String IMG_NAME;
-    /**
-     * The arrived messages follow a protocol defined as:
-     * TOPIC: /microscope
-     * MESSAGE:
-     *          - createFolder;FOLDER_NAME: The app must create a new folder to store new pictures
-     *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
-     * */
-    @Override
-    public void messageArrived(String topic, MqttMessage message) throws Exception {
-        /** Parse string */
-        String payload = new String(message.getPayload());
-        String[] paramsPayload = payload.split(";");
-        String action = paramsPayload[0];
-        /** Info */
-        Log.i(TAG, payload);
-        if (action.equals("createFolder")) {
-            FOLDER_NAME = paramsPayload[1];
-            /** Create folder */
-            //createFolder();
-            File folder = new File(getActivity().getExternalFilesDir(null), File.separator + FOLDER_NAME);
-            boolean success = true;
-            if (!folder.exists()) {
-                success = folder.mkdir();
-            } else {
-                showToast("Folder already exists " + FOLDER_NAME);
-            }
-            if (success) {
-                showToast("Folder successfully created");
-                publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
-            } else {
-                showToast("Folder was not created, something happened");
-                Log.e(TAG, "Folder not created");
-            }
-        } else if (action.equals("takePicture")) {
-            if (!FOLDER_NAME.isEmpty()) {
-                IMG_NAME = paramsPayload[1];
-                /** Create file */
-                // Store in local directory private for the application
-                //final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
-                // Store at DCMI of internal memory
-                final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
-                mFile = new File(path);
-                Log.i(TAG, path);
-                /** Take picture */
-                takePicture();
-            } else {
-                showToast("Assign a folder name first");
-            }
-        } else if (action.equals("takePictureRemoteController")) {
-            if (!FOLDER_NAME.isEmpty()) {
-                IMG_NAME = paramsPayload[1];
-                /** Create file */
-                // Store in local directory private for the application
-                //final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
-                // Store at DCMI of internal memory
-                final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
-                COUNTER_REMOTE_CONTROLLER++;
-                mFile = new File(path);
-                //Log.i(TAG, path);
-                /** Take picture */
-                takePicture();
-                /** Display result */
-                showToast(path);
-            } else{
-                showToast("Assign a folder name first");
-            }
-        } else if (action.equals("autofocusApp")) {
-            if (paramsPayload[1].equals("start")) {
-                showToast("Start app");
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
-                startActivity(intent);
-            } else {
-                //continue
-            }
-        } else {
-            Log.i(TAG, payload);
-            //showToast(payload);
-        }
-    }
-
-    public void reconnectMQTT(){
-        if (client.isConnected()) {
-            showToast("Client is connected");
-        }
-        else {
-            showToast("Client is disconnected, Reconnecting ...");
-            connectMQTT();
-        }
-    }
-
-    /**
-     * Publishes a mqtt message
-     * @param topic: input String that defines the target topic
-     * @param content: input String that contains the message to be sent
-     * */
-    public void publishMessage(String topic, String content){
-        String payload = content;
-        byte[] encodedPayload = new byte[0];
-        try {
-            encodedPayload = payload.getBytes("UTF-8");
-            MqttMessage message = new MqttMessage(encodedPayload);
-            message.setRetained(false);
-            message.setQos(2);
-            client.publish(topic, message);
-        } catch (UnsupportedEncodingException | MqttException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void deliveryComplete(IMqttDeliveryToken token) {
-
     }
 
     @Override
@@ -641,10 +502,9 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     @Override
     public void onResume(){
         super.onResume();
-        client.registerResources(getActivity());
         /** Restart threads */
         startBackgroundThread();
-        startMQTTThread();
+        receiver.register(getActivity());
         // When the screen is turned off and turned back on, the SurfaceTexture is already
         // available, and "onSurfaceTextureAvailable" will not be called. In that case, we can open
         // a camera and start preview from here (otherwise, we wait until the surface is ready in
@@ -659,18 +519,163 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onPause(){
+        receiver.unregister(getActivity());
         closeCamera();
         stopBackgroundThread();
-        stopMQTTThread();
         super.onPause();
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        client.unregisterResources();
     }
 
+    /**************************************************************************************************************************************/
+
+    /**********************************************************MQTT************************************************************************/
+    /**
+     * The arrived messages follow a protocol defined as:
+     * TOPIC: /microscope
+     * MESSAGE:
+     *          - createFolder;FOLDER_NAME: The app must create a new folder to store new pictures
+     *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
+     * */
+    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
+
+        private static final String TAG = "Receiver";
+
+        @Override
+        public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
+            Log.e(TAG, "Subscribed to " + topic);
+            JsonObject request = new JsonObject();
+            request.addProperty("question", "best time to post");
+            request.addProperty("lang", "en");
+            request.addProperty("request_uid", "testAndroid/" + new Date().getTime());
+            byte[] payload = new Gson().toJson(request).getBytes();
+            MQTTServiceCommand.publish(context, "/cameraApp", payload);
+        }
+
+        @Override
+        public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
+            Log.e(TAG, "Can't subscribe to " + topic, exception);
+        }
+
+        @Override
+        public void onPublishSuccessful(Context context, String requestId, String topic) {
+            Log.e(TAG, "Successfully published on topic: " + topic);
+        }
+
+        @Override
+        public void onMessageArrived(Context context, String topic, byte[] payload) {
+            /** Feedback */
+            //showToast(topic);
+            Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
+            /** Receive messages */
+            /** Parse string */
+            String message = new String(payload);
+            String[] paramsPayload = message.split(";");
+            String action = paramsPayload[0];
+            if (action.equals("createFolder")) {
+                FOLDER_NAME = paramsPayload[1];
+                /** Create folder */
+                File folder = new File(getActivity().getExternalFilesDir(null), File.separator + FOLDER_NAME);
+                boolean success = true;
+                if (!folder.exists()) {
+                    success = folder.mkdir();
+                } else {
+                    showToast("Folder already exists " + FOLDER_NAME);
+                }
+                if (success) {
+                    showToast("Folder successfully created");
+                    publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
+                } else {
+                    showToast("Folder was not created, something happened");
+                    Log.e(TAG, "Folder not created");
+                }
+            } else if (action.equals("takePicture")) {
+                if (!FOLDER_NAME.isEmpty()) {
+                    IMG_NAME = paramsPayload[1];
+                    /** Create file */
+                    // Store in local directory private for the application
+                    //final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
+                    // Store at DCMI of internal memory
+                    final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
+                    mFile = new File(path);
+                    Log.i(TAG, path);
+                    /** Take picture */
+                    takePicture();
+                } else {
+                    showToast("Assign a folder name first");
+                }
+            } else if (action.equals("takePictureRemoteController")) {
+                if (!FOLDER_NAME.isEmpty()) {
+                    IMG_NAME = paramsPayload[1];
+                    /** Create file */
+                    // Store in local directory private for the application
+                    //final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                    // Store at DCMI of internal memory
+                    final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                    COUNTER_REMOTE_CONTROLLER++;
+                    mFile = new File(path);
+                    //Log.i(TAG, path);
+                    /** Take picture */
+                    takePicture();
+                    /** Display result */
+                    showToast(path);
+                } else{
+                    showToast("Assign a folder name first");
+                }
+            } else if (action.equals("autofocusApp")) {
+                if (paramsPayload[1].equals("start")) {
+                    showToast("Start app");
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
+                    startActivity(intent);
+                } else {
+                    //continue
+                }
+            } else {
+                //showToast(payload);
+            }
+        }
+
+        @Override
+        public void onConnectionSuccessful(Context context, String requestId) {
+            showToast("Connected");
+            Log.e(TAG, "Connected!");
+        }
+
+        @Override
+        public void onException(Context context, String requestId, Exception exception) {
+            exception.printStackTrace();
+            Log.e(TAG, requestId + " exception");
+        }
+
+        @Override
+        public void onConnectionStatus(Context context, boolean connected) {
+
+        }
+    };
+
+    /** Publish a message
+     * @param topic: input String that defines the target topic of the mqtt client
+     * @param message: input String that contains a message to be published
+     * @return no return
+     * */
+    public void publishMessage(String topic, String message) {
+        byte[] encodedPayload = new byte[0];
+        try {
+            encodedPayload = message.getBytes("UTF-8");
+            MQTTServiceCommand.publish(getActivity(), topic, encodedPayload, 2);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**************************************************************************************************************************************/
+
+
+    /*******************************************************Camera logic*********************************************************************/
     private void requestCameraPermission() {
         if (FragmentCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
             new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
@@ -866,39 +871,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     }
 
     /**
-     * Start mqtt thread
-     * */
-    public void startMQTTThread() {
-        /** MQTT Thread */
-        mMqttKeepAlive = new HandlerThread("MQTTThread");
-        mMqttKeepAlive.start();
-        mMqttHandler = new Handler(mMqttKeepAlive.getLooper());
-        Mqttrunnable = new Runnable() {
-            @Override
-            public void run() {
-                //connectMQTT();
-                reconnectMQTT();
-            }
-        };
-        mMqttHandler.postDelayed(Mqttrunnable, TIME_CHECK_CONNECTION);
-    }
-
-    public void stopMQTTThread(){
-        try {
-        mMqttKeepAlive.quitSafely();
-    } catch (Exception e){
-        e.printStackTrace();
-    }
-        try{
-        mMqttKeepAlive.join();
-        mMqttKeepAlive = null;
-        mMqttHandler = null;
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
-    }
-
-    /**
      * Stops the background thread and its {@link Handler}.
      */
     private void stopBackgroundThread() {
@@ -1040,7 +1012,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
                     //showToast("Saved: " + mFile);
-                    publishMessage(CAMERA_APP_TOPIC, "move;move");
+                    //publishMessage(CAMERA_APP_TOPIC, "move;move");
                     Log.i(TAG, "Saved: " + mFile.toString());
                     try {
                         mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
@@ -1091,6 +1063,9 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 }
                 break;
             }
+            /*case R.id.moveLeft: {
+                publishMessage("/cameraApp", "negrooooo");
+            }*/
         }
     }
 
@@ -1210,5 +1185,24 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     .create();
         }
     }
+    /*****************************************************************************************************************************************************/
+
+    /****************************************************Support methods**********************************************************************************/
+    /**
+     * Shows a {@link Toast} on the UI thread.
+     * @param text The message to show
+     */
+    private void showToast(final String text) {
+        final Activity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+    /*****************************************************************************************************************************************************/
 
 }
