@@ -17,70 +17,20 @@
 package com.example.android.camera2basic;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.pm.ActivityInfo;
-import android.graphics.Camera;
+import android.app.FragmentManager;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import net.igenius.mqttservice.MQTTService;
 import net.igenius.mqttservice.MQTTServiceCommand;
-import net.igenius.mqttservice.MQTTServiceLogger;
-import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import java.io.UnsupportedEncodingException;
-import java.util.UUID;
 
 public class CameraActivity extends Activity {
 
-    /**
-     * MQTT Receiver
-     * */
-    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
-
-        private static final String TAG = "Receiver";
-
-        @Override
-        public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            publishMessage("/authenticate", "oath;cameraApp");
-        }
-
-        @Override
-        public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
-            Log.e(TAG, "Can't subscribe to " + topic, exception);
-        }
-
-        @Override
-        public void onPublishSuccessful(Context context, String requestId, String topic) {
-            Log.e(TAG, "Successfully published on topic: " + topic);
-        }
-
-        @Override
-        public void onMessageArrived(Context context, String topic, byte[] payload) {
-            //showToast(topic);
-            Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
-        }
-
-        @Override
-        public void onConnectionSuccessful(Context context, String requestId) {
-            showToast("Connected");
-            Log.e(TAG, "Connected!");
-        }
-
-        @Override
-        public void onException(Context context, String requestId, Exception exception) {
-            exception.printStackTrace();
-            Log.e(TAG, requestId + " exception");
-        }
-
-        @Override
-        public void onConnectionStatus(Context context, boolean connected) {
-
-        }
-    };
-
+    public SQLiteDatabase mydatabase;
 
     /** Constructors */
     @Override
@@ -88,23 +38,10 @@ public class CameraActivity extends Activity {
         /** Contents */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        /** Instantiate db */
+        mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
         /** Keep screen on */
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        /** Reconnect MQTT */
-        String username = "pfm";
-        String password = "161154029";
-        String clientId = UUID.randomUUID().toString();
-        int qos = 2;
-        MQTTService.NAMESPACE = "com.example.android.camera2basic";
-        MQTTServiceLogger.setLogLevel(MQTTServiceLogger.LogLevel.DEBUG);
-        MQTTServiceCommand.connectAndSubscribe(CameraActivity.this,
-                                                CreatePatient.BROKER,
-                                                clientId,
-                                                username,
-                                                password,
-                                                qos,
-                                                true,
-                                                CreatePatient.CAMERA_APP_TOPIC);
         /** Start fragment */
         if (null == savedInstanceState) {
             getFragmentManager().beginTransaction()
@@ -114,15 +51,29 @@ public class CameraActivity extends Activity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
-        receiver.register(this);
+        //receiver.register(this);
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
-        receiver.unregister(this);
+        //receiver.unregister(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
+        Intent intent = new Intent(CameraActivity.this, CreatePatient.class);
+        startActivity(intent);
+        /*int count = getFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }*/
     }
 
     /** Support methods */
@@ -130,7 +81,7 @@ public class CameraActivity extends Activity {
      * Support function
      * @param message: input string that defines the message to be displayed
      * */
-    public void showToast(String message){
+    public void showToast(String message) {
         Toast.makeText(CameraActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 

@@ -36,6 +36,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
@@ -97,6 +99,8 @@ import java.util.concurrent.TimeUnit;
 import net.igenius.mqttservice.MQTTService;
 import net.igenius.mqttservice.MQTTServiceCommand;
 import net.igenius.mqttservice.MQTTServiceReceiver;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Camera2BasicFragment extends Fragment implements View.OnClickListener,
                                                             FragmentCompat.OnRequestPermissionsResultCallback {
@@ -389,6 +393,12 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     /*************************************************VARIABLES*************************************************************************/
     /**
+     * Boolean that decides the mode to work
+     * */
+    public boolean manualMode = false;
+    public boolean automaticMode = true;
+
+    /**
      * This is the output file for our picture.
      */
     private File mFile;
@@ -396,13 +406,18 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /**
      * Variables for folder and image name
      * */
-    public String FOLDER_NAME = "";
+    public String FOLDER_NAME;
     public String IMG_NAME;
 
     /**
      * Counter for taking pictures
      * */
     public int COUNTER_REMOTE_CONTROLLER = 0;
+
+    /**
+     * SQLITE DB
+     * */
+    public SQLiteDatabase mydatabase;
 
     /**
      * MQTT Topics
@@ -418,18 +433,18 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     static public String EXTRA_ACTIONS_TOPIC = "/extra";
 
     /** Movement states */
-    boolean movingXRight = false;
-    boolean movingXLeft = false;
-    boolean movingYUp = false;
-    boolean movingYDown = false;
+    public boolean movingXRight = false;
+    public boolean movingXLeft = false;
+    public boolean movingYUp = false;
+    public boolean movingYDown = false;
+    public boolean blocked = false;
     /**************************************************************************************************************************************/
 
     /**********************************************************Constructor*****************************************************************/
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
-        /** Get bundle objective */
-        //String strtext = getArguments().getString("edttext");
         /** Contents */
         return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
     }
@@ -438,43 +453,80 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         /** Orientation */
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        /** Get folder name */
+        /** Open table */
+        mydatabase = getActivity().openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
+        /** Query info from the database */
+        Cursor resultSet = mydatabase.rawQuery("Select * from pfmDb", null);
+        resultSet.moveToFirst();
+        FOLDER_NAME = resultSet.getString(0);
         /** UI elements */
         view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
+        //view.findViewById(R.id.autofocusButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
             public void onSwipeTop() {
-                publishMessage(YUP_TOPIC, "1");
-                movingYUp = true;
-            }
-            public void onSwipeRight() {
-                publishMessage(XRIGHT_TOPIC, "1");
-                movingYDown = true;
-            }
-            public void onSwipeLeft() {
-                publishMessage(XLEFT_TOPIC, "1");
-                movingXLeft = true;
+                if (!blocked) {
+                    publishMessage(YUP_TOPIC, "1");
+                    movingYUp = true;
+                    blocked = true;
+                }
+                else {
+                }
             }
             public void onSwipeBottom() {
-                publishMessage(YDOWN_TOPIC, "1");
-                movingXRight = true;
+                if (!blocked) {
+                    publishMessage(YDOWN_TOPIC, "1");
+                    movingYDown = true;
+                    blocked = true;
+                }
+                else {
+
+                }
+            }
+            public void onSwipeRight() {
+                if (!blocked) {
+                    publishMessage(XRIGHT_TOPIC, "1");
+                    movingXRight = true;
+                    blocked = true;
+                }
+                else{
+
+                }
+            }
+            public void onSwipeLeft() {
+                if (!blocked) {
+                    publishMessage(XLEFT_TOPIC, "1");
+                    movingXLeft = true;
+                    blocked = true;
+                }
+                else{
+
+                }
             }
             public void onClick() {
                 if (movingYUp){
                     publishMessage(YUP_TOPIC, "0");
                     movingYUp = false;
+                    blocked = false;
                 }
-                else if (movingYDown){
+                else if (movingYDown) {
                     publishMessage(YDOWN_TOPIC, "0");
                     movingYDown = false;
+                    blocked = false;
                 }
-                else if (movingXRight){
-                    publishMessage(YDOWN_TOPIC, "0");
+                else if (movingXRight) {
+                    publishMessage(XRIGHT_TOPIC, "0");
                     movingXRight = false;
+                    blocked = false;
                 }
                 else if (movingXLeft) {
                     publishMessage(XLEFT_TOPIC, "0");
                     movingXLeft = false;
+                    blocked = false;
+                }
+                else {
                 }
             }
 
@@ -496,7 +548,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     @Override
     public void onStart() {
         super.onStart();
-        //startMQTTThread();
     }
 
     @Override
@@ -568,47 +619,16 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         @Override
         public void onMessageArrived(Context context, String topic, byte[] payload) {
             /** Feedback */
-            //showToast(topic);
+            showToast(topic);
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
             /** Receive messages */
             /** Parse string */
             String message = new String(payload);
             String[] paramsPayload = message.split(";");
             String action = paramsPayload[0];
-            if (action.equals("createFolder")) {
-                FOLDER_NAME = paramsPayload[1];
-                /** Create folder */
-                File folder = new File(getActivity().getExternalFilesDir(null), File.separator + FOLDER_NAME);
-                boolean success = true;
-                if (!folder.exists()) {
-                    success = folder.mkdir();
-                } else {
-                    showToast("Folder already exists " + FOLDER_NAME);
-                }
-                if (success) {
-                    showToast("Folder successfully created");
-                    publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
-                } else {
-                    showToast("Folder was not created, something happened");
-                    Log.e(TAG, "Folder not created");
-                }
-            } else if (action.equals("takePicture")) {
-                if (!FOLDER_NAME.isEmpty()) {
-                    IMG_NAME = paramsPayload[1];
-                    /** Create file */
-                    // Store in local directory private for the application
-                    //final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
-                    // Store at DCMI of internal memory
-                    final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
-                    mFile = new File(path);
-                    Log.i(TAG, path);
-                    /** Take picture */
-                    takePicture();
-                } else {
-                    showToast("Assign a folder name first");
-                }
-            } else if (action.equals("takePictureRemoteController")) {
-                if (!FOLDER_NAME.isEmpty()) {
+            /** Different modes have different behavior */
+            if (manualMode) {
+                if (action.equals("takePictureRemoteController")) {
                     IMG_NAME = paramsPayload[1];
                     /** Create file */
                     // Store in local directory private for the application
@@ -622,21 +642,70 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     takePicture();
                     /** Display result */
                     showToast(path);
-                } else{
-                    showToast("Assign a folder name first");
                 }
-            } else if (action.equals("autofocusApp")) {
-                if (paramsPayload[1].equals("start")) {
-                    showToast("Start app");
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
-                    startActivity(intent);
+            } else if (automaticMode) {
+                if (action.equals("createFolder")) {
+                    FOLDER_NAME = paramsPayload[1];
+                    /** Create folder */
+                    File folder = new File(getActivity().getExternalFilesDir(null), File.separator + FOLDER_NAME);
+                    //File folder = new File(Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME);
+                    boolean success = true;
+                    if (!folder.exists()) {
+                        success = folder.mkdir();
+                    } else {
+                        showToast("Folder already exists " + FOLDER_NAME);
+                    }
+                    if (success) {
+                        showToast("Folder successfully created");
+                        publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
+                    } else {
+                        showToast("Folder was not created, something happened");
+                        Log.e(TAG, "Folder not created");
+                    }
+                } else if (action.equals("takePictureRemoteController")) {
+                    IMG_NAME = paramsPayload[1];
+                    /** Create file */
+                    // Store in local directory private for the application
+                    final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                    // Store at DCMI of internal memory
+                    //final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                    COUNTER_REMOTE_CONTROLLER++;
+                    mFile = new File(path);
+                    //Log.i(TAG, path);
+                    /** Take picture */
+                    takePicture();
+                    /** Display result */
+                    showToast(path);
+                } else if (action.equals("takePicture")) {
+                    if (!FOLDER_NAME.isEmpty()) {
+                        IMG_NAME = paramsPayload[1];
+                        /** Create file */
+                        // Store in local directory private for the application
+                        final String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
+                        // Store at DCMI of internal memory
+                        //final String path = Environment.DIRECTORY_DCIM + File.separator + FOLDER_NAME + File.separator + IMG_NAME + ".jpg";
+                        mFile = new File(path);
+                        Log.i(TAG, path);
+                        /** Take picture */
+                        takePicture();
+                    } else {
+                        showToast("Assign a folder name first");
+                    }
+                } else if (action.equals("autofocusApp")) {
+                    if (paramsPayload[1].equals("start")) {
+                        showToast("Start app");
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
+                        startActivity(intent);
+                    } else {
+                        //continue
+                    }
                 } else {
-                    //continue
+                    //showToast(payload);
                 }
-            } else {
-                //showToast(payload);
             }
+
+
         }
 
         @Override
@@ -1045,30 +1114,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         return (ORIENTATIONS.get(rotation) + mSensorOrientation + 270) % 360;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.picture: {
-                mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
-                takePicture();
-                break;
-            }
-            case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage("Amount of fields: " + String.valueOf(COUNTER_REMOTE_CONTROLLER))
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
-                break;
-            }
-            /*case R.id.moveLeft: {
-                publishMessage("/cameraApp", "negrooooo");
-            }*/
-        }
-    }
-
     /**
      * Saves a JPEG {@link Image} into the specified {@link File}.
      */
@@ -1201,6 +1246,36 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                     Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
                 }
             });
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            /*case R.id.autofocusButton: {
+                //publishMessage(CreatePatient.AUTOFOCUS_APP_TOPIC, "start");
+            }*/
+            case R.id.picture: {
+                mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
+                takePicture();
+                break;
+            }
+            case R.id.info: {
+                Activity activity = getActivity();
+                if (null != activity) {
+                    /*
+                    new AlertDialog.Builder(activity)
+                            .setMessage("Amount of fields: " + String.valueOf(COUNTER_REMOTE_CONTROLLER))
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    */
+                    new AlertDialog.Builder(activity)
+                            .setMessage(FOLDER_NAME)
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                }
+                break;
+            }
         }
     }
     /*****************************************************************************************************************************************************/

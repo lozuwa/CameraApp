@@ -57,6 +57,15 @@
                 android:text="@string/automatic_analysis"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/just_camera_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="just camera"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

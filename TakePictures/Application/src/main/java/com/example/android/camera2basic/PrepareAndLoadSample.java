@@ -44,6 +44,19 @@ public class PrepareAndLoadSample extends Activity implements OnShowcaseEventLis
         /** UI elements */
         placeSample = (Button) findViewById(R.id.placeSample);
         ready = (Button) findViewById(R.id.ready);
+        /** Showcase */
+        /** Show first button */
+        sv = new ShowcaseView.Builder(PrepareAndLoadSample.this)
+                .withMaterialShowcase()
+                .setTarget(target)
+                .setContentTitle("Prepare the sample")
+                .setContentText("Press the button to take the stage out")
+                .setStyle(R.style.CustomShowcaseTheme3)
+                .setShowcaseEventListener(PrepareAndLoadSample.this)
+                .replaceEndButton(R.layout.view_custom_button)
+                .build();
+        sv.setButtonPosition(lps);
+
         /** Callbacks */
         placeSample.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v) {

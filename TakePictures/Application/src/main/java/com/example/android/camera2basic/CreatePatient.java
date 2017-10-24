@@ -1,10 +1,16 @@
 package com.example.android.camera2basic;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Camera;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -27,6 +33,7 @@ import net.igenius.mqttservice.MQTTServiceCommand;
 import net.igenius.mqttservice.MQTTServiceLogger;
 import net.igenius.mqttservice.MQTTServiceReceiver;
 
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.UUID;
@@ -51,7 +58,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
             request.addProperty("lang", "en");
             request.addProperty("request_uid", "testAndroid/" + new Date().getTime());
             byte[] payload = new Gson().toJson(request).getBytes();
-
             MQTTServiceCommand.publish(context, "/random_topic_with_no_intention", payload);
         }
 
@@ -95,15 +101,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     private AutoCompleteTextView nameUserEditText;
     private Button automaticAnalisisButton;
     private Button manualAnalysisButton;
+    private Button justCameraButton;
 
     /** Showcase */
     public ShowcaseView sv;
     public RelativeLayout.LayoutParams lps;
     public ViewTarget target;
 
+    /** SQLite */
+    public SQLiteDatabase mydatabase;
+
     /** Constant variables */
-    /* Broker */
-    static public String BROKER = "tcp://192.168.0.105:1883";
+
     /** MQTT Topics */
     static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
     static public String CAMERA_APP_TOPIC = "/cameraApp";
@@ -121,10 +130,14 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         /** Contents */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_patient);
+        /** Create DB table if not exists */
+        mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
+        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS " + DbFeed.TABLE_NAME + "(" + DbFeed.COLUMN_NAME_TITLE + " VARCHAR);");
         /** Instantiate UI elements */
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
+        justCameraButton = (Button) findViewById(R.id.just_camera_button);
         /** Initial state UI */
         nameUserEditText.setError(null);
         /** Configure showcase */
@@ -136,7 +149,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         lps.setMargins(margin, margin, margin, margin);
         target = new ViewTarget(R.id.automatic_button, this);
         /** Show first button */
-        sv = new ShowcaseView.Builder(CreatePatient.this)
+        /*sv = new ShowcaseView.Builder(CreatePatient/.this)
                 .withMaterialShowcase()
                 .setTarget(target)
                 .setContentTitle("Prepare the sample")
@@ -144,60 +157,53 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 .setStyle(R.style.CustomShowcaseTheme3)
                 .setShowcaseEventListener(CreatePatient.this)
                 .replaceEndButton(R.layout.view_custom_button)
-                .build();
-        sv.setButtonPosition(lps);
-        /** Connect MQTT */
-        String username = "pfm";
-        String password = "161154029";
-        String clientId = UUID.randomUUID().toString();
-        int qos = 2;
-        MQTTService.NAMESPACE = "com.example.android.camera2basic";
-        MQTTServiceLogger.setLogLevel(MQTTServiceLogger.LogLevel.DEBUG);
-        MQTTServiceCommand.connectAndSubscribe(CreatePatient.this,
-                                                BROKER,
-                                                clientId,
-                                                username,
-                                                password,
-                                                qos,
-                                                true,
-                                                CAMERA_APP_TOPIC);
-        attemptUserCreation();
+                .build();*/
+        //sv.setButtonPosition(lps);
         /** Button callbacks */
         automaticAnalisisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                /** Put arguments */
-                //Bundle bundle = new Bundle();
-                //bundle.putString("edttext", "From Activity");
-                /** Publish folder name */
+                /** Get folder name */
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
-                publishMessage(CAMERA_APP_TOPIC, "createFolder;"+NAME_FOLDER);
-                /** Start camera */
-                Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSample.class);
-                startActivity(intent);
+                if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
+                    showToast("Name is too short");
+                } else {
+                    createFolder(NAME_FOLDER);
+                    /** Start camera */
+                    Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
+                    startActivity(intent);
+                }
             }
         });
 
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                /** Put arguments */
-                //Bundle bundle = new Bundle();
-                //bundle.putString("edttext", "From Activity");
-                /** Publish folder name */
+                /** Get folder name */
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
-                publishMessage(CAMERA_APP_TOPIC, "createFolder;"+NAME_FOLDER);
-                /** Start camera */
-                Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
-                startActivity(intent);
+                if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
+                    showToast("Name is too short");
+                } else {
+                    createFolder(NAME_FOLDER);
+                    /** Start camera */
+                    Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
+        justCameraButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /** Callback on resume */
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         receiver.register(this);
     }
@@ -209,34 +215,23 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         receiver.unregister(this);
     }
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
-    private void attemptUserCreation() {
-        // Reset errors.
-        nameUserEditText.setError(null);
-
-        // Store values at the time of the login attempt.
-        String patient = nameUserEditText.getText().toString();
-
-        boolean cancel = false;
-        View focusView = null;
-
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(patient) || (patient.length() < 4)) {
-            nameUserEditText.setError(getString(R.string.error_field_required));
-            focusView = nameUserEditText;
-            cancel = true;
-        }
-
-        if (cancel) {
-            focusView.requestFocus();
+    public void createFolder(String FOLDER_NAME){
+        /** Write folder name into db table */
+        mydatabase.execSQL("INSERT INTO " + DbFeed.TABLE_NAME + " VALUES('" + FOLDER_NAME + "');");
+        /** Create folder */
+        File folder = new File(this.getExternalFilesDir(null), File.separator + FOLDER_NAME);
+        boolean success = true;
+        if (!folder.exists()) {
+            success = folder.mkdir();
         } else {
-            publishMessage("/cameraApp", "shit");
-            //Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
-            //startActivity(intent);
+            showToast("Folder already exists " + FOLDER_NAME);
+        }
+        if (success) {
+            showToast("Folder successfully created");
+            publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
+        } else {
+            showToast("Folder was not created, something happened");
+            Log.e("CreatePatient", "Folder not created");
         }
     }
 
@@ -285,22 +280,4 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     }
     /*************************************************************************************************************/
 
-    /**
-     SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-     // New value for one column
-     ContentValues values = new ContentValues();
-     values.put(FeedEntry.COLUMN_NAME_TITLE, title);
-
-     // Which row to update, based on the title
-     String selection = FeedEntry.COLUMN_NAME_TITLE + " LIKE ?";
-     String[] selectionArgs = { "MyTitle" };
-
-     int count = db.update(
-     FeedReaderDbHelper.FeedEntry.TABLE_NAME,
-     values,
-     selection,
-     selectionArgs);
-     **/
 }
-
