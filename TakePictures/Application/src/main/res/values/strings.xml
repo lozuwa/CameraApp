@@ -30,4 +30,7 @@
     <string name="manual_analysis">Manual</string>
     <string name="prompt_write_name">Write name here</string>
     <string name="error_field_required">Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

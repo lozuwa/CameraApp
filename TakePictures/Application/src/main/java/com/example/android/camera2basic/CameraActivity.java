@@ -24,13 +24,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import net.igenius.mqttservice.MQTTServiceCommand;
-
-import java.io.UnsupportedEncodingException;
-
 public class CameraActivity extends Activity {
-
-    public SQLiteDatabase mydatabase;
 
     /** Constructors */
     @Override
@@ -38,8 +32,6 @@ public class CameraActivity extends Activity {
         /** Contents */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        /** Instantiate db */
-        mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
         /** Keep screen on */
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         /** Start fragment */
@@ -53,27 +45,16 @@ public class CameraActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        //receiver.register(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        //receiver.unregister(this);
     }
 
     @Override
     public void onBackPressed() {
-        mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
-        Intent intent = new Intent(CameraActivity.this, CreatePatient.class);
-        startActivity(intent);
-        /*int count = getFragmentManager().getBackStackEntryCount();
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-        } else {
-            getFragmentManager().popBackStack();
-        }*/
+        /** Back operation is not allowed */
     }
 
     /** Support methods */
@@ -83,21 +64,6 @@ public class CameraActivity extends Activity {
      * */
     public void showToast(String message) {
         Toast.makeText(CameraActivity.this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    /** Publish a message
-     * @param topic: input String that defines the target topic of the mqtt client
-     * @param message: input String that contains a message to be published
-     * @return no return
-     * */
-    public void publishMessage(String topic, String message) {
-        byte[] encodedPayload = new byte[0];
-        try {
-            encodedPayload = message.getBytes("UTF-8");
-            MQTTServiceCommand.publish(CameraActivity.this, topic, encodedPayload, 2);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
     }
 
 }

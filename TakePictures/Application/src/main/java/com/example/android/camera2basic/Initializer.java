@@ -2,7 +2,9 @@ package com.example.android.camera2basic;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -22,7 +24,7 @@ import java.util.UUID;
  * Subclass that initializes the mqtt service
  */
 
-public class Initializer extends Activity {
+public class Initializer extends Application {
     /**
      * Broker
      * */
@@ -45,8 +47,8 @@ public class Initializer extends Activity {
      * Constructor
      * */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate() {
+        super.onCreate();
         /** Initialize variables for MQTT Service */
         MQTTService.NAMESPACE = "com.example.android.camera2basic";
         MQTTService.KEEP_ALIVE_INTERVAL = KEEP_ALIVE_TIMING;
@@ -68,18 +70,6 @@ public class Initializer extends Activity {
                                                 CAMERA_APP_TOPIC);
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        receiver.register(this);
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        receiver.unregister(this);
-    }
-
     /**
      * MQTT Receiver
      * */
@@ -91,6 +81,7 @@ public class Initializer extends Activity {
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
             /** Info */
             Log.i(TAG, "Subscribed to " + topic);
+            /** Authenticate connection */
             publishMessage(CAMERA_APP_TOPIC, "oath;cameraApp");
         }
 
@@ -106,8 +97,21 @@ public class Initializer extends Activity {
 
         @Override
         public void onMessageArrived(Context context, String topic, byte[] payload) {
+            /** Info */
             //showToast(topic);
             Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
+            /** Incoming messages */
+            final String message = new String(payload);
+            String[] messages = message.split(";");
+            String command = messages[0];
+            String action = messages[1];
+            if (command.equals("autofocusApp")){
+                if (action.equals("start")){
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
+                    startActivity(intent);
+                }
+            }
         }
 
         @Override

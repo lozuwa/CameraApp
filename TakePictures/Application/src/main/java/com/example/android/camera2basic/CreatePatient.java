@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -44,100 +45,52 @@ import java.util.UUID;
 public class CreatePatient extends Activity implements OnShowcaseEventListener {
 
     /**
-     * MQTT Receiver
-     * */
-    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
-
-        private static final String TAG = "Receiver";
-
-        @Override
-        public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            Log.e(TAG, "Subscribed to " + topic);
-            JsonObject request = new JsonObject();
-            request.addProperty("question", "best time to post");
-            request.addProperty("lang", "en");
-            request.addProperty("request_uid", "testAndroid/" + new Date().getTime());
-            byte[] payload = new Gson().toJson(request).getBytes();
-            MQTTServiceCommand.publish(context, "/random_topic_with_no_intention", payload);
-        }
-
-        @Override
-        public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
-            Log.e(TAG, "Can't subscribe to " + topic, exception);
-        }
-
-        @Override
-        public void onPublishSuccessful(Context context, String requestId, String topic) {
-            Log.e(TAG, "Successfully published on topic: " + topic);
-        }
-
-        @Override
-        public void onMessageArrived(Context context, String topic, byte[] payload) {
-            //showToast(topic);
-            Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
-        }
-
-        @Override
-        public void onConnectionSuccessful(Context context, String requestId) {
-            showToast("Connected");
-            Log.e(TAG, "Connected!");
-        }
-
-        @Override
-        public void onException(Context context, String requestId, Exception exception) {
-            exception.printStackTrace();
-            Log.e(TAG, requestId + " exception");
-        }
-
-        @Override
-        public void onConnectionStatus(Context context, boolean connected) {
-
-        }
-    };
-
-    /**
-     * UI Shit
+     * UI elements
      * */
     private AutoCompleteTextView nameUserEditText;
     private Button automaticAnalisisButton;
     private Button manualAnalysisButton;
     private Button justCameraButton;
+    private Button readDbButton;
 
-    /** Showcase */
+    /**
+     * Showcase
+     * */
     public ShowcaseView sv;
     public RelativeLayout.LayoutParams lps;
     public ViewTarget target;
 
-    /** SQLite */
+    /**
+     * SQLite
+     * */
     public SQLiteDatabase mydatabase;
 
     /** Constant variables */
 
-    /** MQTT Topics */
-    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
+    /**
+     * MQTT Topics
+     * */
     static public String CAMERA_APP_TOPIC = "/cameraApp";
-    static public String ZDOWN_TOPIC = "/zd";
-    static public String ZUP_TOPIC = "/zu";
-    static public String XRIGHT_TOPIC = "/xr";
-    static public String XLEFT_TOPIC = "/xl";
-    static public String YUP_TOPIC = "/yu";
-    static public String YDOWN_TOPIC = "/yd";
-    static public String EXTRA_ACTIONS_TOPIC = "/extra";
 
-    /** Constructor */
+    /**
+     * Constructors
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /** Contents */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_patient);
-        /** Create DB table if not exists */
+        /** Orientation */
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        /** Open database */
         mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
-        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS " + DbFeed.TABLE_NAME + "(" + DbFeed.COLUMN_NAME_TITLE + " VARCHAR);");
+        initializeDb();
         /** Instantiate UI elements */
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
         justCameraButton = (Button) findViewById(R.id.just_camera_button);
+        readDbButton = (Button) findViewById(R.id.read_db_button);
         /** Initial state UI */
         nameUserEditText.setError(null);
         /** Configure showcase */
@@ -160,7 +113,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 .build();*/
         //sv.setButtonPosition(lps);
         /** Button callbacks */
-        automaticAnalisisButton.setOnClickListener(new OnClickListener() {
+        manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 /** Get folder name */
@@ -176,7 +129,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
             }
         });
 
-        manualAnalysisButton.setOnClickListener(new OnClickListener() {
+        automaticAnalisisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 /** Get folder name */
@@ -186,7 +139,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSample.class);
                     startActivity(intent);
                 }
             }
@@ -195,26 +148,54 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         justCameraButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                /** Start camera */
+                Intent intent = new Intent(CreatePatient.this, JustCamera.class);
                 startActivity(intent);
             }
         });
+
+        readDbButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /** Fetch db and show it */
+                try {
+                    Cursor resultSet = mydatabase.rawQuery("Select * from " + DbFeed.TABLE_NAME, null);
+                    resultSet.moveToFirst();
+                    String folderName = resultSet.getString(0);
+                    showToast(folderName);
+                } catch (Exception e){
+                    showToast("Db is empty");
+                }
+            }
+        });
+
     }
 
-    /** Callback on resume */
     @Override
     protected void onResume() {
         super.onResume();
         receiver.register(this);
     }
 
-    /** Callback on pause */
     @Override
     protected void onPause(){
         super.onPause();
         receiver.unregister(this);
     }
 
+    @Override
+    public void onBackPressed() {
+        /** Back operation is not allowed */
+    }
+
+    /**
+     * Support functions
+     * */
+
+    /**
+     * Creates a physical folder folder in the apps's directory
+     * @param FOLDER_NAME: input string that contains the name of the folder to be created
+     * */
     public void createFolder(String FOLDER_NAME){
         /** Write folder name into db table */
         mydatabase.execSQL("INSERT INTO " + DbFeed.TABLE_NAME + " VALUES('" + FOLDER_NAME + "');");
@@ -236,7 +217,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     }
 
     /**
-     * Support function
+     * First drops the table info just in case any unexpected crashes have happened, then creates a clean table
+     *
+     * */
+    public void initializeDb() {
+        /** Clean table */
+        mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
+        /** Create table */
+        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS " + DbFeed.TABLE_NAME + "(" + DbFeed.COLUMN_NAME_TITLE + " VARCHAR);");
+    }
+
+     /**
+     * Shows a specific message in a toast
      * @param message: input string that defines the message to be displayed
      * */
     public void showToast(String message){
@@ -258,7 +250,56 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         }
     }
 
-    /****************************************Showcase callbacks***************************************************/
+    /**
+     * MQTT Receiver
+     * */
+    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
+
+        private static final String TAG = "Receiver";
+
+        @Override
+        public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
+            /** Info */
+            Log.i(TAG, "Subscribed to " + topic);
+            /** Publish authentication */
+            //publishMessage(CAMERA_APP_TOPIC, "oath;cameraApp");
+        }
+
+        @Override
+        public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
+            Log.e(TAG, "Can't subscribe to " + topic, exception);
+        }
+
+        @Override
+        public void onPublishSuccessful(Context context, String requestId, String topic) {
+            Log.e(TAG, "Successfully published on topic: " + topic);
+        }
+
+        @Override
+        public void onMessageArrived(Context context, String topic, byte[] payload) {
+            //showToast(topic);
+            Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
+        }
+
+        @Override
+        public void onConnectionSuccessful(Context context, String requestId) {
+            showToast("Connected (CreatePatient.class)");
+            Log.e(TAG, "Connected!");
+        }
+
+        @Override
+        public void onException(Context context, String requestId, Exception exception) {
+            exception.printStackTrace();
+            Log.e(TAG, requestId + " exception");
+        }
+
+        @Override
+        public void onConnectionStatus(Context context, boolean connected) {
+
+        }
+    };
+
+    /** Showcase callbacks */
     @Override
     public void onShowcaseViewHide(ShowcaseView showcaseView) {
 
@@ -278,6 +319,5 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     public void onShowcaseViewTouchBlocked(MotionEvent motionEvent) {
 
     }
-    /*************************************************************************************************************/
 
 }

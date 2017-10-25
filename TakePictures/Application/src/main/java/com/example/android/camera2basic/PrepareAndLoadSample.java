@@ -1,8 +1,10 @@
 package com.example.android.camera2basic;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -22,7 +24,6 @@ import net.igenius.mqttservice.MQTTServiceReceiver;
 import java.io.UnsupportedEncodingException;
 
 public class PrepareAndLoadSample extends Activity implements OnShowcaseEventListener {
-
     /** UI Elements */
     public Button placeSample;
     public Button ready;
@@ -41,12 +42,17 @@ public class PrepareAndLoadSample extends Activity implements OnShowcaseEventLis
         super.onCreate(savedInstanceState);
         /** Content */
         setContentView(R.layout.activity_prepare_and_load_sample);
+        /** Orientation */
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         /** UI elements */
         placeSample = (Button) findViewById(R.id.placeSample);
         ready = (Button) findViewById(R.id.ready);
+        /** Initial states */
+        placeSample.setEnabled(true);
+        ready.setEnabled(false);
         /** Showcase */
         /** Show first button */
-        sv = new ShowcaseView.Builder(PrepareAndLoadSample.this)
+        /*sv = new ShowcaseView.Builder(PrepareAndLoadSample.this)
                 .withMaterialShowcase()
                 .setTarget(target)
                 .setContentTitle("Prepare the sample")
@@ -55,30 +61,36 @@ public class PrepareAndLoadSample extends Activity implements OnShowcaseEventLis
                 .setShowcaseEventListener(PrepareAndLoadSample.this)
                 .replaceEndButton(R.layout.view_custom_button)
                 .build();
-        sv.setButtonPosition(lps);
+        sv.setButtonPosition(lps);*/
 
         /** Callbacks */
         placeSample.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v) {
-                /** 4. Press ok */
-                /** 5. Place XY in (15, 40) */
+                /** Restart stage to its initial position */
                 publishMessage(EXTRA_ACTIONS_TOPIC, "extra;home");
-                Intent intent = new Intent(PrepareAndLoadSample.this, ControllerAndCamera.class);
-                startActivity(intent);
+                ready.setEnabled(true);
+                placeSample.setEnabled(false);
             }
         });
 
         ready.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v) {
-                /** 6. Set position to start */
+                /** Once sample is prepared and locked, set to initial position */
                 publishMessage(EXTRA_ACTIONS_TOPIC, "extra;startPosition");
-                Intent intent = new Intent(PrepareAndLoadSample.this, ControllerAndCamera.class);
+                /** Start controller */
+                /*Intent intent = new Intent(PrepareAndLoadSample.this, ControllerAndCamera.class);
+                startActivity(intent);*/
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.CameraAndController"));
                 startActivity(intent);
             }
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        /** Back operation is not allowed */
+    }
 
     /** Showcase callbacks */
     @Override
