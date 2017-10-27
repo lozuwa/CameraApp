@@ -414,12 +414,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * */
     public SQLiteDatabase mydatabase;
 
-    /** Movement states */
-    public boolean movingXRight = false;
-    public boolean movingXLeft = false;
-    public boolean movingYUp = false;
-    public boolean movingYDown = false;
-    public boolean blocked = false;
     /**************************************************************************************************************************************/
 
     /**********************************************************Constructor*****************************************************************/
@@ -446,66 +440,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         view.findViewById(R.id.info).setOnClickListener(this);
         view.findViewById(R.id.startButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-        mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
-            public void onSwipeTop() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_START);
-                    movingYUp = true;
-                    blocked = true;
-                }
-            }
-            public void onSwipeBottom() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_START);
-                    movingYDown = true;
-                    blocked = true;
-                }
-            }
-            public void onSwipeRight() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_START);
-                    movingXRight = true;
-                    blocked = true;
-                }
-            }
-            public void onSwipeLeft() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_START);
-                    movingXLeft = true;
-                    blocked = true;
-                }
-            }
-            public void onClick() {
-                if (movingYUp){
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_END);
-                    movingYUp = false;
-                    blocked = false;
-                }
-                else if (movingYDown) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_END);
-                    movingYDown = false;
-                    blocked = false;
-                }
-                else if (movingXRight) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_END);
-                    movingXRight = false;
-                    blocked = false;
-                }
-                else if (movingXLeft) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_END);
-                    movingXLeft = false;
-                    blocked = false;
-                }
-            }
-
-            public void onDoubleClick() {
-            }
-
-            public void onLongClick() {
-            }
-
-
-        });
     }
 
     @Override
@@ -597,7 +531,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 IMG_NAME = message;
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
-                String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + "_" + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                //String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + "_" + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
                 //Log.i(TAG, path);

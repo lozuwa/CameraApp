@@ -30,12 +30,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/name_patient_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient's name:" />
+
             <AutoCompleteTextView
                 android:id="@+id/patient_name_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_write_name"
-                android:text="negro0"
+                android:text="Rodrigo Loza"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />

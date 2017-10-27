@@ -1,12 +1,14 @@
 package com.example.android.camera2basic;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -68,6 +70,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         /** Open database */
         mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
         initializeDb();
+        /** Always restart home (XY), when reaching this activity */
+        publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
         /** Instantiate UI elements */
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
@@ -100,6 +104,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                /** Once sample is prepared and locked, set to initial position */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 /** Get folder name */
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
                 if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
@@ -107,7 +113,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSampleManual.class);
+                    Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
                     startActivity(intent);
                 }
             }
@@ -116,6 +122,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         automaticAnalisisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                /** Once sample is prepared and locked, set to initial position */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 /** Get folder name */
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
                 if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
@@ -123,7 +131,11 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSampleAutomatic.class);
+                    //Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                    //startActivity(intent);
+                    /** Start activity CameraActivity from cameraApp */
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.CameraAndController"));
                     startActivity(intent);
                 }
             }
@@ -184,7 +196,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         /** Write folder name into db table */
         mydatabase.execSQL("INSERT INTO " + DbFeed.TABLE_NAME + " VALUES('" + FOLDER_NAME + "');");
         /** Create folder */
-        File folder = new File(this.getExternalFilesDir(null), File.separator + FOLDER_NAME);
+        //File folder = new File(this.getExternalFilesDir(null), File.separator + FOLDER_NAME);
+        File folder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), File.separator + FOLDER_NAME);
         boolean success = true;
         if (!folder.exists()) {
             success = folder.mkdir();

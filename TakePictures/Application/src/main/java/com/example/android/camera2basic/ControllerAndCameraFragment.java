@@ -552,12 +552,6 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
             Log.e(TAG, "Subscribed to " + topic);
-            JsonObject request = new JsonObject();
-            request.addProperty("question", "best time to post");
-            request.addProperty("lang", "en");
-            request.addProperty("request_uid", "testAndroid/" + new Date().getTime());
-            byte[] payload = new Gson().toJson(request).getBytes();
-            MQTTServiceCommand.publish(context, "/cameraApp", payload);
         }
 
         @Override
@@ -586,9 +580,11 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
             /** Features */
             if (command.equals("takePictureRemoteController")) {
                 IMG_NAME = message;
+                //Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
-                String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                //String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
                 //Log.i(TAG, path);
