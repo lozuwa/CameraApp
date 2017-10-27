@@ -76,8 +76,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PrepareAndLoadSample" />
-        <activity android:name=".JustCamera"></activity>
+        <activity android:name=".PrepareAndLoadSampleManual" />
+        <activity android:name=".JustCamera" />
+        <activity android:name=".PrepareAndLoadSampleAutomatic"></activity>
     </application>
 
 </manifest>

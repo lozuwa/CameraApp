@@ -47,71 +47,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fragment_just_camera.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_just_camera.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
+      <file leaf-file-name="CreatePatient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="134" column="35" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+              <folding>
+                <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
+                <element signature="class#8640:10177" expanded="false" />
+              </folding>
+            </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrepareAndLoadSampleAutomatic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleAutomatic.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+              <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CameraActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Camera2BasicFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="551" column="39" selection-start-line="551" selection-start-column="39" selection-end-line="551" selection-end-column="39" />
-              <folding>
-                <element signature="class#5497:6273" expanded="false" />
-                <element signature="method#onSurfaceTextureAvailable#0;class#5497:6273" expanded="false" />
-                <element signature="class#7010:7930" expanded="false" />
-                <element signature="class#9676:11056" expanded="false" />
-                <element signature="method#onCaptureCompleted#0;class#9676:11056" expanded="false" />
-                <element signature="method#chooseOptimalSize#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="e#13723#13724#0" expanded="true" />
-                <element signature="e#13772#13773#0" expanded="true" />
-                <element signature="e#16701#16702#0" expanded="true" />
-                <element signature="e#16732#16733#0" expanded="true" />
-                <element signature="e#16917#16999#0" expanded="false" />
-                <element signature="e#17707#17708#0" expanded="true" />
-                <element signature="e#17740#17741#0" expanded="true" />
-                <element signature="method#publishMessage#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#requestCameraPermission#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#onRequestPermissionsResult#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#setUpCameraOutputs#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#openCamera#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#closeCamera#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#startBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#stopBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#createCameraPreviewSession#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#configureTransform#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#captureStillPicture#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#getOrientation#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="class#ImageSaver#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#compare#0;class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#newInstance#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#onCreateDialog#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#onCreateDialog#0;class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#showToast#0;class#Camera2BasicFragment#0" expanded="false" />
-                <element signature="method#onClick#0;class#Camera2BasicFragment#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -2001,28 +1955,31 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ReconnectCameraActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/DbFeed.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCamera.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_just_camera.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/JustCamera.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_just_camera.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_just_camera.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/JustCameraFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSample.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_prepare_and_load_sample_automatic.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleManual.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleAutomatic.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -2628,16 +2585,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23830736" sideWeight="0.5479744" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11915368" sideWeight="0.54584223" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1792873" sideWeight="0.4610874" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1792873" sideWeight="0.5389126" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11915368" sideWeight="0.45415777" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20489977" sideWeight="0.53678036" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28198293" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2646,7 +2603,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18374164" sideWeight="0.4946695" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37305123" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2677,22 +2634,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -2714,36 +2655,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#44991#0" expanded="false" />
+            <element signature="e#0#47730#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="class#5497:6273" expanded="false" />
-            <element signature="method#onSurfaceTextureAvailable#0;class#5497:6273" expanded="false" />
-            <element signature="class#7010:7930" expanded="false" />
-            <element signature="class#9676:11056" expanded="false" />
-            <element signature="method#onCaptureCompleted#0;class#9676:11056" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#16917#16999#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#setUpCameraOutputs#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#closeCamera#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#createCameraPreviewSession#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#configureTransform#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#compare#0;class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#newInstance#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onCreateDialog#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onCreateDialog#0;class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#showToast#0;class#Camera2BasicFragment#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2884,17 +2797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_prepare_and_load_sample.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2903,16 +2805,6 @@
         <state relative-caret-position="149">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
-          <folding>
-            <element signature="class#2347:4521" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2939,85 +2831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="561" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="1202" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#251#0" expanded="true" />
-            <element signature="initializer##0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#4859:5645" expanded="false" />
-            <element signature="class#6382:7302" expanded="false" />
-            <element signature="class#9076:10456" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#16118:18222" expanded="false" />
-            <element signature="method#publishMessage#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#setUpCameraOutputs#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#closeCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#createCameraPreviewSession#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#configureTransform#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#CompareSizesByArea#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#ErrorDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="class#ConfirmationDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <element signature="method#showToast#0;class#ControllerAndCameraFragment#0" expanded="false" />
-            <marker date="1508909168817" expanded="false" signature="25278:25316" ph="&quot;This sample needs camera permission.&quot;" />
-            <marker date="1508909168817" expanded="false" signature="30871:30903" ph="&quot;This device doesn't support Camera2 API.&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_just_camera.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3025,14 +2838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCamera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="32" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -3083,17 +2888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="142" column="42" selection-start-line="140" selection-start-column="19" selection-end-line="142" selection-end-column="42" />
-          <folding>
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#9163:10700" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_just_camera.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3110,69 +2904,211 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+        <state relative-caret-position="391">
+          <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSample.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_prepare_and_load_sample_manual.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_prepare_and_load_sample_automatic.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleManual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="70" column="92" selection-start-line="69" selection-start-column="16" selection-end-line="70" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="1193" column="0" selection-start-line="89" selection-start-column="41" selection-end-line="1193" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#251#0" expanded="true" />
+            <element signature="initializer##0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#4859:5645" expanded="false" />
+            <element signature="class#6382:7302" expanded="false" />
+            <element signature="class#9076:10456" expanded="false" />
+            <element signature="method#chooseOptimalSize#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#15628:17926" expanded="false" />
+            <element signature="method#onSwipeTop#0;class#15628:17926" expanded="false" />
+            <element signature="class#19802:23658" expanded="false" />
+            <element signature="method#publishMessage#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#requestCameraPermission#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#setUpCameraOutputs#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#openCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#closeCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#startBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#stopBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#createCameraPreviewSession#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#configureTransform#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#captureStillPicture#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#getOrientation#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#ImageSaver#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#CompareSizesByArea#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#ErrorDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="class#ConfirmationDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="method#showToast#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <marker date="1509057363068" expanded="false" signature="25626:25664" ph="&quot;This sample needs camera permission.&quot;" />
+            <marker date="1509057363068" expanded="false" signature="31219:31251" ph="&quot;This device doesn't support Camera2 API.&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="551" column="39" selection-start-line="551" selection-start-column="39" selection-end-line="551" selection-end-column="39" />
+        <state relative-caret-position="139">
+          <caret line="1008" column="77" selection-start-line="1008" selection-start-column="77" selection-end-line="1008" selection-end-column="99" />
           <folding>
-            <element signature="class#5497:6273" expanded="false" />
-            <element signature="method#onSurfaceTextureAvailable#0;class#5497:6273" expanded="false" />
-            <element signature="class#7010:7930" expanded="false" />
-            <element signature="class#9676:11056" expanded="false" />
-            <element signature="method#onCaptureCompleted#0;class#9676:11056" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="e#13723#13724#0" expanded="true" />
-            <element signature="e#13772#13773#0" expanded="true" />
-            <element signature="e#16701#16702#0" expanded="true" />
-            <element signature="e#16732#16733#0" expanded="true" />
-            <element signature="e#16917#16999#0" expanded="false" />
-            <element signature="e#17707#17708#0" expanded="true" />
-            <element signature="e#17740#17741#0" expanded="true" />
+            <element signature="initializer##0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#8518#8765#0" expanded="true" />
+            <element signature="e#8764#8765#0" expanded="true" />
+            <element signature="e#13746#13747#0" expanded="true" />
+            <element signature="e#13795#13796#0" expanded="true" />
+            <element signature="class#16098:18396" expanded="false" />
+            <element signature="e#19600#19601#0" expanded="true" />
+            <element signature="e#19633#19634#0" expanded="true" />
             <element signature="method#publishMessage#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#requestCameraPermission#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#25727#25765#0" expanded="true" />
             <element signature="method#setUpCameraOutputs#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#31306#31338#0" expanded="true" />
             <element signature="method#closeCamera#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#stopBackgroundThread#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="class#35154:36866" expanded="false" />
+            <element signature="method#onConfigured#0;class#35154:36866" expanded="false" />
             <element signature="method#configureTransform#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#38752#38753#0" expanded="true" />
+            <element signature="e#38789#38790#0" expanded="true" />
+            <element signature="e#39879#40898#0" expanded="true" />
+            <element signature="e#40897#40898#0" expanded="true" />
             <element signature="class#ImageSaver#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#compare#0;class#CompareSizesByArea#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
             <element signature="method#newInstance#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onCreateDialog#0;class#ErrorDialog#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#44281#44535#0" expanded="true" />
+            <element signature="e#44534#44535#0" expanded="true" />
             <element signature="class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onCreateDialog#0;class#ConfirmationDialog#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#44970#44997#0" expanded="true" />
+            <element signature="e#45059#45473#0" expanded="true" />
+            <element signature="e#45472#45473#0" expanded="true" />
+            <element signature="e#45567#46036#0" expanded="true" />
+            <element signature="e#46035#46036#0" expanded="true" />
             <element signature="method#showToast#0;class#Camera2BasicFragment#0" expanded="false" />
-            <element signature="method#onClick#0;class#Camera2BasicFragment#0" expanded="false" />
+            <element signature="e#46664#46853#0" expanded="true" />
+            <element signature="e#46852#46853#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="134" column="35" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+          <folding>
+            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
+            <element signature="class#8640:10177" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleAutomatic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="66" column="39" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

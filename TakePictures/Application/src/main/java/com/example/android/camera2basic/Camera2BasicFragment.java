@@ -104,7 +104,7 @@ import net.igenius.mqttservice.MQTTServiceReceiver;
 import static android.content.Context.MODE_PRIVATE;
 
 public class Camera2BasicFragment extends Fragment implements View.OnClickListener,
-                                                            FragmentCompat.OnRequestPermissionsResultCallback {
+        FragmentCompat.OnRequestPermissionsResultCallback {
 
     /*************************************************CAMERA VARIABLES**************************************************************************/
     /**
@@ -170,10 +170,10 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         @Override
         public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {
-            /**Fix**/
-            Log.d(TAG, "TextureView.SurfaceTextureListener.onSurfaceTextureDestroyed called");
+            /** Fix **/
+            //Log.d(TAG, "TextureView.SurfaceTextureListener.onSurfaceTextureDestroyed called");
             closeCamera();
-            /*******/
+            /*************/
             return true;
         }
 
@@ -266,7 +266,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         @Override
         public void onImageAvailable(ImageReader reader) {
-            mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
+            mBackgroundHandler.post(new Camera2BasicFragment.ImageSaver(reader.acquireNextImage(), mFile));
         }
 
     };
@@ -378,11 +378,11 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         // Pick the smallest of those big enough. If there is no one big enough, pick the
         // largest of those not big enough.
         if (bigEnough.size() > 0) {
-            return Collections.min(bigEnough, new CompareSizesByArea());
+            return Collections.min(bigEnough, new Camera2BasicFragment.CompareSizesByArea());
         } else if (notBigEnough.size() > 0) {
-            return Collections.max(notBigEnough, new CompareSizesByArea());
+            return Collections.max(notBigEnough, new Camera2BasicFragment.CompareSizesByArea());
         } else {
-            Log.e(TAG, "Couldn't find any suitable preview size");
+            //Log.e(TAG, "Couldn't find any suitable preview size");
             return choices[0];
         }
     }
@@ -414,19 +414,6 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
      * */
     public SQLiteDatabase mydatabase;
 
-    /**
-     * MQTT Topics
-     * */
-    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
-    static public String CAMERA_APP_TOPIC = "/cameraApp";
-    static public String ZDOWN_TOPIC = "/zd";
-    static public String ZUP_TOPIC = "/zu";
-    static public String XRIGHT_TOPIC = "/xr";
-    static public String XLEFT_TOPIC = "/xl";
-    static public String YUP_TOPIC = "/yu";
-    static public String YDOWN_TOPIC = "/yd";
-    static public String EXTRA_ACTIONS_TOPIC = "/extra";
-
     /** Movement states */
     public boolean movingXRight = false;
     public boolean movingXLeft = false;
@@ -456,9 +443,69 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         resultSet.moveToFirst();
         FOLDER_NAME = resultSet.getString(0);
         /** UI elements */
-        view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
+        view.findViewById(R.id.startButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+            public void onSwipeTop() {
+                if (!blocked) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_START);
+                    movingYUp = true;
+                    blocked = true;
+                }
+            }
+            public void onSwipeBottom() {
+                if (!blocked) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_START);
+                    movingYDown = true;
+                    blocked = true;
+                }
+            }
+            public void onSwipeRight() {
+                if (!blocked) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_START);
+                    movingXRight = true;
+                    blocked = true;
+                }
+            }
+            public void onSwipeLeft() {
+                if (!blocked) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_START);
+                    movingXLeft = true;
+                    blocked = true;
+                }
+            }
+            public void onClick() {
+                if (movingYUp){
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_END);
+                    movingYUp = false;
+                    blocked = false;
+                }
+                else if (movingYDown) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_END);
+                    movingYDown = false;
+                    blocked = false;
+                }
+                else if (movingXRight) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_END);
+                    movingXRight = false;
+                    blocked = false;
+                }
+                else if (movingXLeft) {
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_END);
+                    movingXLeft = false;
+                    blocked = false;
+                }
+            }
+
+            public void onDoubleClick() {
+            }
+
+            public void onLongClick() {
+            }
+
+
+        });
     }
 
     @Override
@@ -468,6 +515,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onStart() {
+        //
         super.onStart();
     }
 
@@ -518,8 +566,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            String payload = "oath;cameraApp;automaticActivity";
-            publishMessage(CAMERA_APP_TOPIC, payload);
+            //MQTTServiceCommand.publish(context, "/cameraApp", payload);
         }
 
         @Override
@@ -539,12 +586,15 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
             /** Receive messages */
             /** Parse string */
-            String message = new String(payload);
-            String[] paramsPayload = message.split(";");
+            String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
+            String target = paramsPayload[1];
+            String action = paramsPayload[2];
+            String specific = paramsPayload[3];
+            String message = paramsPayload[4];
             /** Different modes have different behavior */
-            if (command.equals("takePictureRemoteController")){
-                IMG_NAME = paramsPayload[1];
+            if (command.equals("takePicture")){
+                IMG_NAME = message;
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + "_" + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
@@ -555,23 +605,27 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 takePicture();
                 /** Display result */
                 showToast(path);
-            } else if (command.equals("exit")){
+            } else if (command.equals("exit") && target.equals("AutomaticController") && action.equals("CreatePatient")) {
+                /** Clean DB */
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
+                /** Restart stage */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                /** Restart screen */
                 Intent intent = new Intent(getActivity(), CreatePatient.class);
                 startActivity(intent);
-            } else if (command.equals("requestService")){
-                String action = paramsPayload[1];
-                if (action.equals("autofocus")){
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
-                    startActivity(intent);
-                }
+            } /** Service (autofocus) */
+            else if (command.equals("autofocus") && target.equals("AutofocusActivity") && action.equals("start")){
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                startActivity(intent);
+            } else {
+
             }
         }
 
         @Override
         public void onConnectionSuccessful(Context context, String requestId) {
-            showToast("Connected (Camera2BasicFragment)");
+            showToast("Connected");
             Log.e(TAG, "Connected!");
         }
 
@@ -586,6 +640,15 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         }
     };
+
+    /** Unrolls a message
+     * @param pattern: input String
+     * return: a String vector with the message splitted
+     * */
+    public String[] decodeMessage(String pattern){
+        String[] messages = pattern.split(";");
+        return messages;
+    }
 
     /** Publish a message
      * @param topic: input String that defines the target topic of the mqtt client
@@ -608,7 +671,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     /*******************************************************Camera logic*********************************************************************/
     private void requestCameraPermission() {
         if (FragmentCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-            new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
+            new Camera2BasicFragment.ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
         } else {
             FragmentCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
                     REQUEST_CAMERA_PERMISSION);
@@ -620,7 +683,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                                            @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                ErrorDialog.newInstance(getString(R.string.request_permission))
+                Camera2BasicFragment.ErrorDialog.newInstance(getString(R.string.request_permission))
                         .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             }
         } else {
@@ -656,7 +719,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 // For still image captures, we use the largest available size.
                 Size largest = Collections.max(
                         Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)),
-                        new CompareSizesByArea());
+                        new Camera2BasicFragment.CompareSizesByArea());
                 mImageReader = ImageReader.newInstance(largest.getWidth(), largest.getHeight(),
                         ImageFormat.JPEG, /*maxImages*/2);
                 mImageReader.setOnImageAvailableListener(
@@ -682,7 +745,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                         }
                         break;
                     default:
-                        Log.e(TAG, "Display rotation is invalid: " + displayRotation);
+                        //Log.e(TAG, "Display rotation is invalid: " + displayRotation);
                 }
 
                 Point displaySize = new Point();
@@ -735,7 +798,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         } catch (NullPointerException e) {
             // Currently an NPE is thrown when the Camera2API is used but not supported on the
             // device this code runs.
-            ErrorDialog.newInstance(getString(R.string.camera_error))
+            Camera2BasicFragment.ErrorDialog.newInstance(getString(R.string.camera_error))
                     .show(getChildFragmentManager(), FRAGMENT_DIALOG);
         }
     }
@@ -758,6 +821,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 throw new RuntimeException("Time out waiting to lock camera opening.");
             }
             manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
+            publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
         } catch (CameraAccessException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -897,7 +961,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
             bufferRect.offset(centerX - bufferRect.centerX(), centerY - bufferRect.centerY());
             matrix.setRectToRect(viewRect, bufferRect, Matrix.ScaleToFit.FILL);
             float scale = Math.max((float) viewHeight / mPreviewSize.getHeight(),
-                                    (float) viewWidth / mPreviewSize.getWidth());
+                    (float) viewWidth / mPreviewSize.getWidth());
             matrix.postScale(scale, scale, centerX, centerY);
             matrix.postRotate(90 * (rotation - 2), centerX, centerY);
         } else if (Surface.ROTATION_180 == rotation) {
@@ -942,8 +1006,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
                     //showToast("Saved: " + mFile);
-                    publishMessage(CAMERA_APP_TOPIC, "move;move");
-                    Log.i(TAG, "Saved: " + mFile.toString());
+                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
+                    //Log.i(TAG, "Saved: " + mFile.toString());
                     try {
                         mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
                                 mBackgroundHandler);
@@ -1036,8 +1100,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
 
         private static final String ARG_MESSAGE = "message";
 
-        public static ErrorDialog newInstance(String message) {
-            ErrorDialog dialog = new ErrorDialog();
+        public static Camera2BasicFragment.ErrorDialog newInstance(String message) {
+            Camera2BasicFragment.ErrorDialog dialog = new Camera2BasicFragment.ErrorDialog();
             Bundle args = new Bundle();
             args.putString(ARG_MESSAGE, message);
             dialog.setArguments(args);
@@ -1113,18 +1177,17 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.picture: {
-                mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
-                takePicture();
+            case R.id.startButton: {
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
                 break;
             }
             case R.id.info: {
                 Activity activity = getActivity();
                 if (null != activity) {
                     new AlertDialog.Builder(activity)
-                                    .setMessage(FOLDER_NAME)
-                                    .setPositiveButton(android.R.string.ok, null)
-                                    .show();
+                            .setMessage("Manual controller ::: " + FOLDER_NAME)
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
                 }
                 break;
             }

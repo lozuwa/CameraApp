@@ -1,18 +1,12 @@
 package com.example.android.camera2basic;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Camera;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.BaseColumns;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,18 +20,12 @@ import android.widget.Toast;
 import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
-import net.igenius.mqttservice.MQTTService;
 import net.igenius.mqttservice.MQTTServiceCommand;
-import net.igenius.mqttservice.MQTTServiceLogger;
 import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.UUID;
 
 /**
  * A login screen that offers login via email/password.
@@ -68,11 +56,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     /** Constant variables */
 
     /**
-     * MQTT Topics
-     * */
-    static public String CAMERA_APP_TOPIC = "/cameraApp";
-
-    /**
      * Constructors
      * */
     @Override
@@ -93,6 +76,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         readDbButton = (Button) findViewById(R.id.read_db_button);
         /** Initial state UI */
         nameUserEditText.setError(null);
+        readDbButton.setVisibility(View.GONE);
         /** Configure showcase */
         lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                                                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -123,7 +107,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
+                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSampleManual.class);
                     startActivity(intent);
                 }
             }
@@ -139,7 +123,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSample.class);
+                    Intent intent = new Intent(CreatePatient.this, PrepareAndLoadSampleAutomatic.class);
                     startActivity(intent);
                 }
             }
@@ -209,7 +193,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         }
         if (success) {
             showToast("Folder successfully created");
-            publishMessage(CAMERA_APP_TOPIC, "createdFolder;true");
         } else {
             showToast("Folder was not created, something happened");
             Log.e("CreatePatient", "Folder not created");

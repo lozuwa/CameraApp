@@ -25,7 +25,6 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class CameraActivity extends Activity {
-
     /** Constructors */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,15 +54,6 @@ public class CameraActivity extends Activity {
     @Override
     public void onBackPressed() {
         /** Back operation is not allowed */
-    }
-
-    /** Support methods */
-    /**
-     * Support function
-     * @param message: input string that defines the message to be displayed
-     * */
-    public void showToast(String message) {
-        Toast.makeText(CameraActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

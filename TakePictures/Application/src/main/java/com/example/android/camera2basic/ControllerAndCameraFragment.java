@@ -398,19 +398,6 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
      * */
     public SQLiteDatabase mydatabase;
 
-    /**
-     * MQTT Topics
-     * */
-    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
-    static public String CAMERA_APP_TOPIC = "/cameraApp";
-    static public String ZDOWN_TOPIC = "/zd";
-    static public String ZUP_TOPIC = "/zu";
-    static public String XRIGHT_TOPIC = "/xr";
-    static public String XLEFT_TOPIC = "/xl";
-    static public String YUP_TOPIC = "/yu";
-    static public String YDOWN_TOPIC = "/yd";
-    static public String EXTRA_ACTIONS_TOPIC = "/extra";
-
     /** Movement states */
     public boolean movingXRight = false;
     public boolean movingXLeft = false;
@@ -447,65 +434,52 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
         mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
             public void onSwipeTop() {
                 if (!blocked) {
-                    publishMessage(YUP_TOPIC, "1");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_START);
                     movingYUp = true;
                     blocked = true;
-                }
-                else {
                 }
             }
             public void onSwipeBottom() {
                 if (!blocked) {
-                    publishMessage(YDOWN_TOPIC, "1");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_START);
                     movingYDown = true;
                     blocked = true;
-                }
-                else {
-
                 }
             }
             public void onSwipeRight() {
                 if (!blocked) {
-                    publishMessage(XRIGHT_TOPIC, "1");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_START);
                     movingXRight = true;
                     blocked = true;
-                }
-                else{
-
                 }
             }
             public void onSwipeLeft() {
                 if (!blocked) {
-                    publishMessage(XLEFT_TOPIC, "1");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_START);
                     movingXLeft = true;
                     blocked = true;
-                }
-                else{
-
                 }
             }
             public void onClick() {
                 if (movingYUp){
-                    publishMessage(YUP_TOPIC, "0");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_END);
                     movingYUp = false;
                     blocked = false;
                 }
                 else if (movingYDown) {
-                    publishMessage(YDOWN_TOPIC, "0");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_END);
                     movingYDown = false;
                     blocked = false;
                 }
                 else if (movingXRight) {
-                    publishMessage(XRIGHT_TOPIC, "0");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_END);
                     movingXRight = false;
                     blocked = false;
                 }
                 else if (movingXLeft) {
-                    publishMessage(XLEFT_TOPIC, "0");
+                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_END);
                     movingXLeft = false;
                     blocked = false;
-                }
-                else {
                 }
             }
 
@@ -603,12 +577,15 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
             /** Receive messages */
             /** Parse string */
-            String message = new String(payload);
-            String[] paramsPayload = message.split(";");
+            String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
-            /** Different modes have different behavior */
+            String target = paramsPayload[1];
+            String action = paramsPayload[2];
+            String specific = paramsPayload[3];
+            String message = paramsPayload[4];
+            /** Features */
             if (command.equals("takePictureRemoteController")) {
-                IMG_NAME = paramsPayload[1];
+                IMG_NAME = message;
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
@@ -619,17 +596,22 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
                 takePicture();
                 /** Display result */
                 showToast(path);
-            } else if (command.equals("exit")){
+            } else if (command.equals("exit") && target.equals("ManualController") && action.equals("CreatePatient")) {
+                /** Clean DB */
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
+                /** Restart stage */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                /** Restart screen */
                 Intent intent = new Intent(getActivity(), CreatePatient.class);
                 startActivity(intent);
-            } else if (command.equals("requestService")){
-                String action = paramsPayload[1];
-                if (action.equals("autofocus")){
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
-                    startActivity(intent);
-                }
+            }
+            /** Service (autofocus) */
+            else if (command.equals("autofocus") && target.equals("AutofocusActivity") && action.equals("start")){
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                startActivity(intent);
+            } else {
+
             }
         }
 
@@ -650,6 +632,15 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
 
         }
     };
+
+    /** Unrolls a message
+     * @param pattern: input String
+     * return: a String vector with the message splitted
+     * */
+    public String[] decodeMessage(String pattern){
+       String[] messages = pattern.split(";");
+        return messages;
+    }
 
     /** Publish a message
      * @param topic: input String that defines the target topic of the mqtt client
@@ -1178,11 +1169,11 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.autofocusButton: {
-                publishMessage(CAMERA_APP_TOPIC, "requestService;autofocus");
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS);
                 break;
             }
             case R.id.exitButton: {
-                publishMessage(CAMERA_APP_TOPIC, "exit;exit");
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_ACTIVITY_CREATE_PATIENT);
                 break;
             }
             case R.id.info: {

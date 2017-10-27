@@ -33,9 +33,58 @@ public class Initializer extends Application {
     /**
      * MQTT Topics
      * */
-    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
+    static public String MICROSCOPE_TOPIC = "/microscope";
     static public String CAMERA_APP_TOPIC = "/cameraApp";
-    static public String EXTRA_ACTIONS_TOPIC = "/extra";
+    static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp";
+    static public String REMOTE_CONTROLLER_TOPIC = "/remoteController";
+    static public String MACROS_TOPIC = "/macros";
+
+    /**
+     * MQTT messages
+     * */
+    // /microscope
+    public static String MOVE_X_RIGHT_FIELD = "move;x;right;field;1";
+    public static String MOVE_X_LEFT_FIELD = "move;x;left;field;1";
+    public static String MOVE_X_RIGHT_PROCESS_START = "move;x;right;process;1";
+    public static String MOVE_X_LEFT_PROCESS_START = "move;x;left;process;1";
+    public static String MOVE_X_RIGHT_PROCESS_END = "move;x;right;process;0";
+    public static String MOVE_X_LEFT_PROCESS_END = "move;x;left;process;0";
+
+    public static String MOVE_Y_UP_FIELD = "move;y;up;field;1";
+    public static String MOVE_Y_DOWN_FIELD = "move;y;down;field;1";
+    public static String MOVE_Y_UP_PROCESS_START = "move;y;up;process;1";
+    public static String MOVE_Y_DOWN_PROCESS_START = "move;y;down;process;1";
+    public static String MOVE_Y_UP_PROCESS_END = "move;y;up;process;0";
+    public static String MOVE_Y_DOWN_PROCESS_END = "move;y;down;process;0";
+
+    public static String MOVE_Z_UP_FIELD = "move;z;up;field;1";
+    public static String MOVE_Z_DOWN_FIELD = "move;z;down;field;1";
+    public static String MOVE_Z_UP_PROCESS_START = "move;z;up;process;1";
+    public static String MOVE_Z_DOWN_PROCESS_START = "move;z;down;process;1";
+    public static String MOVE_Z_UP_PROCESS_END = "move;z;up;process;0";
+    public static String MOVE_Z_DOWN_PROCESS_END = "move;z;down;process;0";
+
+    public static String HOME_X = "home;x;None;None;None";
+    public static String HOME_Y = "home;y;None;None;None";
+    public static String HOME_Z_TOP = "home;z;top;None;None";
+    public static String HOME_Z_BOTTOM = "home;z;bottom;None;None";
+
+    // /cameraApp
+    public static String EXIT_ACTIVITY_CREATE_PATIENT = "exit;ManualController;CreatePatient;None;None";
+
+    // /macros
+    public static String STAGE_RESTART_HOME = "stage;restart;home;None;None";
+	public static String STAGE_RESTART_INITIAL = "stage;restart;initial;None;None";
+
+    /** Autofocus service */
+    // Trigger
+    public static String REQUEST_SERVICE_AUTOFOCUS = "requestService;autofocus;ManualController;None;None";
+    // Client
+    public static String AUTOFOCUS_APP_START_AUTOFOCUS_ACTIVITY = "autofocusApp;AutofocusActivity;start;None;None";
+
+    /** Automatic service */
+    public static String KEEP_MOVING_MICROSCOPE = "move;None;None;None;None";
+    public static String AUTHENTICATE_CAMERA_ACTIVITY = "authenticate;CameraActivity;None;None;None";
 
     /**
      * Static variables
@@ -70,80 +119,4 @@ public class Initializer extends Application {
                                                 CAMERA_APP_TOPIC);
     }
 
-    /**
-     * MQTT Receiver
-     * */
-    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
-
-        private static final String TAG = "Receiver";
-
-        @Override
-        public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            /** Info */
-            Log.i(TAG, "Subscribed to " + topic);
-            /** Authenticate connection */
-            publishMessage(CAMERA_APP_TOPIC, "oath;cameraApp");
-        }
-
-        @Override
-        public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
-            Log.i(TAG, "Can't subscribe to " + topic, exception);
-        }
-
-        @Override
-        public void onPublishSuccessful(Context context, String requestId, String topic) {
-            Log.i(TAG, "Successfully published on topic: " + topic);
-        }
-
-        @Override
-        public void onMessageArrived(Context context, String topic, byte[] payload) {
-            /** Info */
-            //showToast(topic);
-            Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
-            /** Incoming messages */
-            final String message = new String(payload);
-            String[] messages = message.split(";");
-            String command = messages[0];
-            String action = messages[1];
-            if (command.equals("autofocusApp")){
-                if (action.equals("start")){
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.MainActivity"));
-                    startActivity(intent);
-                }
-            }
-        }
-
-        @Override
-        public void onConnectionSuccessful(Context context, String requestId) {
-            Log.i(TAG, "Connected!");
-        }
-
-        @Override
-        public void onException(Context context, String requestId, Exception exception) {
-            exception.printStackTrace();
-            Log.i(TAG, requestId + " exception");
-        }
-
-        @Override
-        public void onConnectionStatus(Context context, boolean connected) {
-            Log.i(TAG, "Connection statis is " + String.valueOf(connected));
-        }
-    };
-
-    /** Publish a message
-     * @param topic: input String that defines the target topic of the mqtt client
-     * @param message: input String that contains a message to be published
-     * @return no return
-     * */
-    public void publishMessage(String topic, String message) {
-        final int qos = 2;
-        byte[] encodedPayload = new byte[0];
-        try {
-            encodedPayload = message.getBytes("UTF-8");
-            MQTTServiceCommand.publish(Initializer.this, topic, encodedPayload, qos);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-    }
 }
