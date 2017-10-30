@@ -1,23 +1,11 @@
 package com.example.android.camera2basic;
 
-import android.app.Activity;
 import android.app.Application;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import net.igenius.mqttservice.MQTTService;
 import net.igenius.mqttservice.MQTTServiceCommand;
 import net.igenius.mqttservice.MQTTServiceLogger;
-import net.igenius.mqttservice.MQTTServiceReceiver;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -77,8 +65,10 @@ public class Initializer extends Application {
 	public static String STAGE_RESTART_INITIAL = "stage;restart;initial;None;None";
 
     /** Autofocus service */
-    // Trigger
-    public static String REQUEST_SERVICE_AUTOFOCUS = "requestService;autofocus;ManualController;None;None";
+    // Triggers
+    public static String REQUEST_SERVICE_AUTOFOCUS_MANUAL = "requestService;autofocus;ManualController;None;None";
+    public static String REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC = "requestService;autofocus;AutomaticController;None;None";
+
     // Client
     public static String AUTOFOCUS_APP_START_AUTOFOCUS_ACTIVITY = "autofocusApp;AutofocusActivity;start;None;None";
 

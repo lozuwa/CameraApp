@@ -48,19 +48,16 @@ import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
-import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v13.app.FragmentCompat;
 import android.support.v4.content.ContextCompat;
@@ -68,18 +65,14 @@ import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import net.igenius.mqttservice.MQTTServiceCommand;
+import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -93,13 +86,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Vector;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-
-import net.igenius.mqttservice.MQTTService;
-import net.igenius.mqttservice.MQTTServiceCommand;
-import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -466,6 +454,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
         if (mTextureView.isAvailable()) {
             //closeCamera();
             openCamera(mTextureView.getWidth(), mTextureView.getHeight());
+            publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
         } else {
             mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
         }
@@ -539,7 +528,7 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 /** Take picture */
                 takePicture();
                 /** Display result */
-                showToast(path);
+                //showToast(path);
             } else if (command.equals("exit") && target.equals("AutomaticController") && action.equals("CreatePatient")) {
                 /** Clean DB */
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
@@ -548,8 +537,10 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 /** Restart screen */
                 Intent intent = new Intent(getActivity(), CreatePatient.class);
                 startActivity(intent);
-            } /** Service (autofocus) */
-            else if (command.equals("autofocus") && target.equals("AutofocusActivity") && action.equals("start")){
+            }
+            /** Service (autofocus) */
+            //requestService;autofocus;AutomaticController;None;None
+            else if (command.equals("requestService") && target.equals("autofocus") && action.equals("AutomaticController")){
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
                 startActivity(intent);
@@ -756,7 +747,8 @@ public class Camera2BasicFragment extends Fragment implements View.OnClickListen
                 throw new RuntimeException("Time out waiting to lock camera opening.");
             }
             manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
-            publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
+            /** Authenticate when camera has openned */
+            //publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
         } catch (CameraAccessException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

@@ -131,11 +131,12 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    //Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
-                    //startActivity(intent);
-                    /** Start activity CameraActivity from cameraApp */
+                    /*Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                    startActivity(intent);*/
+                    /** Start autofocus servide */
+                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
                     Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.CameraAndController"));
+                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
                     startActivity(intent);
                 }
             }
@@ -237,10 +238,11 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
      * @return no return
      * */
     public void publishMessage(String topic, String message) {
+        final int qos = 2;
         byte[] encodedPayload = new byte[0];
         try {
             encodedPayload = message.getBytes("UTF-8");
-            MQTTServiceCommand.publish(CreatePatient.this, topic, encodedPayload, 2);
+            MQTTServiceCommand.publish(CreatePatient.this, topic, encodedPayload, qos);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
