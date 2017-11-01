@@ -1,14 +1,18 @@
 package com.example.android.camera2basic;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -67,6 +71,9 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         setContentView(R.layout.activity_create_patient);
         /** Orientation */
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        /** Ask for permissions */
+        grantPermissionExternalStorage();
+        grantPermissionCamera();
         /** Open database */
         mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
         initializeDb();
@@ -188,6 +195,54 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     /**
      * Support functions
      * */
+
+    public int PERMISSION_WRITE_EXTERNAL_STORAGE = 1;
+    public int PERMISSION_CAMERA = 2;
+
+    /**
+     * Grants permission to WRITE_EXTERNAL_STORAGE
+     * */
+    public void grantPermissionExternalStorage(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_WRITE_EXTERNAL_STORAGE);
+            }
+        }
+    }
+
+    /**
+     * Grants permission to CAMERA
+     * */
+    public void grantPermissionCamera(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PERMISSION_CAMERA);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    showToast("Write external permission granted");
+                } else {
+                }
+                return;
+            }
+            case 2: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    showToast("Camera permission granted");
+                } else {
+                }
+                return;
+            }
+        }
+    }
 
     /**
      * Creates a physical folder folder in the apps's directory
