@@ -31,6 +31,7 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -379,6 +380,11 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      * */
     public SQLiteDatabase mydatabase;
 
+    /**
+     * Media player
+     * */
+    public MediaPlayer mediaPlayer;
+
     /**************************************************************************************************************************************/
 
     /**********************************************************Constructor*****************************************************************/
@@ -405,6 +411,15 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         view.findViewById(R.id.info).setOnClickListener(this);
         view.findViewById(R.id.startButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        /** Media player */
+        //mediaPlayer = MediaPlayer.create(getActivity(), R.negro);
+        /*mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            public void onCompletion(MediaPlayer player) {
+                player.stop();
+                player.release();
+                Intent intent = new Intent(getActivity(), CreatePatient.class);
+                startActivity(intent);
+        }});*/
     }
 
     @Override
@@ -511,9 +526,12 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
                 /** Restart stage */
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                /** Sound alarm that to tell we have finished */
+                //mediaPlayer.start();
                 /** Restart screen */
-                Intent intent = new Intent(getActivity(), CreatePatient.class);
-                startActivity(intent);
+                // This is called in the onMediaComplete listener
+                //Intent intent = new Intent(getActivity(), CreatePatient.class);
+                //startActivity(intent);
             }
             /** Service (autofocus) */
             //requestService;autofocus;AutomaticController;None;None
