@@ -53,7 +53,7 @@
             <state relative-caret-position="7326">
               <caret line="665" column="13" selection-start-line="665" selection-start-column="13" selection-end-line="665" selection-end-column="13" />
               <folding>
-                <element signature="e#0#251#0" expanded="true" />
+                <element signature="imports" expanded="false" />
                 <element signature="initializer##0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="class#4487:5273" expanded="false" />
                 <element signature="class#6010:6930" expanded="false" />
@@ -61,6 +61,8 @@
                 <element signature="method#chooseOptimalSize#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="class#15256:17554" expanded="false" />
                 <element signature="method#onSwipeTop#0;class#15256:17554" expanded="false" />
+                <element signature="e#18758#18759#0" expanded="false" />
+                <element signature="e#18791#18792#0" expanded="false" />
                 <element signature="method#publishMessage#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#setUpCameraOutputs#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#openCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
@@ -69,6 +71,8 @@
                 <element signature="method#stopBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#createCameraPreviewSession#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#configureTransform#0;class#ControllerAndCameraFragment#0" expanded="false" />
+                <element signature="e#38230#38231#0" expanded="false" />
+                <element signature="e#38267#38268#0" expanded="false" />
                 <element signature="method#captureStillPicture#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#getOrientation#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="class#ImageSaver#0;class#ControllerAndCameraFragment#0" expanded="false" />
@@ -76,23 +80,43 @@
                 <element signature="class#ErrorDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="class#ConfirmationDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
                 <element signature="method#showToast#0;class#ControllerAndCameraFragment#0" expanded="false" />
+                <element signature="e#46207#46208#0" expanded="false" />
+                <element signature="e#46304#46305#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreatePatient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreatePatient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state relative-caret-position="646">
+              <caret line="238" column="21" selection-start-line="238" selection-start-column="21" selection-end-line="238" selection-end-column="21" />
               <folding>
-                <element signature="method#grantPermissionExternalStorage#0;class#CreatePatient#0" expanded="false" />
+                <element signature="method#onCreate#0;class#CreatePatient#0" expanded="false" />
+                <element signature="e#4364#5170#0" expanded="true" />
+                <element signature="e#5169#5170#0" expanded="true" />
+                <element signature="e#5225#6443#0" expanded="true" />
+                <element signature="e#6442#6443#0" expanded="true" />
+                <element signature="e#6491#6762#0" expanded="true" />
+                <element signature="e#6761#6762#0" expanded="true" />
+                <element signature="e#6806#7345#0" expanded="true" />
+                <element signature="e#7344#7345#0" expanded="true" />
                 <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
                 <element signature="method#showToast#0;class#CreatePatient#0" expanded="false" />
                 <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-                <element signature="class#11956:13493" expanded="false" />
+                <element signature="class#12002:13539" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Initializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,8 +150,11 @@
             <state relative-caret-position="6642">
               <caret line="501" column="44" selection-start-line="501" selection-start-column="44" selection-end-line="501" selection-end-column="44" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="class#8415:9795" expanded="false" />
                 <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#15937#15938#0" expanded="false" />
+                <element signature="e#15970#15971#0" expanded="false" />
                 <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -137,6 +164,8 @@
                 <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#35562#35563#0" expanded="false" />
+                <element signature="e#35599#35600#0" expanded="false" />
                 <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -145,6 +174,8 @@
                 <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#43584#43585#0" expanded="false" />
+                <element signature="e#43681#43682#0" expanded="false" />
                 <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
               </folding>
             </state>
@@ -3052,21 +3083,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6642">
           <caret line="501" column="44" selection-start-line="501" selection-start-column="44" selection-end-line="501" selection-end-column="44" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="class#8415:9795" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#15937#15938#0" expanded="false" />
+            <element signature="e#15970#15971#0" expanded="false" />
             <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3076,6 +3102,8 @@
             <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#35562#35563#0" expanded="false" />
+            <element signature="e#35599#35600#0" expanded="false" />
             <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3084,6 +3112,8 @@
             <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#43584#43585#0" expanded="false" />
+            <element signature="e#43681#43682#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
           </folding>
         </state>
@@ -3113,7 +3143,7 @@
         <state relative-caret-position="7326">
           <caret line="665" column="13" selection-start-line="665" selection-start-column="13" selection-end-line="665" selection-end-column="13" />
           <folding>
-            <element signature="e#0#251#0" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="initializer##0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="class#4487:5273" expanded="false" />
             <element signature="class#6010:6930" expanded="false" />
@@ -3121,6 +3151,8 @@
             <element signature="method#chooseOptimalSize#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="class#15256:17554" expanded="false" />
             <element signature="method#onSwipeTop#0;class#15256:17554" expanded="false" />
+            <element signature="e#18758#18759#0" expanded="false" />
+            <element signature="e#18791#18792#0" expanded="false" />
             <element signature="method#publishMessage#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#setUpCameraOutputs#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#openCamera#0;class#ControllerAndCameraFragment#0" expanded="false" />
@@ -3129,6 +3161,8 @@
             <element signature="method#stopBackgroundThread#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="e#38230#38231#0" expanded="false" />
+            <element signature="e#38267#38268#0" expanded="false" />
             <element signature="method#captureStillPicture#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#getOrientation#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="class#ImageSaver#0;class#ControllerAndCameraFragment#0" expanded="false" />
@@ -3136,21 +3170,39 @@
             <element signature="class#ErrorDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="class#ConfirmationDialog#0;class#ControllerAndCameraFragment#0" expanded="false" />
             <element signature="method#showToast#0;class#ControllerAndCameraFragment#0" expanded="false" />
+            <element signature="e#46207#46208#0" expanded="false" />
+            <element signature="e#46304#46305#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        <state relative-caret-position="646">
+          <caret line="238" column="21" selection-start-line="238" selection-start-column="21" selection-end-line="238" selection-end-column="21" />
           <folding>
-            <element signature="method#grantPermissionExternalStorage#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#onCreate#0;class#CreatePatient#0" expanded="false" />
+            <element signature="e#4364#5170#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5225#6443#0" expanded="true" />
+            <element signature="e#6442#6443#0" expanded="true" />
+            <element signature="e#6491#6762#0" expanded="true" />
+            <element signature="e#6761#6762#0" expanded="true" />
+            <element signature="e#6806#7345#0" expanded="true" />
+            <element signature="e#7344#7345#0" expanded="true" />
             <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#showToast#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#11956:13493" expanded="false" />
+            <element signature="class#12002:13539" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

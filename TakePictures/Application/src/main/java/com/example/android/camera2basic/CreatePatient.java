@@ -60,6 +60,11 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     public SQLiteDatabase mydatabase;
 
     /** Constant variables */
+    /**
+     * Permission statements
+     * */
+    public int PERMISSION_WRITE_EXTERNAL_STORAGE = 1;
+    public int PERMISSION_CAMERA = 2;
 
     /**
      * Constructors
@@ -195,9 +200,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     /**
      * Support functions
      * */
-
-    public int PERMISSION_WRITE_EXTERNAL_STORAGE = 1;
-    public int PERMISSION_CAMERA = 2;
 
     /**
      * Grants permission to WRITE_EXTERNAL_STORAGE
