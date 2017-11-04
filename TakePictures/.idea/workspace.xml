@@ -131,12 +131,13 @@
       <file leaf-file-name="RecoverAutomaticServiceFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="421" column="13" selection-start-line="421" selection-start-column="13" selection-end-line="421" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="407" column="32" selection-start-line="407" selection-start-column="32" selection-end-line="407" selection-end-column="32" />
               <folding>
                 <element signature="class#8449:9829" expanded="false" />
                 <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="e#14890#15203#0" expanded="true" />
+                <element signature="e#15202#15203#0" expanded="true" />
                 <element signature="e#16503#16504#0" expanded="true" />
                 <element signature="e#16536#16537#0" expanded="true" />
                 <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -2366,7 +2367,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../autofocusApp/ImprocCameraAutofocus" />
-    <property name="device.picker.selection" value="REBDU16723001940" />
+    <property name="device.picker.selection" value="4200b0f5d4e454c9" />
     <property name="android.project.structure.last.selected" value="Application" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="settings.editor.selected.configurable" value="usage.statistics" />
@@ -3170,12 +3171,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="421" column="13" selection-start-line="421" selection-start-column="13" selection-end-line="421" selection-end-column="13" />
+        <state relative-caret-position="252">
+          <caret line="407" column="32" selection-start-line="407" selection-start-column="32" selection-end-line="407" selection-end-column="32" />
           <folding>
             <element signature="class#8449:9829" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="e#14890#15203#0" expanded="true" />
+            <element signature="e#15202#15203#0" expanded="true" />
             <element signature="e#16503#16504#0" expanded="true" />
             <element signature="e#16536#16537#0" expanded="true" />
             <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
