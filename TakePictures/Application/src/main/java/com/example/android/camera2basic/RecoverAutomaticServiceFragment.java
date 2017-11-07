@@ -450,7 +450,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         } else {
             mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
         }
-        publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
+        //publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
     }
 
     @Override
@@ -743,12 +743,12 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
             }
             manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
             /** Authenticate when camera has openned */
-            //publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
         } catch (CameraAccessException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             throw new RuntimeException("Interrupted while trying to lock camera opening.", e);
         }
+        publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
     }
 
     /**
@@ -928,7 +928,6 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
                     //showToast("Saved: " + mFile);
-                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                     //Log.i(TAG, "Saved: " + mFile.toString());
                     try {
                         mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
@@ -938,6 +937,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
+                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 }
             };
             mCaptureSession.stopRepeating();
