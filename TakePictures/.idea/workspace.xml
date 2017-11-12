@@ -50,42 +50,42 @@
       <file leaf-file-name="RecoverAutomaticServiceFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="1060" column="43" selection-start-line="1060" selection-start-column="43" selection-end-line="1060" selection-end-column="43" />
+            <state relative-caret-position="130">
+              <caret line="420" column="66" selection-start-line="420" selection-start-column="66" selection-end-line="420" selection-end-column="66" />
               <folding>
-                <element signature="e#7333#7591#0" expanded="true" />
-                <element signature="e#7590#7591#0" expanded="true" />
-                <element signature="class#8481:9861" expanded="false" />
+                <element signature="e#7333#7589#0" expanded="true" />
+                <element signature="e#7588#7589#0" expanded="true" />
+                <element signature="class#8479:9859" expanded="false" />
                 <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#15121#15434#0" expanded="true" />
-                <element signature="e#15433#15434#0" expanded="true" />
+                <element signature="e#15116#15429#0" expanded="true" />
+                <element signature="e#15428#15429#0" expanded="true" />
                 <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#23485#23523#0" expanded="true" />
+                <element signature="e#23480#23518#0" expanded="true" />
                 <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#29086#29118#0" expanded="true" />
+                <element signature="e#29081#29113#0" expanded="true" />
                 <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#37722#38741#0" expanded="true" />
-                <element signature="e#38740#38741#0" expanded="true" />
+                <element signature="e#37717#38788#0" expanded="true" />
+                <element signature="e#38787#38788#0" expanded="true" />
                 <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="method#run#0;class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#42157#42411#0" expanded="true" />
-                <element signature="e#42410#42411#0" expanded="true" />
+                <element signature="e#42352#42606#0" expanded="true" />
+                <element signature="e#42605#42606#0" expanded="true" />
                 <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#42846#42873#0" expanded="true" />
-                <element signature="e#42935#43349#0" expanded="true" />
-                <element signature="e#43348#43349#0" expanded="true" />
-                <element signature="e#43443#43912#0" expanded="true" />
-                <element signature="e#43911#43912#0" expanded="true" />
+                <element signature="e#43041#43068#0" expanded="true" />
+                <element signature="e#43130#43544#0" expanded="true" />
+                <element signature="e#43543#43544#0" expanded="true" />
+                <element signature="e#43638#44107#0" expanded="true" />
+                <element signature="e#44106#44107#0" expanded="true" />
                 <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#44812#44813#0" expanded="false" />
+                <element signature="e#44909#44910#0" expanded="false" />
                 <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
               </folding>
             </state>
@@ -3219,42 +3219,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="1060" column="43" selection-start-line="1060" selection-start-column="43" selection-end-line="1060" selection-end-column="43" />
+        <state relative-caret-position="130">
+          <caret line="420" column="66" selection-start-line="420" selection-start-column="66" selection-end-line="420" selection-end-column="66" />
           <folding>
-            <element signature="e#7333#7591#0" expanded="true" />
-            <element signature="e#7590#7591#0" expanded="true" />
-            <element signature="class#8481:9861" expanded="false" />
+            <element signature="e#7333#7589#0" expanded="true" />
+            <element signature="e#7588#7589#0" expanded="true" />
+            <element signature="class#8479:9859" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#15121#15434#0" expanded="true" />
-            <element signature="e#15433#15434#0" expanded="true" />
+            <element signature="e#15116#15429#0" expanded="true" />
+            <element signature="e#15428#15429#0" expanded="true" />
             <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#23485#23523#0" expanded="true" />
+            <element signature="e#23480#23518#0" expanded="true" />
             <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#29086#29118#0" expanded="true" />
+            <element signature="e#29081#29113#0" expanded="true" />
             <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#37722#38741#0" expanded="true" />
-            <element signature="e#38740#38741#0" expanded="true" />
+            <element signature="e#37717#38788#0" expanded="true" />
+            <element signature="e#38787#38788#0" expanded="true" />
             <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#run#0;class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#42157#42411#0" expanded="true" />
-            <element signature="e#42410#42411#0" expanded="true" />
+            <element signature="e#42352#42606#0" expanded="true" />
+            <element signature="e#42605#42606#0" expanded="true" />
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#42846#42873#0" expanded="true" />
-            <element signature="e#42935#43349#0" expanded="true" />
-            <element signature="e#43348#43349#0" expanded="true" />
-            <element signature="e#43443#43912#0" expanded="true" />
-            <element signature="e#43911#43912#0" expanded="true" />
+            <element signature="e#43041#43068#0" expanded="true" />
+            <element signature="e#43130#43544#0" expanded="true" />
+            <element signature="e#43543#43544#0" expanded="true" />
+            <element signature="e#43638#44107#0" expanded="true" />
+            <element signature="e#44106#44107#0" expanded="true" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#44812#44813#0" expanded="false" />
+            <element signature="e#44909#44910#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
           </folding>
         </state>

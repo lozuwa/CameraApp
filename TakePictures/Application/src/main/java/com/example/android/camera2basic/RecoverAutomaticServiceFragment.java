@@ -230,12 +230,10 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      */
     private final ImageReader.OnImageAvailableListener mOnImageAvailableListener
             = new ImageReader.OnImageAvailableListener() {
-
         @Override
         public void onImageAvailable(ImageReader reader) {
             mBackgroundHandler.post(new RecoverAutomaticServiceFragment.ImageSaver(reader.acquireNextImage(), mFile));
         }
-
     };
 
     /**
@@ -420,7 +418,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         view.findViewById(R.id.stopButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         /** Media player */
-        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.rodrigo);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.bell);
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer.stop();
@@ -948,7 +946,8 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
-                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
+                    /** Keep moving microscope */
+                    //publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 }
             };
             mCaptureSession.stopRepeating();
@@ -975,7 +974,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
     /**
      * Saves a JPEG {@link Image} into the specified {@link File}.
      */
-    private static class ImageSaver implements Runnable {
+    private class ImageSaver implements Runnable {
         /**
          * The JPEG image
          */
@@ -1003,6 +1002,8 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 e.printStackTrace();
             } finally {
                 mImage.close();
+                /** We have finished saving the image */
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 if (null != output) {
                     try {
                         output.close();
