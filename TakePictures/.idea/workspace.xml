@@ -47,69 +47,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Initializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreatePatient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-              <folding>
-                <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-                <element signature="method#showToast#0;class#CreatePatient#0" expanded="false" />
-                <element signature="class#12002:13539" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecoverAutomaticService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RecoverAutomaticServiceFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="569" column="24" selection-start-line="569" selection-start-column="24" selection-end-line="569" selection-end-column="24" />
+            <state relative-caret-position="123">
+              <caret line="1060" column="43" selection-start-line="1060" selection-start-column="43" selection-end-line="1060" selection-end-column="43" />
               <folding>
-                <element signature="class#8449:9829" expanded="false" />
+                <element signature="e#7333#7591#0" expanded="true" />
+                <element signature="e#7590#7591#0" expanded="true" />
+                <element signature="class#8481:9861" expanded="false" />
                 <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="class#17177:21049" expanded="false" />
+                <element signature="e#15121#15434#0" expanded="true" />
+                <element signature="e#15433#15434#0" expanded="true" />
                 <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#23485#23523#0" expanded="true" />
                 <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#29086#29118#0" expanded="true" />
+                <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-                <element signature="e#37292#38311#0" expanded="true" />
-                <element signature="e#38310#38311#0" expanded="true" />
+                <element signature="e#37722#38741#0" expanded="true" />
+                <element signature="e#38740#38741#0" expanded="true" />
                 <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#run#0;class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#42157#42411#0" expanded="true" />
+                <element signature="e#42410#42411#0" expanded="true" />
                 <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                <element signature="e#42846#42873#0" expanded="true" />
+                <element signature="e#42935#43349#0" expanded="true" />
+                <element signature="e#43348#43349#0" expanded="true" />
+                <element signature="e#43443#43912#0" expanded="true" />
+                <element signature="e#43911#43912#0" expanded="true" />
                 <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                 <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_recover_automatic.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_recover_automatic.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="864">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <folding>
+                <marker date="1510249494287" expanded="false" signature="1266:1292" ph="&quot;Info&quot;" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1995,18 +2002,18 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCamera.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticService.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/JustCamera.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java" />
       </list>
     </option>
@@ -2041,27 +2048,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TakePictures" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TakePictures" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2139,6 +2126,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values-v21" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values-v11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values-sw600dp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2284,6 +2335,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2292,10 +2369,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".google" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TakePictures" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2317,6 +2428,7 @@
       <recent name="com.example.android.camera2basic" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Application/src/main/res/raw" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\raw" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\drawable-hdpi" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\layout" />
@@ -2657,14 +2769,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8949212" sideWeight="0.46965098" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3502627" sideWeight="0.530349" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12084063" sideWeight="0.530349" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21320182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33004552" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2697,14 +2809,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_autofocus_camera.xml" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/AutoFitTextureView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Looper.java" />
     <entry file="file://$PROJECT_DIR$/mqttservice/src/main/java/net/igenius/mqttservice/BackgroundService.java" />
     <entry file="file://$PROJECT_DIR$/Application/Application.iml">
@@ -2835,17 +2939,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleManual.java" />
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleAutomatic.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/DbFeed.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36">
@@ -2899,32 +2992,6 @@
         <state relative-caret-position="190">
           <caret line="24" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="e#1143#1169#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-          <folding>
-            <element signature="e#1253#1279#0" expanded="false" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3022,22 +3089,10 @@
     </entry>
     <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/database/sqlite/SQLiteDatabase.class" />
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/database/sqlite/SQLiteDatabase.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3072,18 +3127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-          <folding>
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#showToast#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#12002:13539" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -3092,38 +3135,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CreatePatient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="127" column="33" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
+          <folding>
+            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#showToast#0;class#CreatePatient#0" expanded="false" />
+            <element signature="class#12002:13539" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="53" />
+        <state relative-caret-position="157">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values-v11/template-styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values-v21/base-template-styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <marker date="1510249494287" expanded="false" signature="1266:1292" ph="&quot;Info&quot;" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="569" column="24" selection-start-line="569" selection-start-column="24" selection-end-line="569" selection-end-column="24" />
+        <state relative-caret-position="123">
+          <caret line="1060" column="43" selection-start-line="1060" selection-start-column="43" selection-end-line="1060" selection-end-column="43" />
           <folding>
-            <element signature="class#8449:9829" expanded="false" />
+            <element signature="e#7333#7591#0" expanded="true" />
+            <element signature="e#7590#7591#0" expanded="true" />
+            <element signature="class#8481:9861" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#17177:21049" expanded="false" />
+            <element signature="e#15121#15434#0" expanded="true" />
+            <element signature="e#15433#15434#0" expanded="true" />
             <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#23485#23523#0" expanded="true" />
             <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#29086#29118#0" expanded="true" />
+            <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#37292#38311#0" expanded="true" />
-            <element signature="e#38310#38311#0" expanded="true" />
+            <element signature="e#37722#38741#0" expanded="true" />
+            <element signature="e#38740#38741#0" expanded="true" />
             <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#run#0;class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#42157#42411#0" expanded="true" />
+            <element signature="e#42410#42411#0" expanded="true" />
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#42846#42873#0" expanded="true" />
+            <element signature="e#42935#43349#0" expanded="true" />
+            <element signature="e#43348#43349#0" expanded="true" />
+            <element signature="e#43443#43912#0" expanded="true" />
+            <element signature="e#43911#43912#0" expanded="true" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
           </folding>

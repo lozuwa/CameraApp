@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_write_name"
-                android:text="Rodrigo Loza"
+                android:text="muestra"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />

@@ -59,6 +59,7 @@ public class Initializer extends Application {
 
     // /cameraApp
     public static String EXIT_ACTIVITY_CREATE_PATIENT = "exit;ManualController;CreatePatient;None;None";
+    public static String EXIT_AUTOMATIC_CONTROLLER = "exit;AutomaticController;CreatePatient;None;None";
 
     // /macros
     public static String STAGE_RESTART_HOME = "stage;restart;home;None;None";

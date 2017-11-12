@@ -47,6 +47,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import net.igenius.mqttservice.MQTTServiceCommand;
@@ -385,6 +386,11 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      * */
     public MediaPlayer mediaPlayer;
 
+    /**
+     * UI Elements
+     * */
+    public TextView text;
+
     /**************************************************************************************************************************************/
 
     /**********************************************************Constructor*****************************************************************/
@@ -408,11 +414,13 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         resultSet.moveToFirst();
         FOLDER_NAME = resultSet.getString(0);
         /** UI elements */
-        view.findViewById(R.id.info).setOnClickListener(this);
+        //view.findViewById(R.id.info).setOnClickListener(this);
+        text = (TextView) getView().findViewById(R.id.text);
         view.findViewById(R.id.startButton).setOnClickListener(this);
+        view.findViewById(R.id.stopButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         /** Media player */
-        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.door);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.rodrigo);
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer.stop();
@@ -515,6 +523,9 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 //String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + "_" + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                /** Extract image number */
+                String[] messageSplit = message.split("ple");
+                text.setText(FOLDER_NAME + "\n" + String.valueOf(messageSplit[1]) + "/700");
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
                 //Log.i(TAG, path);
@@ -1103,7 +1114,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
                 break;
             }
-            case R.id.info: {
+            /*case R.id.info: {
                 Activity activity = getActivity();
                 if (null != activity) {
                     new AlertDialog.Builder(activity)
@@ -1112,6 +1123,10 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                             .show();
                 }
                 break;
+            }*/
+            case R.id.stopButton: {
+                /** Exit app */
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
             }
         }
     }
