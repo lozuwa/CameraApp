@@ -195,7 +195,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String permissions[],
+                                           int[] grantResults) {
         switch (requestCode) {
             case 1: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -240,7 +241,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
 
     /**
      * First drops the table info just in case any unexpected crashes have happened, then creates a clean table
-     *
      * */
     public void initializeDb() {
         /** Clean table */
@@ -302,7 +302,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         public void onMessageArrived(Context context, String topic, byte[] payload) {
             //showToast(topic);
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
-
             /** Parse string */
             String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
@@ -312,7 +311,12 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
             String message = paramsPayload[4];
             /** If listener responds */
             if (command.equals("listener") && target.equals("handshake") && action.equals("cameraApp")){
+                automaticAnalisisButton.setVisibility(View.VISIBLE);
+                manualAnalysisButton.setVisibility(View.VISIBLE);
                 handshakeWithListener = true;
+            }
+            else {
+
             }
         }
 
@@ -355,6 +359,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
             @Override
             public void run() {
                 handshakeWithListener = false;
+                automaticAnalisisButton.setVisibility(View.INVISIBLE);
+                manualAnalysisButton.setVisibility(View.INVISIBLE);
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.HANDSHAKE_WITH_LISTENER);
                 mBackgroundHandler.postDelayed(myRunnable, 30000);
             }
