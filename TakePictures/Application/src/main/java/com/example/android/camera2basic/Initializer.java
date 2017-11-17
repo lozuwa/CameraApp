@@ -77,6 +77,9 @@ public class Initializer extends Application {
     public static String KEEP_MOVING_MICROSCOPE = "move;None;None;None;None";
     public static String AUTHENTICATE_CAMERA_ACTIVITY = "authenticate;CameraActivity;None;None;None";
 
+    /** Handshake */
+    public static String HANDSHAKE_WITH_LISTENER = "cameraApp;handshake;listener;None;None";
+
     /**
      * Static variables
      * */

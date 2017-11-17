@@ -15,8 +15,17 @@
  limitations under the License.
 -->
 <resources>
+    <!-- Default -->
     <color name="control_background">#cc4285f4</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- pfm design -->
+    <color name="screenBackground">#A5E9EB</color>
+    <color name="buttonBackground1">#4286A6</color>
+    <color name="buttonBackground2">#4286A6</color>
+
+
+
 </resources>

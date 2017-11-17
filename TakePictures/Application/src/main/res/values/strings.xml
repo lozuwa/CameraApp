@@ -25,10 +25,10 @@
     <string name="title_activity_create_patient">Sign in</string>
 
     <!-- Strings related to user creation -->
-    <string name="prompt_username">Patients name</string>
-    <string name="automatic_analysis">Automatic</string>
+    <string name="prompt_username">Ingrese nombre del paciente:</string>
+    <string name="automatic_analysis">Automatico</string>
     <string name="manual_analysis">Manual</string>
-    <string name="prompt_write_name">Write name here</string>
+    <string name="prompt_write_name">paciente</string>
     <string name="error_field_required">Error</string>
 
     <!-- TODO: Remove or change this placeholder text -->

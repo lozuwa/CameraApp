@@ -23,38 +23,26 @@
         android:background="@color/control_background">
 
         <Button
-            android:id="@+id/startButton"
+            android:id="@+id/stop_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:text="Start" />
-
-        <!--
-        <ImageButton
-            android:id="@+id/info"
-            android:contentDescription="@string/description_info"
-            style="@android:style/Widget.Material.Light.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:padding="20dp"
-            android:src="@drawable/ic_action_info" />
-            -->
+            android:layout_gravity="center_horizontal|top"
+            android:text="Stop" />
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:text="" />
 
         <Button
-            android:id="@+id/stopButton"
+            android:id="@+id/start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:text="Stop" />
+            android:layout_gravity="center_horizontal|center"
+            android:text="Start" />
 
     </FrameLayout>
 

@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.camera2basic.CreatePatient">
+    android:background="@color/screenBackground"
+    tools:context="com.example.android.camera2basic.CreatePatient" >
 
     <!-- Login progress -->
     <ProgressBar
@@ -19,69 +21,133 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
-        android:id="@+id/login_form"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:id="@+id/patient_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/name_patient_textView"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Patient's name:" />
+                android:layout_height="match_parent">
 
-            <AutoCompleteTextView
-                android:id="@+id/patient_name_editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_write_name"
-                android:text="muestra"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:singleLine="true" />
+                <ImageView
+                    android:id="@+id/personImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintRight_toLeftOf="@+id/name_patient_textView"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="4dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_bias="0.783" />
 
-            <Button
-                android:id="@+id/manual_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/manual_analysis"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/name_patient_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="@string/prompt_username"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="51dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp" />
 
-            <Button
-                android:id="@+id/automatic_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/automatic_analysis"
-                android:textStyle="bold" />
+                <AutoCompleteTextView
+                    android:id="@+id/patient_name_editText"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name_patient_textView"
+                    android:hint="@string/prompt_write_name"
+                    android:text="muestra"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:layout_marginRight="51dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/name_patient_textView"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <Button
-                android:id="@+id/just_camera_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="just camera"
-                android:textStyle="bold" />
+            </android.support.constraint.ConstraintLayout>
 
-            <Button
-                android:id="@+id/read_db_button"
-                style="?android:textAppearanceSmall"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="read db"
-                android:textStyle="bold" />
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/listImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_list"
+                    app:layout_constraintRight_toLeftOf="@+id/select_sample_number"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/select_sample_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="@string/prompt_username"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp" />
+
+                <Spinner
+                    android:id="@+id/sample_number"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/select_sample_number"
+                    android:layout_marginRight="151dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/select_sample_number" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/manual_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="101dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/buttonBackground1"
+                    android:text="@string/manual_analysis"
+                    android:textStyle="bold"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/automatic_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="101dp"
+                    android:layout_marginTop="39dp"
+                    android:background="@color/buttonBackground1"
+                    android:text="@string/automatic_analysis"
+                    android:textStyle="bold"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/manual_button" />
+
+            </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
-    </ScrollView>
+
 </LinearLayout>

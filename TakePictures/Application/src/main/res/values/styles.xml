@@ -14,6 +14,7 @@
  limitations under the License.
 -->
 <resources>
+    <!-- Default -->
     <style name="MaterialTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen" />
 
     <!-- Showcase themes -->

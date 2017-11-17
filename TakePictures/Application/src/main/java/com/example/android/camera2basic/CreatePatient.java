@@ -11,6 +11,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -44,8 +46,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     private AutoCompleteTextView nameUserEditText;
     private Button automaticAnalisisButton;
     private Button manualAnalysisButton;
-    private Button justCameraButton;
-    private Button readDbButton;
 
     /**
      * Showcase
@@ -58,6 +58,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
      * SQLite
      * */
     public SQLiteDatabase mydatabase;
+
+    /**
+     * Threads
+     * */
+    public HandlerThread mBackgroundThread;
+    public Handler mBackgroundHandler;
+    public Runnable myRunnable;
+
+    /**
+     * Reset UI variable to assure MTTQ connection
+     * */
+    public boolean handshakeWithListener = false;
 
     /** Constant variables */
     /**
@@ -88,30 +100,8 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
-        justCameraButton = (Button) findViewById(R.id.just_camera_button);
-        readDbButton = (Button) findViewById(R.id.read_db_button);
         /** Initial state UI */
         nameUserEditText.setError(null);
-        readDbButton.setVisibility(View.GONE);
-        /** Configure showcase */
-        lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                                                ViewGroup.LayoutParams.WRAP_CONTENT);
-        lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        lps.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        int margin = ((Number) (getResources().getDisplayMetrics().density * 12)).intValue();
-        lps.setMargins(margin, margin, margin, margin);
-        target = new ViewTarget(R.id.automatic_button, this);
-        /** Show first button */
-        /*sv = new ShowcaseView.Builder(CreatePatient/.this)
-                .withMaterialShowcase()
-                .setTarget(target)
-                .setContentTitle("Prepare the sample")
-                .setContentText("Press the button to take the stage out")
-                .setStyle(R.style.CustomShowcaseTheme3)
-                .setShowcaseEventListener(CreatePatient.this)
-                .replaceEndButton(R.layout.view_custom_button)
-                .build();*/
-        //sv.setButtonPosition(lps);
         /** Button callbacks */
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -154,42 +144,20 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
             }
         });
 
-        justCameraButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /** Start camera */
-                Intent intent = new Intent(CreatePatient.this, JustCamera.class);
-                startActivity(intent);
-            }
-        });
-
-        readDbButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /** Fetch db and show it */
-                try {
-                    Cursor resultSet = mydatabase.rawQuery("Select * from " + DbFeed.TABLE_NAME, null);
-                    resultSet.moveToFirst();
-                    String folderName = resultSet.getString(0);
-                    showToast(folderName);
-                } catch (Exception e){
-                    showToast("Db is empty");
-                }
-            }
-        });
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         receiver.register(this);
+        startBackgroundThread();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
         receiver.unregister(this);
+        stopBackgroundThread();
     }
 
     @Override
@@ -334,6 +302,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         public void onMessageArrived(Context context, String topic, byte[] payload) {
             //showToast(topic);
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
+
+            /** Parse string */
+            String[] paramsPayload = decodeMessage(new String(payload));
+            String command = paramsPayload[0];
+            String target = paramsPayload[1];
+            String action = paramsPayload[2];
+            String specific = paramsPayload[3];
+            String message = paramsPayload[4];
+            /** If listener responds */
+            if (command.equals("listener") && target.equals("handshake") && action.equals("cameraApp")){
+                handshakeWithListener = true;
+            }
         }
 
         @Override
@@ -353,6 +333,48 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
 
         }
     };
+
+    /** Unrolls a message
+     * @param pattern: input String
+     * return: a String vector with the message splitted
+     * */
+    public String[] decodeMessage(String pattern){
+        String[] messages = pattern.split(";");
+        return messages;
+    }
+
+    /**
+     * Starts a background thread and its {@link Handler}.
+     */
+    public void startBackgroundThread() {
+        /** Camera Thread */
+        mBackgroundThread = new HandlerThread("CameraBackground");
+        mBackgroundThread.start();
+        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
+        myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                handshakeWithListener = false;
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.HANDSHAKE_WITH_LISTENER);
+                mBackgroundHandler.postDelayed(myRunnable, 30000);
+            }
+        };
+    }
+
+    /**
+     * Stops the background thread and its {@link Handler}.
+     */
+    public void stopBackgroundThread() {
+        /** Camera Thread */
+        mBackgroundThread.quitSafely();
+        try {
+            mBackgroundThread.join();
+            mBackgroundThread = null;
+            mBackgroundHandler = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     /** Showcase callbacks */
     @Override

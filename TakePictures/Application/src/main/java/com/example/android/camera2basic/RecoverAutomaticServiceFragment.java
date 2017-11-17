@@ -414,8 +414,8 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         /** UI elements */
         //view.findViewById(R.id.info).setOnClickListener(this);
         text = (TextView) getView().findViewById(R.id.text);
-        view.findViewById(R.id.startButton).setOnClickListener(this);
-        view.findViewById(R.id.stopButton).setOnClickListener(this);
+        view.findViewById(R.id.start_button).setOnClickListener(this);
+        view.findViewById(R.id.stop_button).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         /** Media player */
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.bell);
@@ -1111,7 +1111,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.startButton: {
+            case R.id.start_button: {
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
                 break;
             }
@@ -1125,7 +1125,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 }
                 break;
             }*/
-            case R.id.stopButton: {
+            case R.id.stop_button: {
                 /** Exit app */
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
             }
