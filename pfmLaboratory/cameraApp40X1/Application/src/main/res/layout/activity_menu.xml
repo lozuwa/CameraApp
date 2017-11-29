@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground">
+
+        <Button
+            android:id="@+id/reception_button"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="120dp"
+            android:background="@color/buttonBackground1"
+            android:text="RECEPCION"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/diagnostic_button"
+            android:layout_width="112dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/buttonBackground1"
+            android:text="DIAGNOSTICO"
+            app:layout_constraintTop_toBottomOf="@+id/reception_button" />
+
+        <Button
+            android:id="@+id/planilla_button"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/buttonBackground1"
+            android:text="PLANILLA"
+            app:layout_constraintTop_toBottomOf="@+id/diagnostic_button" />
+
+</android.support.constraint.ConstraintLayout>

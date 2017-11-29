@@ -235,6 +235,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
+
             return true;
         }
         return false;
@@ -248,19 +249,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         /** Write folder name into db table */
         mydatabase.execSQL("INSERT INTO " + DbFeed.TABLE_NAME + " VALUES('" + FOLDER_NAME + "');");
         /** Create folder */
-        //String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME;
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + FOLDER_NAME;
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME;
         File folder = new File(path);
         boolean success = true;
         if (!folder.exists()) {
             success = folder.mkdir();
         } else {
-            showToast("Folder already exists " + FOLDER_NAME);
+            //showToast("Folder already exists " + FOLDER_NAME);
         }
         if (success) {
-            showToast("Folder successfully created");
+            showToast("Folder successfully created :: " + folder.getAbsolutePath());
         } else {
-            showToast("Folder was not created, something happened");
+            showToast("Folder was not created, something happened :: " + path);
             Log.e("CreatePatient", "Folder not created");
         }
     }
