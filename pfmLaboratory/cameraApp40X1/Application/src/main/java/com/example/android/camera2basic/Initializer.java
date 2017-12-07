@@ -21,7 +21,7 @@ public class Initializer extends Application {
     /**
      * MQTT Topics
      * */
-    static public String PREFIX = "/40X/1";
+    static public String PREFIX = "/40X/2";
     static public String MICROSCOPE_TOPIC = "/microscope" + PREFIX;
     static public String CAMERA_APP_TOPIC = "/cameraApp" + PREFIX;
     static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp" + PREFIX;
@@ -65,6 +65,8 @@ public class Initializer extends Application {
     // /macros
     public static String STAGE_RESTART_HOME = "stage;restart;home;None;None";
 	public static String STAGE_RESTART_INITIAL = "stage;restart;initial;None;None";
+    public static String ACTIVATE_CHARGE = "charge;smartphone;activate;None;None";
+    public static String DEACTIVATE_CHARGE = "charge;smartphone;deactivate;None;None";
 
     /** Autofocus service */
     // Triggers

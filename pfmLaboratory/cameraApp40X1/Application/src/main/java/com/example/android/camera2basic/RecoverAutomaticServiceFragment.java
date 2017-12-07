@@ -421,8 +421,12 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.door);
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
+                /** Stop the MediaPlayer */
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                /** Make sure to restart the variables */
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
+                /** Move to the CreatePatient activity */
                 Intent intent = new Intent(getActivity(), CreatePatient.class);
                 startActivity(intent);
             }
@@ -479,7 +483,6 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      * The arrived messages follow a protocol defined as:
      * TOPIC: /microscope
      * MESSAGE:
-     *          - createFolder;FOLDER_NAME: The app must create a new folder to store new pictures
      *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
      * */
     private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
@@ -534,12 +537,10 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
             } else if (command.equals("exit") && target.equals("AutomaticController") && action.equals("CreatePatient")) {
                 /** Clean DB */
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
-                /** Restart stage */
-                //publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
-                /** Restart screen */
+                /** Go home */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                /** Play sound */
                 mediaPlayer.start();
-                //Intent intent = new Intent(getActivity(), CreatePatient.class);
-                //startActivity(intent);
             }
             /** Service (autofocus) */
             //requestService;autofocus;AutomaticController;None;None
@@ -1123,21 +1124,17 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.start_button: {
+                /** Reinitialize the service, just in case */
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
                 break;
             }
-            /*case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage("Manual controller ::: " + FOLDER_NAME)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
-                break;
-            }*/
             case R.id.stop_button: {
-                /** Exit app */
+                /** Exit app
+                 * Note this message also resets the automatic service variables. Nonetheless,
+                 * since this call is asynchronous, it may not take effect. Thus, we repeat this
+                 * message when the alarm finishes, which is enough time to let all the messages
+                 * arrive and be processes.
+                 * */
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
             }
         }

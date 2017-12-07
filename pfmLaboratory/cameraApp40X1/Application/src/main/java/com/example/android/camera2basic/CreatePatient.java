@@ -5,10 +5,12 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -40,7 +42,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * A login screen that offers login via email/password.
  */
-public class CreatePatient extends Activity implements OnShowcaseEventListener {
+public class CreatePatient extends Activity {
 
     /**
      * Debug tag
@@ -53,14 +55,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     private AutoCompleteTextView nameUserEditText;
     private Button automaticAnalisisButton;
     private Button manualAnalysisButton;
-    public TextView availableSizeTextView;
-
-    /**
-     * Showcase
-     * */
-    public ShowcaseView sv;
-    public RelativeLayout.LayoutParams lps;
-    public ViewTarget target;
+    public Button readQRCode;
 
     /**
      * SQLite
@@ -104,35 +99,80 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         /** Open database */
         mydatabase = openOrCreateDatabase(DbFeed.TABLE_NAME, MODE_PRIVATE, null);
         initializeDb();
-        /** Always restart home (XY), when reaching this activity */
-        publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+        /** Query from the bundle */
+        final String EXTRACTED_FOLDER_NAME = getIntent().getStringExtra("FOLDER");
+        final String AUTOMATIC = getIntent().getStringExtra("AUTOMATIC");
+        /** Get battery level */
+        int batteryLevel = getBatteryPercentage();
+        if (batteryLevel < 90){
+            publishMessage(Initializer.MACROS_TOPIC, Initializer.ACTIVATE_CHARGE);
+        } else{
+            publishMessage(Initializer.MACROS_TOPIC, Initializer.DEACTIVATE_CHARGE);
+        }
         /** Instantiate UI elements */
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
-        availableSizeTextView = (TextView) findViewById(R.id.available_size_textView);
-        /** Instantiatte storage size class */
-        //availableSizeTextView.setText(String.valueOf(55));
-        /** Initial state UI */
-        nameUserEditText.setError(null);
+        readQRCode = (Button) findViewById(R.id.read_qr_button);
+        /** Initial states */
+        if (EXTRACTED_FOLDER_NAME == null){
+            showToast("Null object");
+            nameUserEditText.setText("");
+            automaticAnalisisButton.setEnabled(false);
+            manualAnalysisButton.setEnabled(false);
+        }
+        else{
+            nameUserEditText.setText("muestra"+EXTRACTED_FOLDER_NAME);
+            automaticAnalisisButton.setEnabled(true);
+            manualAnalysisButton.setEnabled(true);
+            if (AUTOMATIC == null){
+                //do nothing
+            }
+            else if (AUTOMATIC.equals("1")) {
+                /** Once sample is prepared and locked, set to initial position */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
+                /** Get folder name */
+                final String NAME_FOLDER = nameUserEditText.getText().toString();
+                if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
+                    showToast("Name is too short");
+                } else {
+                    createFolder(NAME_FOLDER);
+                    /** Start autofocus servide */
+                    publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                    startActivity(intent);
+                }
+            }
+        }
         /** Button callbacks */
+        readQRCode.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /** Always restart home (XY), when reaching this activity */
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                /** Go to barcode activity */
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("com.google.android.gms.samples.vision.barcodereader", "com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"));
+                startActivity(intent);
+            }
+        });
+
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String NAME_FOLDER = nameUserEditText.getText().toString();
-                createFolder(NAME_FOLDER);
                 /** Once sample is prepared and locked, set to initial position */
-                //publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 /** Get folder name */
-                //final String NAME_FOLDER = nameUserEditText.getText().toString();
-                //if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
-                //   showToast("Name is too short");
-                //} else {
-                //   createFolder(NAME_FOLDER);
-                //   /** Start camera */
-                //   Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
-                //   startActivity(intent);
-                //}
+                final String NAME_FOLDER = nameUserEditText.getText().toString();
+                if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
+                   showToast("Name is too short");
+                } else {
+                   createFolder(NAME_FOLDER);
+                   /** Start camera */
+                   Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
+                   startActivity(intent);
+                }
             }
         });
 
@@ -147,9 +187,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                     showToast("Name is too short");
                 } else {
                     createFolder(NAME_FOLDER);
-                    /** Start camera */
-                    /*Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
-                    startActivity(intent);*/
                     /** Start autofocus servide */
                     publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
                     Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -227,18 +264,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 return;
             }
         }
-    }
-
-    /**
-     * Checks if there is an external sd card
-     * */
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-
-            return true;
-        }
-        return false;
     }
 
     /**
@@ -410,25 +435,14 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         }
     }
 
-    /** Showcase callbacks */
-    @Override
-    public void onShowcaseViewHide(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewDidHide(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewShow(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewTouchBlocked(MotionEvent motionEvent) {
-
+    /** Check battery status */
+    public int getBatteryPercentage() {
+        IntentFilter iFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        Intent batteryStatus = registerReceiver(null, iFilter);
+        int level = batteryStatus != null ? batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) : -1;
+        int scale = batteryStatus != null ? batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1) : -1;
+        float batteryPct = level / (float) scale;
+        return (int) (batteryPct * 100);
     }
 
 }

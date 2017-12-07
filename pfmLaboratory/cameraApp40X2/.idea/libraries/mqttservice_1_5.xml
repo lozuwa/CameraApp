@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="mqttservice-1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/59a1c0538827929c44a1c60140f6074ca132aa42/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/59a1c0538827929c44a1c60140f6074ca132aa42/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/59a1c0538827929c44a1c60140f6074ca132aa42/output/jars/libs/org.eclipse.paho.client.mqttv3-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.igenius/mqttservice/1.5/c75d19c6b31fefcbff3fff2f79b15d00662d7908/mqttservice-1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
