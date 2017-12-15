@@ -27,7 +27,6 @@ dependencies {
     //}
     // Igenius MQTT Service
     // Showcase
-    // android shit
     compile 'net.igenius:mqttservice:1.5'
     compile 'com.github.amlcurran.showcaseview:library:5.4.3'
     compile 'com.android.support:support-v4:25.3.1'

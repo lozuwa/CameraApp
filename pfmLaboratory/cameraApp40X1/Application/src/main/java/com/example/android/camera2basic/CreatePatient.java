@@ -7,29 +7,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.StatFs;
-import android.support.v4.app.ActivityCompat;
+import android.support.v13.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
 import net.igenius.mqttservice.MQTTServiceCommand;
 import net.igenius.mqttservice.MQTTServiceReceiver;
@@ -40,7 +32,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * A login screen that offers login via email/password.
  */
-public class CreatePatient extends Activity implements OnShowcaseEventListener {
+public class CreatePatient extends Activity {
 
     /**
      * Debug tag
@@ -58,9 +50,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
     /**
      * Showcase
      * */
-    public ShowcaseView sv;
     public RelativeLayout.LayoutParams lps;
-    public ViewTarget target;
 
     /**
      * SQLite
@@ -119,20 +109,18 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String NAME_FOLDER = nameUserEditText.getText().toString();
-                createFolder(NAME_FOLDER);
                 /** Once sample is prepared and locked, set to initial position */
-                //publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 /** Get folder name */
-                //final String NAME_FOLDER = nameUserEditText.getText().toString();
-                //if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
-                //   showToast("Name is too short");
-                //} else {
-                //   createFolder(NAME_FOLDER);
-                //   /** Start camera */
-                //   Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
-                //   startActivity(intent);
-                //}
+                final String NAME_FOLDER = nameUserEditText.getText().toString();
+                if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
+                   showToast("Name is too short");
+                } else {
+                   createFolder(NAME_FOLDER);
+                   /** Start camera */
+                   Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
+                   startActivity(intent);
+                }
             }
         });
 
@@ -148,7 +136,7 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
                 } else {
                     createFolder(NAME_FOLDER);
                     /** Start camera */
-                    /*Intent intent = new Intent(CreatePatient.this, CameraActivity.class);
+                    /*Intent intent = new Intent(CreatePatient.this, RecoverAutomaticService.class);
                     startActivity(intent);*/
                     /** Start autofocus servide */
                     publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
@@ -408,27 +396,6 @@ public class CreatePatient extends Activity implements OnShowcaseEventListener {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    /** Showcase callbacks */
-    @Override
-    public void onShowcaseViewHide(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewDidHide(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewShow(ShowcaseView showcaseView) {
-
-    }
-
-    @Override
-    public void onShowcaseViewTouchBlocked(MotionEvent motionEvent) {
-
     }
 
 }
