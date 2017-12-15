@@ -583,7 +583,7 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
             } else if (command.equals("exit") && target.equals("ManualController") && action.equals("CreatePatient")) {
                 /** Clean DB */
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + DbFeed.TABLE_NAME);
-                /** Restart stage */
+                /** Go home */
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
                 /** Restart screen */
                 Intent intent = new Intent(getActivity(), CreatePatient.class);
