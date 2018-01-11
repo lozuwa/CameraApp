@@ -32,7 +32,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 
 /**
- * A login screen that offers login via email/password.
+ * Interface screen
  */
 public class CreatePatient extends Activity {
 
