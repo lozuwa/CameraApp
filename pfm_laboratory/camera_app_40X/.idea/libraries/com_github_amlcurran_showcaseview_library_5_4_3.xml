@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.amlcurran.showcaseview:library-5.4.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/babe4a9c3a7b8427a00fe6f53e07576ab6cc037f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/babe4a9c3a7b8427a00fe6f53e07576ab6cc037f/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.amlcurran.showcaseview/library/5.4.3/ad6944a7aab3ac896d34d4a783cf7ceca1808ff8/library-5.4.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
