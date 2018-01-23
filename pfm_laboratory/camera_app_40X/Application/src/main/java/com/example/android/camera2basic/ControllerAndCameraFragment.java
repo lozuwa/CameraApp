@@ -594,7 +594,8 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
              * */
             else if (command.equals("requestService") && target.equals("autofocus") && action.equals("ManualController")) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                intent.setComponent(new ComponentName("com.example.root.autofocus_app", "com.example.root.autofocus_app.AutofocusActivity"));
+                //intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
                 startActivity(intent);
             } else {
 

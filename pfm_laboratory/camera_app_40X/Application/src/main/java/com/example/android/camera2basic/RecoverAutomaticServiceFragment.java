@@ -548,7 +548,8 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
             //requestService;autofocus;AutomaticController;None;None
             else if (command.equals("requestService") && target.equals("autofocus") && action.equals("AutomaticController")){
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                //intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                intent.setComponent(new ComponentName("com.example.root.autofocus_app", "com.example.root.autofocus_app.AutofocusActivity"));
                 startActivity(intent);
             } else {
 
