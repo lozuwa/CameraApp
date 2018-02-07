@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.camera2basic.Debug.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="35dp"
+        android:text="Folder name" />
+
+    <EditText
+        android:id="@+id/folder_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/folder_name"
+        android:layout_below="@+id/folder_name"
+        android:layout_marginTop="31dp"
+        android:text="Completed" />
+
+    <EditText
+        android:id="@+id/completed"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/folder_name"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="29dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginStart="82dp"
+        android:layout_toEndOf="@+id/folder_name"
+        android:text="Image name" />
+
+    <EditText
+        android:id="@+id/image_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/folder_name" />
+
+    <Button
+        android:id="@+id/read_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/completed"
+        android:layout_marginBottom="144dp"
+        android:text="Read" />
+
+    <Button
+        android:id="@+id/write_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/read_button"
+        android:layout_alignEnd="@+id/textView3"
+        android:text="Write" />
+
+    <Button
+        android:id="@+id/read_all_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/read_button"
+        android:layout_below="@+id/write_button"
+        android:layout_marginTop="44dp"
+        android:text="Read all" />
+
+    <Button
+        android:id="@+id/remove_tables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/image_name"
+        android:layout_alignTop="@+id/read_all_button"
+        android:text="Remove tables" />
+</RelativeLayout>
