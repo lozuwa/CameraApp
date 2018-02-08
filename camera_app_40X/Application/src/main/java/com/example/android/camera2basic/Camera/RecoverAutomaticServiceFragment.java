@@ -1036,6 +1036,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 // The image is saved, so we can move on
                 // First annotate create the image in the db
                 Images image = new Images();
+                Log.d(TAG, "Writing image to db: " + GLOBAL_CURRENT_IMAGE_NAME);
                 image.setImageName(GLOBAL_CURRENT_IMAGE_NAME);
                 image.setFolderName(FOLDER_NAME);
                 clientsDB.createImage(image);

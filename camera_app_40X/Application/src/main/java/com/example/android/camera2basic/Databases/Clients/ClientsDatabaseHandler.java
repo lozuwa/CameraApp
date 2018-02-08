@@ -106,10 +106,10 @@ public class ClientsDatabaseHandler extends SQLiteOpenHelper {
     }
 
     // read folder by name
-    public Folders readFolderByName(String name){
+    public Folders readFolderByName(String folderName){
         Folders folder = new Folders();
-        String selectQuery = "SELECT * FROM " + TABLE_FOLDERS + " WHERE " + KEY_NAME_FOLDERS + " = "
-                + String.valueOf(name);
+        String selectQuery = "SELECT * FROM " + TABLE_FOLDERS + " WHERE " + KEY_NAME_FOLDERS + " = '"
+                + folderName + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor != null){
@@ -172,7 +172,7 @@ public class ClientsDatabaseHandler extends SQLiteOpenHelper {
     public void deleteFolder(Folders folder) {
         SQLiteDatabase db = this.getWritableDatabase();
         try {
-            db.delete(TABLE_FOLDERS, KEY_ID_FOLDERS + " = ?",
+            db.delete(TABLE_FOLDERS, KEY_NAME_FOLDERS + " = ?",
                     new String[] { String.valueOf(folder.getfolderName()) });
         } catch (Exception e){
             Log.e("TAG::", "Value could not be deleted, it might not exist.");
@@ -251,10 +251,11 @@ public class ClientsDatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Read image by name
-    public Images readImageByName(String name){
+    public Images readImageByName(String imageName){
         Images image = new Images();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_IMAGES + " WHERE " + KEY_NAME_IMAGES + " = " + name;
+        String query = "SELECT * FROM " + TABLE_IMAGES + " WHERE " + KEY_NAME_IMAGES
+                + " = '" + imageName + "'";
         Cursor cursor = db.rawQuery(query, null);
         if (cursor == null){
             // Do nothing
@@ -275,14 +276,14 @@ public class ClientsDatabaseHandler extends SQLiteOpenHelper {
         // Database
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_IMAGES + " WHERE "
-                + KEY_FOLDER_NAME_IMAGES + " = " + folderName;
+                + KEY_NAME_FOLDERS + " = '" + folderName + "'";
         Cursor cursor = db.rawQuery(query, null);
         if (cursor != null){
             cursor.moveToFirst();
             do {
                 Images img = new Images();
                 img.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID_IMAGES)));
-                img.setImageName(cursor.getString(cursor.getColumnIndex(KEY_NAME_FOLDERS)));
+                img.setImageName(cursor.getString(cursor.getColumnIndex(KEY_NAME_IMAGES)));
                 img.setFolderName(cursor.getString(cursor.getColumnIndex(KEY_FOLDER_NAME_IMAGES)));
                 imgs.add(img);
             } while (cursor.moveToNext());
@@ -295,17 +296,23 @@ public class ClientsDatabaseHandler extends SQLiteOpenHelper {
         return imgs;
     }
 
+    public String[] readColumnsImagesTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db = getReadableDatabase();
+        Cursor dbCursor = db.query(TABLE_IMAGES, null, null, null, null, null, null);
+        String[] columnNames = dbCursor.getColumnNames();
+        db.close();
+        return columnNames;
+    }
+
     // Delete image
     public void deleteImage(Images image){
         SQLiteDatabase db = this.getWritableDatabase();
-        try {
-            db.delete(TABLE_FOLDERS, KEY_ID_FOLDERS + " = ?",
-                    new String[] { String.valueOf(image.getImageName()) });
-        } catch (Exception e){
-            Log.e("TAG::", "Value could not be deleted, it might not exist.");
-        } finally {
-            db.close();
-        }
+        String table = TABLE_IMAGES;
+        String whereClause = KEY_NAME_IMAGES + "=?";
+        String[] whereArgs = new String[] { String.valueOf(image.getImageName()) };
+        db.delete(table, whereClause, whereArgs);
+        db.close();
     }
 
     // Update image

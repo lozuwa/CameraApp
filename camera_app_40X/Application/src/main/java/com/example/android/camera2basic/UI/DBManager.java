@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.android.camera2basic.Databases.Clients.ClientsDatabaseHandler;
 import com.example.android.camera2basic.Databases.Clients.Folders;
@@ -29,6 +31,8 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
     private Spinner tablesSpinner;
     private Spinner dataSpinner;
     private Button selectTableButton;
+    private Button dropTableButton;
+    private Button removeButton;
 
     // Database
     ClientsDatabaseHandler clientsDB;
@@ -43,6 +47,8 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
         tablesSpinner = (Spinner) findViewById(R.id.tables_spinner);
         dataSpinner = (Spinner) findViewById(R.id.data_in_table_spinner);
         selectTableButton = (Button) findViewById(R.id.select_table_button);
+        dropTableButton = (Button) findViewById(R.id.drop_table_button);
+        removeButton = (Button) findViewById(R.id.remove_button);
         loadTablesSpinner();
         // Click listeners
         selectTableButton.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +85,7 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
                     // Load the data to a String list
                     List<String> list = new ArrayList<String>();
                     for (Images img: imgs){
-                        String toString = img.getId() + "," + img.getImageName()
+                        String toString = img.getId() + "," + img.getImageName().split("ple")[0]
                                 + "," + img.getFolderName();
                         list.add(toString);
                         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DBManager.this,
@@ -90,6 +96,29 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
                 } else{
                     // Do nothing
                 }
+            }
+        });
+
+        dropTableButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (selectedTable.equals("images")){
+                    clientsDB.dropImagesTable();
+                } else if (selectedTable.equals("folders")){
+                    clientsDB.dropFoldersTable();
+                } else{
+                    String columns[] = clientsDB.readColumnsImagesTable();
+                    for (String col: columns){
+                        showToast(col);
+                    }
+                }
+            }
+        });
+
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clientsDB.deleteImage(new Images("", "muestra1"));
             }
         });
 
@@ -121,6 +150,10 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+    }
+
+    public void showToast(String message){
+        Toast.makeText(DBManager.this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

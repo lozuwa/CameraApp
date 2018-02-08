@@ -34,6 +34,9 @@ import java.util.List;
 
 public class UploadDebug extends Activity {
 
+    // Constants
+    private static final String TAG = "UPLOAD_DEBUG:";
+
     // UI elements
     public Button readFoldersButton;
     public Button signInButton;
@@ -107,10 +110,11 @@ public class UploadDebug extends Activity {
 
     public void uploadImage(Images img){
         // Variables
-        String imageName = img.getImageName();
-        String folderName = img.getFolderName();
-        String pathToFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+        final String imageName = img.getImageName();
+        final String folderName = img.getFolderName();
+        final String pathToFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
                 + File.separator + folderName + File.separator + imageName;
+        Log.d(TAG, imageName + "," + folderName);
         // Set a Uri
         Uri file = Uri.fromFile(new File(pathToFile));
         // Create a reference
@@ -120,14 +124,26 @@ public class UploadDebug extends Activity {
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                showToast("Failed to upload image");
+                Log.i(TAG, "Failed to upload image.");
+//                showToast("Failed to upload image");
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                // Get download URI
                 Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                showToast("Success " + downloadUrl.toString());
+                Log.i(TAG, "Success " + downloadUrl.toString());
+                // Remove the file physically
+                File imageFile = new File(pathToFile);
+                boolean deleted = imageFile.delete();
+                if (deleted){
+                    Log.i(TAG, "File succesfully deleted.");
+                    // Given the file was removed, now delete its field from the db
+                    db.deleteImage(new Images(imageName, folderName));
+                } else{
+                    Log.i(TAG, "File could not be deleted.");
+                }
             }
         });
     }
