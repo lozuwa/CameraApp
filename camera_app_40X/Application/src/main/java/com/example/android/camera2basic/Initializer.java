@@ -6,6 +6,8 @@ import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.util.Log;
 
+import com.example.android.camera2basic.Utils.MQTTUtils;
+
 import net.igenius.mqttservice.MQTTService;
 import net.igenius.mqttservice.MQTTServiceCommand;
 import net.igenius.mqttservice.MQTTServiceLogger;
@@ -103,6 +105,25 @@ public class Initializer extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        // MQTT stuff
+        // Initialize variables for MQTT Service
+        MQTTService.NAMESPACE = "com.example.android.camera2basic";
+        MQTTService.KEEP_ALIVE_INTERVAL = Initializer.KEEP_ALIVE_TIMING;
+        MQTTService.CONNECT_TIMEOUT = Initializer.CONNECT_TIMEOUT;
+        // Connect MQTT
+        String username = "pfm";
+        String password = "161154029";
+        String clientId = UUID.randomUUID().toString();
+        int qos = 2;
+        MQTTServiceLogger.setLogLevel(MQTTServiceLogger.LogLevel.DEBUG);
+        MQTTServiceCommand.connectAndSubscribe(Initializer.this,
+                Initializer.BROKER,
+                clientId,
+                username,
+                password,
+                qos,
+                true,
+                Initializer.CAMERA_APP_TOPIC);
         // Job Scheduler and firestore stuff
 //        ComponentName componentName = new ComponentName(this, Initializer.class);
 //        JobInfo jobInfo = new JobInfo.Builder(12, componentName)

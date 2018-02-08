@@ -48,8 +48,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <!-- Job scheduler needs these -->
-    <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
-
+    <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> -->
     <application
         android:name=".Initializer"
         android:allowBackup="true"
@@ -80,14 +79,15 @@
             </intent-filter>
         </activity>
 
-        <!--<service-->
-            <!--android:name=".Service.UploadImages"-->
-            <!--android:label="Upload images service"-->
-            <!--android:permission="android.permission.BIND_JOB_SERVICE"></service>-->
+        <!-- <service -->
+        <!-- android:name=".Service.UploadImages" -->
+        <!-- android:label="Upload images service" -->
+        <!-- android:permission="android.permission.BIND_JOB_SERVICE"></service> -->
 
+        <activity android:name=".Debug.UploadDebug" />
         <activity
-            android:name=".Debug.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:name=".UI.DBManager"
+            android:label="@string/title_activity_dbmanager"></activity>
     </application>
 
 </manifest>

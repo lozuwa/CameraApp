@@ -36,6 +36,7 @@ import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 /**
  * A login screen that offers login via email/password.
@@ -53,7 +54,8 @@ public class CreatePatient extends Activity {
     private AutoCompleteTextView nameUserEditText;
     private Button automaticAnalisisButton;
     private Button manualAnalysisButton;
-    public Button readQRCode;
+    public Button readQRCodeButton;
+    public Button dbManagerButton;
 
     /**
      * SQLite
@@ -99,7 +101,7 @@ public class CreatePatient extends Activity {
         mydatabase = openOrCreateDatabase(User.TABLE_NAME, MODE_PRIVATE, null);
         initializeDb();
         // Create an instance of ClientsDB
-        clientsDB = new ClientsDatabaseHandler(getApplicationContext());
+        clientsDB = new ClientsDatabaseHandler(this);
         /** Query from the bundle */
         final String EXTRACTED_FOLDER_NAME = getIntent().getStringExtra("FOLDER");
         final String AUTOMATIC = getIntent().getStringExtra("AUTOMATIC");
@@ -114,10 +116,10 @@ public class CreatePatient extends Activity {
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
-        readQRCode = (Button) findViewById(R.id.read_qr_button);
+        readQRCodeButton = (Button) findViewById(R.id.read_qr_button);
+        dbManagerButton = (Button) findViewById(R.id.db_manager_button);
         /** Initial states */
         if (EXTRACTED_FOLDER_NAME == null){
-            showToast("Null object");
             nameUserEditText.setText("");
             automaticAnalisisButton.setEnabled(false);
             manualAnalysisButton.setEnabled(false);
@@ -147,7 +149,7 @@ public class CreatePatient extends Activity {
             }
         }
         /** Button callbacks */
-        readQRCode.setOnClickListener(new OnClickListener() {
+        readQRCodeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Make sure listener is working
@@ -158,9 +160,9 @@ public class CreatePatient extends Activity {
         manualAnalysisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                /** Once sample is prepared and locked, set to initial position */
+                // Once the sample is prepared and locked, set to initial position
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
-                /** Get folder name */
+                // Get folder name
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
                 if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
                    showToast("Name is too short");
@@ -169,7 +171,7 @@ public class CreatePatient extends Activity {
                    createFolder(NAME_FOLDER);
                    // Close db connection
                     mydatabase.close();
-                   /** Start camera */
+                   // Start camera
                    Intent intent = new Intent(CreatePatient.this, ControllerAndCamera.class);
                    startActivity(intent);
                 }
@@ -179,9 +181,9 @@ public class CreatePatient extends Activity {
         automaticAnalisisButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                /** Once sample is prepared and locked, set to initial position */
+                // Once the sample is prepared and locked, set to initial position
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
-                /** Get folder name */
+                // Get folder name
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
                 if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
                     showToast("Name is too short");
@@ -190,12 +192,20 @@ public class CreatePatient extends Activity {
                     createFolder(NAME_FOLDER);
                     // Close db connection
                     mydatabase.close();
-                    /** Start autofocus servide */
+                    // Start autofocus service
                     publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
                     Intent intent = new Intent(Intent.ACTION_MAIN);
                     intent.setComponent(new ComponentName("com.example.root.autofocus_app", "com.example.root.autofocus_app.AutofocusActivity"));
                     startActivity(intent);
                 }
+            }
+        });
+
+        dbManagerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent DBManagerActivity = new Intent(CreatePatient.this, DBManager.class);
+                startActivity(DBManagerActivity);
             }
         });
     }
@@ -204,14 +214,14 @@ public class CreatePatient extends Activity {
     protected void onResume() {
         super.onResume();
         receiver.register(this);
-        startBackgroundThread();
+//        startBackgroundThread();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         receiver.unregister(this);
-        stopBackgroundThread();
+//        stopBackgroundThread();
     }
 
     @Override
@@ -298,6 +308,7 @@ public class CreatePatient extends Activity {
         }
         if (success) {
             showToast("Folder successfully created :: " + folder.getAbsolutePath());
+            // Create folder in folders table
             Folders folderInstance = new Folders(folder.getName(), 0);
             clientsDB.createFolder(folderInstance);
         } else {
@@ -367,8 +378,8 @@ public class CreatePatient extends Activity {
 
         @Override
         public void onMessageArrived(Context context, String topic, byte[] payload) {
-            showToast(topic + "::" + new String(payload));
-            Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
+//            showToast(topic + "::" + new String(payload));
+            Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
             /** Parse string */
             String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
@@ -404,7 +415,7 @@ public class CreatePatient extends Activity {
 
         @Override
         public void onConnectionSuccessful(Context context, String requestId) {
-            showToast("Connected (CreatePatient.class)");
+            showToast("Connected");
             Log.e(TAG, "Connected!");
         }
 

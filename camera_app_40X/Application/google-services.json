@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "953345896855",
+    "firebase_url": "https://sophi-168901.firebaseio.com",
+    "project_id": "sophi-168901",
+    "storage_bucket": "sophi-168901.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953345896855:android:882757318ab57f16",
+        "android_client_info": {
+          "package_name": "com.example.root.firebase_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953345896855-g9n260emq841e1rklatoi5j42mlmft44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF4TPXt5dma2mJxCS_fvmR7wWdGTnfv00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953345896855:android:e1ee61e256773eb3",
+        "android_client_info": {
+          "package_name": "com.example.android.camera2basic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953345896855-g9n260emq841e1rklatoi5j42mlmft44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF4TPXt5dma2mJxCS_fvmR7wWdGTnfv00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

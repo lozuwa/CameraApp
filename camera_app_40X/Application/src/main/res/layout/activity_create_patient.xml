@@ -123,6 +123,18 @@
 
             </android.support.constraint.ConstraintLayout>
 
+            <!--<android.support.constraint.ConstraintLayout-->
+            <!--</android.support.constraint.ConstraintLayout>-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/db_manager_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DB Manager" />
+            </LinearLayout>
+
         </LinearLayout>
 
 </LinearLayout>

@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
@@ -14,10 +14,9 @@ apply plugin: 'com.android.application'
 
 repositories {
     jcenter()
-    //maven {
-    // mqtt
-    //    url "https://repo.eclipse.org/content/repositories/paho-releases/"
-    //}
+//    maven {
+//        url "https://maven.google.com"
+//    }
 }
 
 dependencies {
@@ -25,15 +24,20 @@ dependencies {
     //compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
     //    exclude module: 'support-v4'
     //}
-    // Igenius MQTT Service
-    // Showcase
-    compile 'net.igenius:mqttservice:1.5'
-    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    // Android stuff
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:support-v13:25.3.1'
     compile 'com.android.support:cardview-v7:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    // Igenius MQTT Service
+    compile 'net.igenius:mqttservice:1.5'
+    // Showcase
+    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    // firebase auth
+    compile 'com.google.firebase:firebase-auth:11.8.0'
+    // firebase storage
+    compile 'com.google.firebase:firebase-storage:11.8.0'
 }
 
 // The sample build uses multiple directories to
@@ -46,7 +50,7 @@ List<String> dirs = [
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 21
@@ -70,3 +74,5 @@ android {
     }
 
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -51,7 +51,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.camera2basic.Databases.Clients.ClientsDatabaseHandler;
+import com.example.android.camera2basic.Databases.Clients.Images;
 import com.example.android.camera2basic.Databases.Users.User;
+import com.example.android.camera2basic.Debug.UploadDebug;
 import com.example.android.camera2basic.UI.CreatePatient;
 import com.example.android.camera2basic.Initializer;
 import com.example.android.camera2basic.R;
@@ -374,6 +376,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      * */
     public String FOLDER_NAME;
     public String IMG_NAME;
+    public String GLOBAL_CURRENT_IMAGE_NAME;
 
     /**
      * Counter for taking pictures
@@ -438,7 +441,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                  * This second message works for the listener script. */
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
                 // Move to the CreatePatient activity
-                Intent intent = new Intent(getActivity(), CreatePatient.class);
+                Intent intent = new Intent(getActivity(), UploadDebug.class);
                 startActivity(intent);
             }
         });
@@ -534,7 +537,10 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 //String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
-                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                GLOBAL_CURRENT_IMAGE_NAME = IMG_NAME + "_" + timeStamp
+                        + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+                        + File.separator + FOLDER_NAME + File.separator + GLOBAL_CURRENT_IMAGE_NAME;
                 /** Extract image number */
                 String[] messageSplit = message.split("ple");
                 text.setText(FOLDER_NAME + "\n" + String.valueOf(messageSplit[1]) + "/700");
@@ -1027,7 +1033,13 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 e.printStackTrace();
             } finally {
                 mImage.close();
-                /** We have finished saving the image */
+                // The image is saved, so we can move on
+                // First annotate create the image in the db
+                Images image = new Images();
+                image.setImageName(GLOBAL_CURRENT_IMAGE_NAME);
+                image.setFolderName(FOLDER_NAME);
+                clientsDB.createImage(image);
+                // Then, command the microscope to keep moving
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 if (null != output) {
                     try {
