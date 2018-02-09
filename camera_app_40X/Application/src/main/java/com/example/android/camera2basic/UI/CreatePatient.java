@@ -46,7 +46,7 @@ public class CreatePatient extends Activity {
     /**
      * Debug tag
      * */
-    static public String TAG = "cameraApp::";
+    static public String TAG = "CreatePatientActivity ::";
 
     /**
      * UI elements
@@ -62,13 +62,6 @@ public class CreatePatient extends Activity {
      * */
     public SQLiteDatabase mydatabase;
     public ClientsDatabaseHandler clientsDB;
-
-    /**
-     * Threads
-     * */
-    public HandlerThread mBackgroundThread;
-    public Handler mBackgroundHandler;
-    public Runnable myRunnable;
 
     /**
      * Reset UI variable to assure MTTQ connection
@@ -88,67 +81,59 @@ public class CreatePatient extends Activity {
      * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /** Contents */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_patient);
-        /** Orientation */
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        /** Keep screen on */
         getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        /** Ask for permissions */
+        // Ask for permissions
         grantPermissions();
-        /** Open auxiliar database */
+        // Open auxiliar db
         mydatabase = openOrCreateDatabase(User.TABLE_NAME, MODE_PRIVATE, null);
         initializeDb();
         // Create an instance of ClientsDB
         clientsDB = new ClientsDatabaseHandler(this);
-        /** Query from the bundle */
+        // Extract from bundle
         final String EXTRACTED_FOLDER_NAME = getIntent().getStringExtra("FOLDER");
         final String AUTOMATIC = getIntent().getStringExtra("AUTOMATIC");
-        /** Get battery level */
-        int batteryLevel = getBatteryPercentage();
-        if (batteryLevel < 90){
-            publishMessage(Initializer.MACROS_TOPIC, Initializer.ACTIVATE_CHARGE);
-        } else{
-            publishMessage(Initializer.MACROS_TOPIC, Initializer.DEACTIVATE_CHARGE);
-        }
-        /** Instantiate UI elements */
+        Log.i(TAG, "Extracted folder name: " + EXTRACTED_FOLDER_NAME);
+        Log.i(TAG, "Automatic? " + AUTOMATIC);
+        // showToast(EXTRACTED_FOLDER_NAME + ", " + AUTOMATIC);
+        // Instantiate UI elements
         nameUserEditText = (AutoCompleteTextView) findViewById(R.id.patient_name_editText);
         automaticAnalisisButton = (Button) findViewById(R.id.automatic_button);
         manualAnalysisButton = (Button) findViewById(R.id.manual_button);
         readQRCodeButton = (Button) findViewById(R.id.read_qr_button);
         dbManagerButton = (Button) findViewById(R.id.db_manager_button);
-        /** Initial states */
+        // Initial states
         if (EXTRACTED_FOLDER_NAME == null){
             nameUserEditText.setText("");
             automaticAnalisisButton.setEnabled(false);
             manualAnalysisButton.setEnabled(false);
-        }
-        else{
+        } else{
             nameUserEditText.setText("muestra"+EXTRACTED_FOLDER_NAME);
             automaticAnalisisButton.setEnabled(true);
             manualAnalysisButton.setEnabled(true);
             if (AUTOMATIC == null){
                 //do nothing
-            }
-            else if (AUTOMATIC.equals("1")) {
-                /** Once sample is prepared and locked, set to initial position */
+            } else if (AUTOMATIC.equals("1")) {
+                // Once sample is prepared and locked, set to initial position
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
-                /** Get folder name */
+                // Get folder name
                 final String NAME_FOLDER = nameUserEditText.getText().toString();
                 if (NAME_FOLDER.isEmpty() || (NAME_FOLDER.length() < 4)) {
                     showToast("Name is too short");
                 } else {
                     createFolder(NAME_FOLDER);
-                    /** Start autofocus servide */
+                    // Start autofocus activity
                     publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
                     Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
+                    intent.setComponent(new ComponentName("com.example.root.autofocus_app", "com.example.root.autofocus_app.AutofocusActivity"));
                     startActivity(intent);
                 }
             }
         }
-        /** Button callbacks */
+
+        // Button callbacks
         readQRCodeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -294,9 +279,9 @@ public class CreatePatient extends Activity {
      * @param FOLDER_NAME: input string that contains the name of the folder to be created
      * */
     public void createFolder(String FOLDER_NAME) {
-        /** Write folder name into db table */
+        // Write folder name into db table
         mydatabase.execSQL("INSERT INTO " + User.TABLE_NAME + " VALUES('" + FOLDER_NAME + "');");
-        /** Create folder */
+        // Create folder
         String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME;
         File folder = new File(path);
         boolean success = false;
@@ -309,7 +294,7 @@ public class CreatePatient extends Activity {
         if (success) {
             showToast("Folder successfully created :: " + folder.getAbsolutePath());
             // Create folder in folders table
-            Folders folderInstance = new Folders(folder.getName(), 0);
+            Folders folderInstance = new Folders(folder.getName());
             clientsDB.createFolder(folderInstance);
         } else {
             showToast("Folder was not created, something happened :: " + path);
@@ -360,9 +345,9 @@ public class CreatePatient extends Activity {
 
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            /** Info */
+            // Info
             Log.i(TAG, "Subscribed to " + topic);
-            /** Publish authentication */
+            // Publish authentication
             //publishMessage(CAMERA_APP_TOPIC, "oath;cameraApp");
         }
 
@@ -380,34 +365,23 @@ public class CreatePatient extends Activity {
         public void onMessageArrived(Context context, String topic, byte[] payload) {
 //            showToast(topic + "::" + new String(payload));
             Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
-            /** Parse string */
+            // Parse string
             String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
             String target = paramsPayload[1];
             String action = paramsPayload[2];
             String specific = paramsPayload[3];
             String message = paramsPayload[4];
-            /** If listener responds */
+            // Hardware response
             if (command.equals("listener") && target.equals("handshake") && action.equals("cameraApp") && specific.equals("40X")){
-                /**
-                 * If the handshake is assured, then we can work.
-                 * So, let's open the QR reader.
-                 * */
+                // If the handshake is authenticated, then we can continue.
                 handshakeWithListener = true;
-                /** Always restart home (XY), when opening QR activity */
+                // Always restart home (XY), when opening QR activity.
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
-                /** Go to barcode activity */
+                // Start barcode acticity
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setComponent(new ComponentName("com.google.android.gms.samples.vision.barcodereader", "com.google.android.gms.samples.vision.barcodereader.BarcodeCaptureActivity"));
                 startActivity(intent);
-            } else if (command.equals("listener") && target.equals("battery") && action.equals("status")){
-                int batteryPercentage = getBatteryPercentage();
-                if (batteryPercentage < 90){
-                    publishMessage(Initializer.MACROS_TOPIC, Initializer.ACTIVATE_CHARGE);
-                }
-                else {
-                    publishMessage(Initializer.MACROS_TOPIC, Initializer.DEACTIVATE_CHARGE);
-                }
             } else {
 
             }
@@ -438,49 +412,6 @@ public class CreatePatient extends Activity {
     public String[] decodeMessage(String pattern){
         String[] messages = pattern.split(";");
         return messages;
-    }
-
-    /**
-     * Starts a background thread and its {@link Handler}.
-     */
-    public void startBackgroundThread() {
-        /** Camera Thread */
-        mBackgroundThread = new HandlerThread("CameraBackground");
-        mBackgroundThread.start();
-        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
-        myRunnable = new Runnable() {
-            @Override
-            public void run() {
-                MQTTUtils mqttUtil = new MQTTUtils();
-                mBackgroundHandler.postDelayed(myRunnable, 10000);
-            }
-        };
-        mBackgroundHandler.post(myRunnable);
-    }
-
-    /**
-     * Stops the background thread and its {@link Handler}.
-     */
-    public void stopBackgroundThread() {
-        /** Camera Thread */
-        mBackgroundThread.quitSafely();
-        try {
-            mBackgroundThread.join();
-            mBackgroundThread = null;
-            mBackgroundHandler = null;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /** Check battery status */
-    public int getBatteryPercentage() {
-        IntentFilter iFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        Intent batteryStatus = registerReceiver(null, iFilter);
-        int level = batteryStatus != null ? batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) : -1;
-        int scale = batteryStatus != null ? batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1) : -1;
-        float batteryPct = level / (float) scale;
-        return (int) (batteryPct * 100);
     }
 
 }

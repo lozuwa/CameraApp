@@ -577,7 +577,9 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
                 /** Create file */
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 //String path = getActivity().getExternalFilesDir(null) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
-                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+                        + File.separator + FOLDER_NAME + File.separator + IMG_NAME
+                        + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
                 //Log.i(TAG, path);

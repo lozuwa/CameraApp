@@ -70,14 +70,13 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
                     // Add the data to the String list
                     for (Folders fold: folders){
                         String toString = String.valueOf(fold.getId())
-                                + ", " + String.valueOf(fold.getfolderName())
-                                + ", " + String.valueOf(fold.getCompleted());
+                                + ", " + String.valueOf(fold.getfolderName());
                         list.add(toString);
-                        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DBManager.this,
-                        android.R.layout.simple_spinner_item, list);
-                        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        dataSpinner.setAdapter(dataAdapter);
                     }
+                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DBManager.this,
+                            android.R.layout.simple_spinner_item, list);
+                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    dataSpinner.setAdapter(dataAdapter);
                 } else if (selectedTable.equals("images")){
                     // Get the images
                     List <Images> imgs = clientsDB.readAllImages();
@@ -88,11 +87,11 @@ public class DBManager extends Activity implements AdapterView.OnItemSelectedLis
                         String toString = img.getId() + "," + img.getImageName().split("ple")[0]
                                 + "," + img.getFolderName();
                         list.add(toString);
-                        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DBManager.this,
-                                android.R.layout.simple_spinner_item, list);
-                        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        dataSpinner.setAdapter(dataAdapter);
                     }
+                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DBManager.this,
+                            android.R.layout.simple_spinner_item, list);
+                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    dataSpinner.setAdapter(dataAdapter);
                 } else{
                     // Do nothing
                 }

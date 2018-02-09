@@ -99,7 +99,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
     /**
      * Tag for the {@link Log}.
      */
-    private static final String TAG = "RecoverAutomaticServiceFragment";
+    private static final String TAG = "RecoverAutSerFragment";
 
     /**
      * Camera state: Showing camera preview.
@@ -420,9 +420,9 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         // Clients database
         clientsDB = new ClientsDatabaseHandler(getActivity().getApplicationContext());
         // Query info from the database
-        Cursor resultSet = mydatabase.rawQuery("Select * from pfmDb", null);
-        resultSet.moveToFirst();
-        FOLDER_NAME = resultSet.getString(0);
+        Cursor cursor = mydatabase.rawQuery("Select * from pfmDb", null);
+        cursor.moveToFirst();
+        FOLDER_NAME = cursor.getString(0);
         // UI elements
         //view.findViewById(R.id.info).setOnClickListener(this);
         text = (TextView) getView().findViewById(R.id.text);
@@ -442,6 +442,9 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
                 // Move to the CreatePatient activity
                 Intent intent = new Intent(getActivity(), UploadDebug.class);
+                //Bundle bundle = new Bundle();
+                //bundle.putString("folderName", FOLDER_NAME);
+                intent.putExtra("folderName", FOLDER_NAME);
                 startActivity(intent);
             }
         });
@@ -454,7 +457,6 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
 
     @Override
     public void onStart() {
-        //
         super.onStart();
     }
 

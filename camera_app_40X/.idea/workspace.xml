@@ -10,17 +10,30 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="UPLOAD" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="UPLOAD_DEBUG" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="184" />
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="148" />
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" line="292" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="258" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="154" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" line="285" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="212" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ad8b3f5-7da3-4897-8723-1a2760c86295" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/closed_door.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_arrow_back_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_home_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_open_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_play_arrow_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/icon_human.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/icon_microscope.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/icon_robot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/larvae.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/lock_selector.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/open_door.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -30,11 +43,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Application.iml" afterPath="$PROJECT_DIR$/Application/Application.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml" />
     </list>
     <ignored path="TakePictures.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,31 +88,80 @@
     <favorites_list name="TakePictures" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4668275">
+    <splitter split-orientation="horizontal" split-proportion="0.56441325">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="UploadDebug.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1160">
-                  <caret line="138" column="53" lean-forward="true" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
+                <state relative-caret-position="300">
+                  <caret line="221" column="13" lean-forward="true" selection-start-line="221" selection-start-column="13" selection-end-line="221" selection-end-column="13" />
                   <folding>
-                    <element signature="e#4818#5065#0" expanded="true" />
-                    <element signature="e#5064#5065#0" expanded="true" />
-                    <element signature="e#5088#6044#0" expanded="true" />
-                    <element signature="e#6043#6044#0" expanded="true" />
-                    <element signature="method#readFolders#0;class#UploadDebug#0" expanded="false" />
+                    <element signature="e#2877#3113#0" expanded="true" />
+                    <element signature="e#3112#3113#0" expanded="true" />
+                    <element signature="e#3162#4044#0" expanded="true" />
+                    <element signature="e#4043#4044#0" expanded="true" />
+                    <element signature="method#uploadImage#0;class#UploadDebug#0" expanded="false" />
+                    <element signature="e#4905#5152#0" expanded="true" />
+                    <element signature="e#5151#5152#0" expanded="true" />
+                    <element signature="e#5175#6131#0" expanded="true" />
+                    <element signature="e#6130#6131#0" expanded="true" />
+                    <element signature="e#6943#7191#0" expanded="true" />
+                    <element signature="e#7190#7191#0" expanded="true" />
+                    <element signature="e#7214#9109#0" expanded="true" />
+                    <element signature="e#9108#9109#0" expanded="true" />
+                    <element signature="e#9133#9611#0" expanded="true" />
+                    <element signature="e#9610#9611#0" expanded="true" />
+                    <element signature="e#9633#9857#0" expanded="true" />
+                    <element signature="e#9967#9976#0" expanded="true" />
+                    <element signature="e#10615#11629#0" expanded="true" />
+                    <element signature="e#11628#11629#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Images.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Images.java">
+          <file leaf-file-name="RecoverAutomaticServiceFragment.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-                  <folding />
+                <state relative-caret-position="409">
+                  <caret line="446" column="59" lean-forward="false" selection-start-line="446" selection-start-column="59" selection-end-line="446" selection-end-column="59" />
+                  <folding>
+                    <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#4681:5467" expanded="false" />
+                    <element signature="method#onSurfaceTextureDestroyed#0;class#4681:5467" expanded="false" />
+                    <element signature="class#6204:7124" expanded="false" />
+                    <element signature="class#8900:10280" expanded="false" />
+                    <element signature="method#process#0;class#8900:10280" expanded="false" />
+                    <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="e#15709#16565#0" expanded="true" />
+                    <element signature="e#16564#16565#0" expanded="true" />
+                    <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="e#16752#16753#0" expanded="true" />
+                    <element signature="e#16783#16784#0" expanded="true" />
+                    <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -104,53 +170,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="ClientsDatabaseHandler.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#onUpgrade#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#createFolder#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readFolderById#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readFolderByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readAllFolders#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#updateFolder#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#dropFoldersTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#createImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readAllImages#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readImageById#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readImageByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readImagesByFolderName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#readColumnsImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#updateImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                    <element signature="method#dropImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#5294#5480#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="activity_dbmanager.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml">
+          <file leaf-file-name="activity_upload_debug.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml">
               <provider editor-type-id="android-designer2">
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
-                  <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="46" />
+                <state relative-caret-position="520">
+                  <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -171,7 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getBatteryPercentage()</find>
       <find>EXTRACTED_FOLDER_NAME</find>
       <find>automaticAnalisisButton.setEnabled</find>
       <find>automaticAnalisisButton</find>
@@ -198,6 +224,10 @@
       <find>dbManagerButton</find>
       <find>GLOBAL_CURRENT_IMAGE_NAME</find>
       <find>Log.i</find>
+      <find>'&quot;</find>
+      <find>showT</find>
+      <find>UploadDe</find>
+      <find>intent.put</find>
     </findStrings>
     <replaceStrings>
       <replace>folderName</replace>
@@ -2022,8 +2052,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/PrepareAndLoadSampleAutomatic.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/CameraActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_camera2_basic.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml" />
@@ -2060,19 +2088,21 @@
         <option value="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/values/values.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/MainActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Utils/MQTTUtils.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/Application/build.gradle" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
         <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_settings_black_24dp.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" />
       </list>
     </option>
   </component>
@@ -2100,8 +2130,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2173,6 +2205,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camera_app_40X" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camera_app_40X" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camera_app_40X" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camera_app_40X" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout-land" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2480,12 +2572,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../barcode_reader" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi" />
     <property name="device.picker.selection" value="420092fb9b3f546b" />
     <property name="android.project.structure.last.selected" value="Application" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -2493,31 +2583,36 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1516748752563" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
+    <property name="VectorAssetImportPath" value="$PROJECT_DIR$/../.." />
+    <property name="android.profiler.active" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.android.camera2basic.UI" />
-      <recent name="com.example.android.camera2basic.Camera" />
-      <recent name="com.example.android.camera2basic.Databases.Users" />
-      <recent name="com.example.android.camera2basic.Databases" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="com.example.android.camera2basic.UI" />
-      <recent name="com.example.android.camera2basic.Debug" />
-      <recent name="com.example.android.camera2basic" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.android.camera2basic" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Application" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\cameraApp\TakePictures\Application\src\main\res\drawable-hdpi" />
       <recent name="$PROJECT_DIR$/Application/src/main/res/raw" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\raw" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\drawable-hdpi" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.example.android.camera2basic.UI" />
+      <recent name="com.example.android.camera2basic.Debug" />
+      <recent name="com.example.android.camera2basic" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.android.camera2basic.UI" />
+      <recent name="com.example.android.camera2basic.Camera" />
+      <recent name="com.example.android.camera2basic.Databases.Users" />
+      <recent name="com.example.android.camera2basic.Databases" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.android.camera2basic" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2603,7 +2698,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518122242743" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518216392100" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2651,7 +2746,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518122242743" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518216392100" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2834,7 +2929,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518122242743" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518216392100" />
       </method>
     </configuration>
     <list size="1">
@@ -2888,39 +2983,39 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16805845" sideWeight="0.54236007" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37265137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8949212" sideWeight="0.46965098" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41858038" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16805845" sideWeight="0.54236007" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8949212" sideWeight="0.46965098" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2803838" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22964509" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08347153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13322277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15762004" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22354949" sideWeight="0.530349" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22354949" sideWeight="0.530349" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2941,39 +3036,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4700">
-          <caret line="272" column="16" lean-forward="false" selection-start-line="272" selection-start-column="16" selection-end-line="272" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#getBatteryPercentage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1518110527018" expanded="true" signature="3900:3929" ph="..." />
-            <marker date="1518110527018" expanded="true" signature="3900:3942" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2982,20 +3049,17 @@
         <state relative-caret-position="9620">
           <caret line="551" column="18" lean-forward="false" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4691:5477" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4691:5477" expanded="false" />
-            <element signature="class#6214:7134" expanded="false" />
-            <element signature="class#8910:10290" expanded="false" />
-            <element signature="method#process#0;class#8910:10290" expanded="false" />
+            <element signature="class#4681:5467" expanded="false" />
+            <element signature="method#onSurfaceTextureDestroyed#0;class#4681:5467" expanded="false" />
+            <element signature="class#6204:7124" expanded="false" />
+            <element signature="class#8900:10280" expanded="false" />
+            <element signature="method#process#0;class#8900:10280" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#17715#17716#0" expanded="false" />
-            <element signature="e#17748#17749#0" expanded="false" />
             <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3008,115 +3072,12 @@
             <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#38001#38002#0" expanded="false" />
-            <element signature="e#38038#38039#0" expanded="false" />
             <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#46632#46633#0" expanded="false" />
-            <element signature="e#46729#46730#0" expanded="false" />
-            <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/OnSwipeTouchListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10480">
-          <caret line="597" column="0" lean-forward="false" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4700">
-          <caret line="272" column="16" lean-forward="true" selection-start-line="272" selection-start-column="16" selection-end-line="272" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#getBatteryPercentage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1518110527018" expanded="true" signature="3900:3929" ph="..." />
-            <marker date="1518110527018" expanded="true" signature="3900:3942" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9620">
-          <caret line="551" column="18" lean-forward="false" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4691:5477" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4691:5477" expanded="false" />
-            <element signature="class#6214:7134" expanded="false" />
-            <element signature="class#8910:10290" expanded="false" />
-            <element signature="method#process#0;class#8910:10290" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#17715#17716#0" expanded="false" />
-            <element signature="e#17748#17749#0" expanded="false" />
-            <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#38001#38002#0" expanded="false" />
-            <element signature="e#38038#38039#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#46632#46633#0" expanded="false" />
-            <element signature="e#46729#46730#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
           </folding>
         </state>
@@ -3142,14 +3103,11 @@
         <state relative-caret-position="4680">
           <caret line="271" column="37" lean-forward="true" selection-start-line="271" selection-start-column="37" selection-end-line="271" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#getBatteryPercentage#0;class#CreatePatient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3166,10 +3124,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1518110527018" expanded="true" signature="3900:3929" ph="..." />
-            <marker date="1518110527018" expanded="true" signature="3900:3942" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3178,14 +3133,11 @@
         <state relative-caret-position="3000">
           <caret line="187" column="145" lean-forward="false" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="145" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
             <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#getBatteryPercentage#0;class#CreatePatient#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3203,20 +3155,17 @@
         <state relative-caret-position="9620">
           <caret line="551" column="18" lean-forward="false" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4691:5477" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4691:5477" expanded="false" />
-            <element signature="class#6214:7134" expanded="false" />
-            <element signature="class#8910:10290" expanded="false" />
-            <element signature="method#process#0;class#8910:10290" expanded="false" />
+            <element signature="class#4681:5467" expanded="false" />
+            <element signature="method#onSurfaceTextureDestroyed#0;class#4681:5467" expanded="false" />
+            <element signature="class#6204:7124" expanded="false" />
+            <element signature="class#8900:10280" expanded="false" />
+            <element signature="method#process#0;class#8900:10280" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#17715#17716#0" expanded="false" />
-            <element signature="e#17748#17749#0" expanded="false" />
             <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3229,17 +3178,12 @@
             <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#38001#38002#0" expanded="false" />
-            <element signature="e#38038#38039#0" expanded="false" />
             <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ImageSaver#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#46632#46633#0" expanded="false" />
-            <element signature="e#46729#46730#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
           </folding>
         </state>
@@ -3281,14 +3225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10480">
-          <caret line="597" column="0" lean-forward="false" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3345,26 +3281,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Images.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2180">
-          <caret line="121" column="25" lean-forward="false" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="560">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <marker date="1518110527018" expanded="true" signature="3900:3929" ph="..." />
-            <marker date="1518110527018" expanded="true" signature="3900:3942" ph="..." />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/material_showcase_button_bg.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_open_black_24dp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_black_24dp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_list.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_action_info.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/tile.9.png">
+      <provider editor-type-id="images">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="ninepatcheditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/open_door.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_settings_black_24dp.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
@@ -3372,60 +3368,16 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="131" column="54" lean-forward="true" selection-start-line="131" selection-start-column="54" selection-end-line="131" selection-end-column="54" />
+        <state relative-caret-position="340">
+          <caret line="103" column="53" lean-forward="false" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2440">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#getBatteryPercentage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Service/UploadImages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Images.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="-660">
+          <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -3441,30 +3393,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Service/UploadImages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
+        <state relative-caret-position="620">
+          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="572" column="27" lean-forward="true" selection-start-line="572" selection-start-column="27" selection-end-line="572" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="280" column="29" lean-forward="false" selection-start-line="280" selection-start-column="29" selection-end-line="280" selection-end-column="29" />
           <folding>
-            <element signature="e#5294#5480#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#createImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#readAllImages#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#readImageById#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#readImageByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="e#9587#9595#0" expanded="true" />
+            <element signature="method#readColumnsImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#deleteImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#updateImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="method#dropImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="95" column="50" lean-forward="true" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
+          <folding>
+            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="548" column="23" lean-forward="false" selection-start-line="548" selection-start-column="18" selection-end-line="548" selection-end-column="23" />
+        <state relative-caret-position="409">
+          <caret line="446" column="59" lean-forward="false" selection-start-line="446" selection-start-column="59" selection-end-line="446" selection-end-column="59" />
           <folding>
             <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4691:5477" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4691:5477" expanded="false" />
-            <element signature="class#6214:7134" expanded="false" />
-            <element signature="class#8910:10290" expanded="false" />
-            <element signature="method#process#0;class#8910:10290" expanded="false" />
+            <element signature="class#4681:5467" expanded="false" />
+            <element signature="method#onSurfaceTextureDestroyed#0;class#4681:5467" expanded="false" />
+            <element signature="class#6204:7124" expanded="false" />
+            <element signature="class#8900:10280" expanded="false" />
+            <element signature="method#process#0;class#8900:10280" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#15709#16565#0" expanded="true" />
+            <element signature="e#16564#16565#0" expanded="true" />
             <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+            <element signature="e#16752#16753#0" expanded="true" />
+            <element signature="e#16783#16784#0" expanded="true" />
             <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3492,39 +3506,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="138" column="53" lean-forward="true" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
+        <state relative-caret-position="300">
+          <caret line="221" column="13" lean-forward="true" selection-start-line="221" selection-start-column="13" selection-end-line="221" selection-end-column="13" />
           <folding>
-            <element signature="e#4818#5065#0" expanded="true" />
-            <element signature="e#5064#5065#0" expanded="true" />
-            <element signature="e#5088#6044#0" expanded="true" />
-            <element signature="e#6043#6044#0" expanded="true" />
-            <element signature="method#readFolders#0;class#UploadDebug#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onUpgrade#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#createFolder#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readFolderById#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readFolderByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readAllFolders#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#updateFolder#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#dropFoldersTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#createImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readAllImages#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readImageById#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readImageByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readImagesByFolderName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#readColumnsImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#updateImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="method#dropImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
+            <element signature="e#2877#3113#0" expanded="true" />
+            <element signature="e#3112#3113#0" expanded="true" />
+            <element signature="e#3162#4044#0" expanded="true" />
+            <element signature="e#4043#4044#0" expanded="true" />
+            <element signature="method#uploadImage#0;class#UploadDebug#0" expanded="false" />
+            <element signature="e#4905#5152#0" expanded="true" />
+            <element signature="e#5151#5152#0" expanded="true" />
+            <element signature="e#5175#6131#0" expanded="true" />
+            <element signature="e#6130#6131#0" expanded="true" />
+            <element signature="e#6943#7191#0" expanded="true" />
+            <element signature="e#7190#7191#0" expanded="true" />
+            <element signature="e#7214#9109#0" expanded="true" />
+            <element signature="e#9108#9109#0" expanded="true" />
+            <element signature="e#9133#9611#0" expanded="true" />
+            <element signature="e#9610#9611#0" expanded="true" />
+            <element signature="e#9633#9857#0" expanded="true" />
+            <element signature="e#9967#9976#0" expanded="true" />
+            <element signature="e#10615#11629#0" expanded="true" />
+            <element signature="e#11628#11629#0" expanded="true" />
           </folding>
         </state>
       </provider>
