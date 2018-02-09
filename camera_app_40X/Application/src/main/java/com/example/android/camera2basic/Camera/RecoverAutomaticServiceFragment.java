@@ -54,6 +54,7 @@ import com.example.android.camera2basic.Databases.Clients.ClientsDatabaseHandler
 import com.example.android.camera2basic.Databases.Clients.Images;
 import com.example.android.camera2basic.Databases.Users.User;
 import com.example.android.camera2basic.Debug.UploadDebug;
+import com.example.android.camera2basic.Firebase.UploadImages;
 import com.example.android.camera2basic.UI.CreatePatient;
 import com.example.android.camera2basic.Initializer;
 import com.example.android.camera2basic.R;
@@ -438,10 +439,11 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
                 mediaPlayer.release();
                 /**
                  * Make sure to restart the variables. So we trigger twice this message.
-                 * This second message works for the listener script. */
+                 * This second message works for the listener script.
+                 * */
                 publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
                 // Move to the CreatePatient activity
-                Intent intent = new Intent(getActivity(), UploadDebug.class);
+                Intent intent = new Intent(getActivity(), UploadImages.class);
                 //Bundle bundle = new Bundle();
                 //bundle.putString("folderName", FOLDER_NAME);
                 intent.putExtra("folderName", FOLDER_NAME);
@@ -522,52 +524,53 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
 
         @Override
         public void onMessageArrived(Context context, String topic, byte[] payload) {
-            /** Feedback */
+            // Feedback
             //showToast(topic);
             Log.e(TAG, "New message on " + topic + ":  " + new String(payload));
-            /** Receive messages */
-            /** Parse string */
+            // Parse string
             String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
             String target = paramsPayload[1];
             String action = paramsPayload[2];
             String specific = paramsPayload[3];
             String message = paramsPayload[4];
-            /** Different modes have different behavior */
+            // Different modes have different behavior
             if (command.equals("takePicture")){
                 IMG_NAME = message;
-                /** Create file */
+                // Create file
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
                 //String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 GLOBAL_CURRENT_IMAGE_NAME = IMG_NAME + "_" + timeStamp
                         + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
                         + File.separator + FOLDER_NAME + File.separator + GLOBAL_CURRENT_IMAGE_NAME;
-                /** Extract image number */
+                // Extract image number
                 String[] messageSplit = message.split("ple");
                 text.setText(FOLDER_NAME + "\n" + String.valueOf(messageSplit[1]) + "/700");
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
                 //Log.i(TAG, path);
-                /** Take picture */
+                // Take picture
                 takePicture();
-                /** Display result */
+                // Display result
                 //showToast(path);
-            } else if (command.equals("exit") && target.equals("AutomaticController") && action.equals("CreatePatient")) {
-                /** Clean DB */
+            } else if (command.equals("exit") && target.equals("AutomaticController")
+                    && action.equals("CreatePatient")) {
+                // Clean db
                 mydatabase.execSQL("DROP TABLE IF EXISTS " + User.TABLE_NAME);
                 mydatabase.close();
-                /** Go home */
+                // Go home
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
-                /** Play sound */
+                // Play sound
                 mediaPlayer.start();
             }
-            /** Service (autofocus) */
-            //requestService;autofocus;AutomaticController;None;None
-            else if (command.equals("requestService") && target.equals("autofocus") && action.equals("AutomaticController")){
+            // Service autofocus
+            else if (command.equals("requestService") && target.equals("autofocus") &&
+                    action.equals("AutomaticController")){
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 //intent.setComponent(new ComponentName("pfm.improccameraautofocus", "pfm.improccameraautofocus.AutofocusActivity"));
-                intent.setComponent(new ComponentName("com.example.root.autofocus_app", "com.example.root.autofocus_app.AutofocusActivity"));
+                intent.setComponent(new ComponentName("com.example.root.autofocus_app",
+                        "com.example.root.autofocus_app.AutofocusActivity"));
                 startActivity(intent);
             } else {
 
@@ -1008,13 +1011,9 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
      * Saves a JPEG {@link Image} into the specified {@link File}.
      */
     private class ImageSaver implements Runnable {
-        /**
-         * The JPEG image
-         */
+        // The jpec image
         private final Image mImage;
-        /**
-         * The file we save the image into.
-         */
+        // The file where we save the image
         private final File mFile;
 
         public ImageSaver(Image image, File file) {

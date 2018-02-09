@@ -8,7 +8,7 @@ import android.util.Log;
  * Created by root on 2/5/18.
  */
 
-public class UploadImages extends JobService {
+public class UploadClientsBackground extends JobService {
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
         return false;

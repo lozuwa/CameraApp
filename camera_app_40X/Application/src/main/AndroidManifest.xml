@@ -80,7 +80,7 @@
         </activity>
 
         <!-- <service -->
-        <!-- android:name=".Service.UploadImages" -->
+        <!-- android:name=".ServUploadClientsBackgroundages" -->
         <!-- android:label="Upload images service" -->
         <!-- android:permission="android.permission.BIND_JOB_SERVICE"></service> -->
 

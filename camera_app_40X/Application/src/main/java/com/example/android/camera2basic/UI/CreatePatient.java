@@ -199,14 +199,12 @@ public class CreatePatient extends Activity {
     protected void onResume() {
         super.onResume();
         receiver.register(this);
-//        startBackgroundThread();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         receiver.unregister(this);
-//        stopBackgroundThread();
     }
 
     @Override
@@ -306,9 +304,9 @@ public class CreatePatient extends Activity {
      * First drops the table info just in case any unexpected crashes have happened, then creates a clean table
      * */
     public void initializeDb() {
-        /** Clean table */
+        // Clean table
         mydatabase.execSQL("DROP TABLE IF EXISTS " + User.TABLE_NAME);
-        /** Create table */
+        // Create table again
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS " + User.TABLE_NAME + "(" + User.COLUMN_NAME_TITLE + " VARCHAR);");
     }
 
@@ -353,12 +351,12 @@ public class CreatePatient extends Activity {
 
         @Override
         public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
-            Log.e(TAG, "Can't subscribe to " + topic, exception);
+            Log.i(TAG, "Can't subscribe to " + topic, exception);
         }
 
         @Override
         public void onPublishSuccessful(Context context, String requestId, String topic) {
-            Log.e(TAG, "Successfully published on topic: " + topic);
+            Log.i(TAG, "Successfully published on topic: " + topic);
         }
 
         @Override
@@ -390,13 +388,13 @@ public class CreatePatient extends Activity {
         @Override
         public void onConnectionSuccessful(Context context, String requestId) {
             showToast("Connected");
-            Log.e(TAG, "Connected!");
+            Log.i(TAG, "Connected!");
         }
 
         @Override
         public void onException(Context context, String requestId, Exception exception) {
             exception.printStackTrace();
-            Log.e(TAG, requestId + " exception");
+            Log.i(TAG, requestId + " exception");
         }
 
         @Override
