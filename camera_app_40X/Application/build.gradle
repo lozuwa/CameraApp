@@ -32,8 +32,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     // Igenius MQTT Service
     compile 'net.igenius:mqttservice:1.5'
-    // Showcase
-    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
     // firebase auth
     compile 'com.google.firebase:firebase-auth:11.8.0'
     // firebase storage

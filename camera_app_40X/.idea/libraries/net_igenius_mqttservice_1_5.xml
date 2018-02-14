@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="net.igenius:mqttservice-1.5">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/9479bef665477fa2f0930fe394543e61/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/9479bef665477fa2f0930fe394543e61/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/9479bef665477fa2f0930fe394543e61/jars/libs/org.eclipse.paho.client.mqttv3-1.1.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/a049e1c1055cc41e2cfc30e6c26510a8/jars/libs/org.eclipse.paho.client.mqttv3-1.1.0.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/a049e1c1055cc41e2cfc30e6c26510a8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/mqttservice-1.5.aar/a049e1c1055cc41e2cfc30e6c26510a8/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

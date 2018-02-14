@@ -2,7 +2,8 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_layer_1" >
 
     <com.example.android.camera2basic.Camera.AutoFitTextureView
         android:id="@+id/texture"
@@ -20,7 +21,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/texture"
-        android:background="@color/control_background">
+        android:background="@color/primaryLightColor">
 
         <Button
             android:id="@+id/exitButton"

@@ -56,7 +56,7 @@ public class UploadImages extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload_debug);
+        setContentView(R.layout.activity_upload_images);
         // Intent information
         FOLDER_NAME = getIntent().getStringExtra("folderName");
         Log.d(TAG, "Folder to read: " + FOLDER_NAME);

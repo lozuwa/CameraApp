@@ -14,7 +14,7 @@ public class ControllerAndCamera extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         /** Contents */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_controller_and_camera);
+        setContentView(R.layout.activities_require_camera);
         /** Orientation */
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         /** Keep screen on */

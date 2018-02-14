@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- Copyright 2015 The Android Open Source Project
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
 <resources>
     <!-- Default -->
-    <color name="control_background">#cc4285f4</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#0277bd</color>
+    <color name="colorPrimaryDark">#004c8c</color>
+    <color name="colorAccent">#00796b</color>
 
-    <!-- pfm design -->
-    <color name="screenBackground">#A5E9EB</color>
-    <color name="buttonBackground1">#4286A6</color>
-    <color name="buttonBackground2">#4286A6</color>
+    <!-- Primary option -->
+    <color name="primaryColor">#0277bd</color>
+    <color name="primaryLightColor">#58a5f0</color>
+    <color name="primaryDarkColor">#004c8c</color>
+    <color name="primaryTextColor">#ffffff</color>
 
+    <!-- Second option -->
+    <color name="primaryColor2">#085078</color>
+    <color name="primaryLightColor2">#85d8ce</color>
+    <color name="primaryDarkColor2">#ffffff</color>
+    <color name="primaryTextColor2">#ffffff</color>
 
+    <!-- Widgets colors -->
+    <color name="primaryButtonColor">#00796b</color>
+    <color name="separatorColor">#DADADA</color>
 
 </resources>

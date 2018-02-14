@@ -13,7 +13,7 @@ public class RecoverAutomaticService extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         /** Contents */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recover_automatic_service);
+        setContentView(R.layout.activities_require_camera);
         /** Keep screen on */
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         /** Start fragment */

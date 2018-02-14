@@ -15,18 +15,92 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="258" />
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="154" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="256" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="152" />
     <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" line="285" />
-    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="212" />
+    <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" line="210" />
     <bookmark url="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java" line="160" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ad8b3f5-7da3-4897-8723-1a2760c86295" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Service/UploadImages.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Service/UploadClientsBackground.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_github_amlcurran_showcaseview_library_5_4_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/camera.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/camerapressed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/curvebutton.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/curvebuttonpressed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_photo_camera_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_stop_black_24dp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/material_showcase_button_bg.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/move_field.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/rectangle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/spinnerseleccionar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_camera.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/view_custom_button.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_controller_and_camera.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activities_require_camera.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_images.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_animated_vector_drawable_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_animated_vector_drawable_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_appcompat_v7_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_appcompat_v7_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_cardview_v7_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_cardview_v7_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_1_0_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_compat_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_compat_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_ui_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_ui_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_utils_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_utils_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_fragment_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_fragment_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_media_compat_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_media_compat_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v13_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v13_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_25_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_25_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_vector_drawable_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_vector_drawable_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_base_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_base_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_base_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_base_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_basement_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_basement_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_basement_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_basement_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_tasks_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_tasks_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_tasks_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_gms_play_services_tasks_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_impl_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_impl_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_impl_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_impl_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_analytics_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_auth_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_auth_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_auth_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_auth_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_common_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_common_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_common_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_common_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_core_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_core_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_iid_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_iid_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_iid_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_iid_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_common_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_common_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_common_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_common_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_license_11_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_firebase_firebase_storage_license_11_8_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/net_igenius_mqttservice_1_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/net_igenius_mqttservice_1_5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Application.iml" afterPath="$PROJECT_DIR$/Application/Application.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/build.gradle" afterPath="$PROJECT_DIR$/Application/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCamera.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCamera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticService.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/Application/src/main/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="TakePictures.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,68 +137,67 @@
     <favorites_list name="TakePictures" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40114796">
+    <splitter split-orientation="horizontal" split-proportion="0.4659091">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UploadDebug.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java">
+          <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/LoginActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="214" column="32" lean-forward="true" selection-start-line="214" selection-start-column="32" selection-end-line="214" selection-end-column="32" />
+                <state relative-caret-position="425">
+                  <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
                   <folding>
-                    <element signature="e#2877#3113#0" expanded="true" />
-                    <element signature="e#3112#3113#0" expanded="true" />
-                    <element signature="e#3162#4044#0" expanded="true" />
-                    <element signature="e#4043#4044#0" expanded="true" />
-                    <element signature="method#uploadImage#0;class#UploadDebug#0" expanded="false" />
-                    <element signature="e#4905#5152#0" expanded="true" />
-                    <element signature="e#5151#5152#0" expanded="true" />
-                    <element signature="e#5175#6131#0" expanded="true" />
-                    <element signature="e#6130#6131#0" expanded="true" />
-                    <element signature="e#6943#7191#0" expanded="true" />
-                    <element signature="e#7190#7191#0" expanded="true" />
-                    <element signature="e#7214#9109#0" expanded="true" />
-                    <element signature="e#9108#9109#0" expanded="true" />
-                    <element signature="e#9133#9611#0" expanded="true" />
-                    <element signature="e#9610#9611#0" expanded="true" />
-                    <element signature="e#9633#9857#0" expanded="true" />
-                    <element signature="e#9856#9857#0" expanded="true" />
-                    <element signature="e#9967#9976#0" expanded="true" />
-                    <element signature="e#10615#11629#0" expanded="true" />
-                    <element signature="e#11628#11629#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UploadImages.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java">
+          <file leaf-file-name="RecoverAutomaticService.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+                <state relative-caret-position="187">
+                  <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RecoverAutomaticServiceFragment.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="737">
+                  <caret line="581" column="35" lean-forward="true" selection-start-line="581" selection-start-column="35" selection-end-line="581" selection-end-column="35" />
                   <folding>
-                    <element signature="e#2797#3033#0" expanded="true" />
-                    <element signature="e#3032#3033#0" expanded="true" />
-                    <element signature="e#3082#3965#0" expanded="true" />
-                    <element signature="e#3964#3965#0" expanded="true" />
-                    <element signature="e#4014#4015#0" expanded="true" />
-                    <element signature="e#4045#4046#0" expanded="true" />
-                    <element signature="method#uploadImage#0;class#UploadImages#0" expanded="false" />
-                    <element signature="e#4826#5073#0" expanded="true" />
-                    <element signature="e#5072#5073#0" expanded="true" />
-                    <element signature="e#5096#6052#0" expanded="true" />
-                    <element signature="e#6051#6052#0" expanded="true" />
-                    <element signature="e#6864#7112#0" expanded="true" />
-                    <element signature="e#7111#7112#0" expanded="true" />
-                    <element signature="e#7135#9031#0" expanded="true" />
-                    <element signature="e#9030#9031#0" expanded="true" />
-                    <element signature="e#9055#9533#0" expanded="true" />
-                    <element signature="e#9532#9533#0" expanded="true" />
-                    <element signature="e#9555#9779#0" expanded="true" />
-                    <element signature="e#9778#9779#0" expanded="true" />
-                    <element signature="e#9889#9898#0" expanded="true" />
-                    <element signature="e#10538#11553#0" expanded="true" />
-                    <element signature="e#11552#11553#0" expanded="true" />
+                    <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#4744:5530" expanded="false" />
+                    <element signature="method#onSurfaceTextureDestroyed#0;class#4744:5530" expanded="false" />
+                    <element signature="class#6267:7187" expanded="false" />
+                    <element signature="class#8963:10343" expanded="false" />
+                    <element signature="method#process#0;class#8963:10343" expanded="false" />
+                    <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
+                    <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -134,16 +207,16 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="activity_upload_debug.xml" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml">
-              <provider editor-type-id="android-designer2">
-                <state />
-              </provider>
+          <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_login.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="760">
-                  <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+                <state relative-caret-position="-493">
+                  <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
                   <folding />
                 </state>
+              </provider>
+              <provider editor-type-id="android-designer2">
+                <state />
               </provider>
             </entry>
           </file>
@@ -208,7 +281,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\HP\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -332,6 +405,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -711,6 +788,10 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1020,6 +1101,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Application" />
                 <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Application" />
+                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -1391,6 +1476,10 @@
                 <option name="description" value="Run unit tests for all variants." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Application" />
                 <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Application" />
+                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Application" />
@@ -1866,138 +1955,138 @@
               <option name="name" value="camera_app_40X" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/publish" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-jvm" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/antlr" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-android-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-cache-http" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/composite-builds" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-java" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/model-core" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/model-groovy" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-process-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-docs-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-messaging-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-core-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-launcher-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-core-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-runtime-api-info-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-resources-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-cli-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-builders-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/groovy-all-2.4.11.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-tooling-api-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-installation-beacon-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-wrapper-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-logging-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-base-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-groovy-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/wrapper" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-models-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-base-services-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-base-services-groovy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-compiler-plugin-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-cli-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-core-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-docs-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-installation-beacon-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-jvm-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-sftp-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-development-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-compiler-plugin-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-builders-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-models-0.10.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-launcher-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-logging-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-messaging-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-core-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-groovy-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-native-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-process-services-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-resources-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-runtime-api-info-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-tooling-api-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-wrapper-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/groovy-all-2.4.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-announce-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-antlr-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-cache-http-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-comparison-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-init-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-code-quality-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-workers-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-native-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-composite-builds-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-dependency-management-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-diagnostics-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ear-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-native-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-play-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ivy-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-jacoco-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-javascript-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-groovy-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-java-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-jvm-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-native-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-scala-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-maven-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-osgi-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-base-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-jvm-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-use-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-antlr-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-groovy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-base-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugins-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-announce-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-diagnostics-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-jacoco-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-composite-builds-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-signing-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-comparison-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-jvm-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ivy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ear-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-scala-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-init-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-play-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-http-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-jvm-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-play-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-tooling-api-builders-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-java-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-dependency-management-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-maven-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-test-kit-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-cache-http-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-development-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-use-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugins-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-publish-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-reporting-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-base-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-javascript-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-http-4.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-s3-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-sftp-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-scala-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-signing-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-test-kit-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-base-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-jvm-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-native-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-tooling-api-builders-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-workers-4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2017,20 +2106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticService.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/JustCamera.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera2BasicFragment.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/values/base-strings.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCamera.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/values-v21/base-colors.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_menu.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/ControllerAndCameraFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/broadcastReceiver/RestartService.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/service/UploadImages.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/RecoverAutomaticServiceFragment.java" />
@@ -2052,13 +2127,10 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/MainActivity.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Utils/MQTTUtils.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/Application/build.gradle" />
-        <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/Folders.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_settings_black_24dp.xml" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Clients/ClientsDatabaseHandler.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java" />
@@ -2068,14 +2140,31 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java" />
+        <option value="$PROJECT_DIR$/Application/build.gradle" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_camera.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticService.java" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activities_require_camera.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/values/base-strings.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -2095,10 +2184,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2462,6 +2549,10 @@
               <option name="myItemId" value="Databases" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2537,10 +2628,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application/src/main/res/drawable-hdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="420092fb9b3f546b" />
     <property name="android.project.structure.last.selected" value="Application" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -2553,11 +2646,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Dropbox\pfm\apps\camera_app\camera_app_40X\Application\src\main\res\drawable-hdpi" />
+      <recent name="C:\Users\HP\Dropbox\pfm\apps\camera_app\camera_app_40X\Application\src\main\res\anim" />
       <recent name="$PROJECT_DIR$/Application" />
       <recent name="C:\Users\HP\Dropbox\pfm\Apps\cameraApp\TakePictures\Application\src\main\res\drawable-hdpi" />
       <recent name="$PROJECT_DIR$/Application/src/main/res/raw" />
-      <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\raw" />
-      <recent name="C:\Users\HP\Dropbox\pfm\Apps\CameraApp\TakePictures\Application\src\main\res\drawable-hdpi" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.example.android.camera2basic.UI" />
@@ -2664,7 +2757,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518217253326" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518555990502" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2712,7 +2805,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518217253326" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518555990502" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2895,7 +2988,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518217253327" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518555990504" />
       </method>
     </configuration>
     <list size="1">
@@ -2946,7 +3039,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37265137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2959,7 +3052,7 @@
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16805845" sideWeight="0.54236007" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16703786" sideWeight="0.54236007" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2969,8 +3062,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13322277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15762004" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15565032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29175946" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -3002,242 +3095,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9620">
-          <caret line="551" column="18" lean-forward="false" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
-          <folding>
-            <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4744:5530" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4744:5530" expanded="false" />
-            <element signature="class#6267:7187" expanded="false" />
-            <element signature="class#8963:10343" expanded="false" />
-            <element signature="method#process#0;class#8963:10343" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/OnSwipeTouchListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10480">
-          <caret line="597" column="0" lean-forward="false" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="271" column="37" lean-forward="true" selection-start-line="271" selection-start-column="37" selection-end-line="271" selection-end-column="37" />
-          <folding>
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#createFolder#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#13706:16394" expanded="false" />
-            <element signature="method#onMessageArrived#0;class#13706:16394" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="187" column="145" lean-forward="false" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="145" />
-          <folding>
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#createFolder#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#13706:16394" expanded="false" />
-            <element signature="method#onMessageArrived#0;class#13706:16394" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCameraFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10480">
-          <caret line="597" column="0" lean-forward="false" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9620">
-          <caret line="551" column="18" lean-forward="false" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
-          <folding>
-            <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#4744:5530" expanded="false" />
-            <element signature="method#onSurfaceTextureDestroyed#0;class#4744:5530" expanded="false" />
-            <element signature="class#6267:7187" expanded="false" />
-            <element signature="class#8963:10343" expanded="false" />
-            <element signature="method#process#0;class#8963:10343" expanded="false" />
-            <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#decodeMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#requestCameraPermission#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#setUpCameraOutputs#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#openCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#closeCamera#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#startBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#stopBackgroundThread#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#createCameraPreviewSession#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#configureTransform#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#captureStillPicture#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#getOrientation#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#CompareSizesByArea#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ErrorDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/OnSwipeTouchListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/broadcastReceiver/RestartService.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Users.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Users/CRUD.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Users/Database.java" />
-    <entry file="android-dummy:///home/pfm/Documents/pfm/apps/camera_app/pfm_laboratory/camera_app_40X//Theme Editor" />
-    <entry file="file://$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/values/values.xml" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Databases/Users/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/MainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_main.xml" />
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/google-services.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Utils/MQTTUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -3258,101 +3115,25 @@
         <state relative-caret-position="560">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="false" />
+            <element signature="e#287#288#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/material_showcase_button_bg.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_open_black_24dp.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_black_24dp.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_open_black_24dp.png" />
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_lock_black_24dp.png" />
     <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_list.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_action_info.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/tile.9.png">
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/open_door.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_settings_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="103" column="53" lean-forward="false" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/open_door.png" />
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_settings_black_24dp.xml" />
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-660">
           <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -3378,45 +3159,16 @@
         <state relative-caret-position="504">
           <caret line="280" column="29" lean-forward="false" selection-start-line="280" selection-start-column="29" selection-end-line="280" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#createImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#readAllImages#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#readImageById#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#readImageByName#0;class#ClientsDatabaseHandler#0" expanded="false" />
-            <element signature="e#9587#9595#0" expanded="true" />
+            <element signature="e#9587#9595#0" expanded="false" />
             <element signature="method#readColumnsImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#deleteImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#updateImage#0;class#ClientsDatabaseHandler#0" expanded="false" />
             <element signature="method#dropImagesTable#0;class#ClientsDatabaseHandler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="214" column="32" lean-forward="true" selection-start-line="214" selection-start-column="32" selection-end-line="214" selection-end-column="32" />
-          <folding>
-            <element signature="e#2877#3113#0" expanded="true" />
-            <element signature="e#3112#3113#0" expanded="true" />
-            <element signature="e#3162#4044#0" expanded="true" />
-            <element signature="e#4043#4044#0" expanded="true" />
-            <element signature="method#uploadImage#0;class#UploadDebug#0" expanded="false" />
-            <element signature="e#4905#5152#0" expanded="true" />
-            <element signature="e#5151#5152#0" expanded="true" />
-            <element signature="e#5175#6131#0" expanded="true" />
-            <element signature="e#6130#6131#0" expanded="true" />
-            <element signature="e#6943#7191#0" expanded="true" />
-            <element signature="e#7190#7191#0" expanded="true" />
-            <element signature="e#7214#9109#0" expanded="true" />
-            <element signature="e#9108#9109#0" expanded="true" />
-            <element signature="e#9133#9611#0" expanded="true" />
-            <element signature="e#9610#9611#0" expanded="true" />
-            <element signature="e#9633#9857#0" expanded="true" />
-            <element signature="e#9856#9857#0" expanded="true" />
-            <element signature="e#9967#9976#0" expanded="true" />
-            <element signature="e#10615#11629#0" expanded="true" />
-            <element signature="e#11628#11629#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3429,9 +3181,347 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/tile.9.png">
+      <provider editor-type-id="images">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="ninepatcheditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/material_showcase_button_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/view_custom_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/curvebutton.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/move_field.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/rectangle.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/anim/anim_alpha.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/bg_layer_1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_photo_camera_black_24dp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_stop_black_24dp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/drawable-hdpi/ic_action_info.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="65" column="7" lean-forward="false" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+          <folding>
+            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#createFolder#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
+            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
+            <element signature="class#13706:16394" expanded="false" />
+            <element signature="method#onMessageArrived#0;class#13706:16394" expanded="false" />
+            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="method#uploadImage#0;class#UploadImages#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Debug/UploadDebug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="214" column="32" lean-forward="false" selection-start-line="214" selection-start-column="32" selection-end-line="214" selection-end-column="32" />
+          <folding>
+            <element signature="method#uploadImage#0;class#UploadDebug#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_recover_automatic_service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/ControllerAndCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_images.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_dbmanager.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="82" column="33" lean-forward="false" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_recover_automatic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout-land/fragment_controller_and_camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_recover_automatic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/fragment_controller_and_camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_create_patient.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activities_require_camera.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/base-strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Utils/UIUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Camera/RecoverAutomaticServiceFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1508">
+        <state relative-caret-position="737">
           <caret line="581" column="35" lean-forward="true" selection-start-line="581" selection-start-column="35" selection-end-line="581" selection-end-column="35" />
           <folding>
             <element signature="initializer##0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3442,11 +3532,7 @@
             <element signature="method#process#0;class#8963:10343" expanded="false" />
             <element signature="method#chooseOptimalSize#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#15772#16648#0" expanded="true" />
-            <element signature="e#16647#16648#0" expanded="true" />
             <element signature="method#onActivityCreated#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-            <element signature="e#16835#16836#0" expanded="true" />
-            <element signature="e#16866#16867#0" expanded="true" />
             <element signature="method#onResume#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onPause#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#isExternalStorageWritable#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
@@ -3468,65 +3554,6 @@
             <element signature="class#ConfirmationDialog#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#showToast#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
             <element signature="method#onClick#0;class#RecoverAutomaticServiceFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/UI/CreatePatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="315" column="0" lean-forward="false" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
-          <folding>
-            <element signature="method#grantPermissions#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#createFolder#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#initializeDb#0;class#CreatePatient#0" expanded="false" />
-            <element signature="method#publishMessage#0;class#CreatePatient#0" expanded="false" />
-            <element signature="class#13706:16394" expanded="false" />
-            <element signature="method#onMessageArrived#0;class#13706:16394" expanded="false" />
-            <element signature="method#decodeMessage#0;class#CreatePatient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_upload_debug.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/camera2basic/Firebase/UploadImages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
-          <folding>
-            <element signature="e#2797#3033#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3082#3965#0" expanded="true" />
-            <element signature="e#3964#3965#0" expanded="true" />
-            <element signature="e#4014#4015#0" expanded="true" />
-            <element signature="e#4045#4046#0" expanded="true" />
-            <element signature="method#uploadImage#0;class#UploadImages#0" expanded="false" />
-            <element signature="e#4826#5073#0" expanded="true" />
-            <element signature="e#5072#5073#0" expanded="true" />
-            <element signature="e#5096#6052#0" expanded="true" />
-            <element signature="e#6051#6052#0" expanded="true" />
-            <element signature="e#6864#7112#0" expanded="true" />
-            <element signature="e#7111#7112#0" expanded="true" />
-            <element signature="e#7135#9031#0" expanded="true" />
-            <element signature="e#9030#9031#0" expanded="true" />
-            <element signature="e#9055#9533#0" expanded="true" />
-            <element signature="e#9532#9533#0" expanded="true" />
-            <element signature="e#9555#9779#0" expanded="true" />
-            <element signature="e#9778#9779#0" expanded="true" />
-            <element signature="e#9889#9898#0" expanded="true" />
-            <element signature="e#10538#11553#0" expanded="true" />
-            <element signature="e#11552#11553#0" expanded="true" />
           </folding>
         </state>
       </provider>

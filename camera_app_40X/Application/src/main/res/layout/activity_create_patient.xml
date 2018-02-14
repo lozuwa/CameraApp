@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/screenBackground"
+    android:background="@drawable/bg_layer_1"
     tools:context="com.example.android.camera2basic.UI.CreatePatient" >
 
     <!-- Login progress -->
@@ -63,7 +63,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="101dp"
-                    android:background="@color/buttonBackground1"
+                    android:background="@color/primaryButtonColor"
                     android:text="@string/read_qr_code"
                     android:textStyle="bold"
                     app:layout_constraintRight_toRightOf="parent"
@@ -97,7 +97,7 @@
                     style="?android:textAppearanceSmall"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttonBackground1"
+                    android:background="@color/primaryButtonColor"
                     android:text="@string/manual_analysis"
                     android:textStyle="bold"
                     android:layout_marginTop="32dp"
@@ -110,7 +110,7 @@
                     style="?android:textAppearanceSmall"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttonBackground1"
+                    android:background="@color/primaryButtonColor"
                     android:text="@string/automatic_analysis"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
