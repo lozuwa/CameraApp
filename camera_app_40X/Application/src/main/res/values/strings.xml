@@ -15,9 +15,11 @@
 -->
 
 <resources>
-    <string name="take_picture">Take picture</string>
+    <!-- General purpose -->
+    <string name="original_app_name">Labomatic</string>
 
     <!-- App others -->
+    <string name="take_picture">Take picture</string>
     <string name="picture">Picture</string>
     <string name="description_info">Info</string>
     <string name="request_permission">This sample needs camera permission.</string>
@@ -44,10 +46,22 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="action_log_in">Log in</string>
+    <string name="error_not_valid_email">The username is not an email address</string>
     <string name="error_invalid_username">This username is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_invalid_password_empty">The password is empty</string>
+    <string name="error_invalid_password_short">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="report_problems">Report a problem</string>
+    <string name="info_sign_in">Not registered yet?</string>
+    <string name="title_activity_sign_in">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 
 </resources>

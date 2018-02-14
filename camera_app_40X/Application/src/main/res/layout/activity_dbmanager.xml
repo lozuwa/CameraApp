@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.camera2basic.UI.DBManager"
+    tools:context="com.example.android.labomatic.UI.DBManager"
     android:orientation="vertical">
 
 
@@ -63,52 +63,24 @@
         android:orientation="vertical"
         android:layout_below="@+id/linear_layout_1">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
-                android:id="@+id/read_all_values_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Read all"/>
 
             <Button
                 android:id="@+id/drop_table_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:text="Drop button" />
 
-            <Button
-                android:id="@+id/remove_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remove"/>
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Spinner
-                android:id="@+id/select_column_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </Spinner>
-            
-            <Spinner
-                android:id="@+id/select_class_column_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:layout_width="100dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_layout_3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -117,8 +89,12 @@
         <Spinner
             android:id="@+id/data_in_table_spinner"
             android:layout_width="250dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="92dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

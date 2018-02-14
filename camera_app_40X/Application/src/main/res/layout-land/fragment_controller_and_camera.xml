@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_layer_1" >
 
-    <com.example.android.camera2basic.Camera.AutoFitTextureView
+    <com.example.android.labomatic.Camera.AutoFitTextureView
         android:id="@+id/texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

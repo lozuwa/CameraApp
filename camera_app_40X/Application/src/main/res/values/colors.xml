@@ -19,6 +19,7 @@
 
     <!-- Widgets colors -->
     <color name="primaryButtonColor">#00796b</color>
+    <color name="secondaryButtonColor">#ffff72</color>
     <color name="separatorColor">#DADADA</color>
 
 </resources>
