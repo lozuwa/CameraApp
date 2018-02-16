@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/automatic_analysis_screen"
+        android:title="@string/automatic_screen_label"
+        android:icon="@drawable/ic_robot_black_24dp"
+        />
+
+    <item
+        android:id="@+id/manual_analysis_screen"
+        android:title="@string/manual_screen_label"
+        android:icon="@drawable/ic_person_black_24dp"
+        />
+
+    <item
+        android:id="@+id/settings_screen"
+        android:title="@string/settings_screen_label"
+        android:icon="@drawable/ic_settings_black_24dp"
+        />
+
+</menu>

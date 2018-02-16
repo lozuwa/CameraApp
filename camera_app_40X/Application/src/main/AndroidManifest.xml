@@ -1,24 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><!--
- Copyright 2014 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.labomatic">
+    package="ai.labomatic">
 
     <!-- Camera2 -->
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera2.full" />
@@ -44,21 +30,23 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- Job scheduler needs this -->
     <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> -->
+
     <application
-        android:name=".Initializer"
+        android:name="ai.labomatic.util.Initializer"
         android:allowBackup="true"
         android:label="@string/original_app_name"
         android:icon="@drawable/labomatic_icon"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".UI.LoginActivity">
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".UI.CreatePatient"
+            android:name=".ui.LabomaticCamera.CreatePatient"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.ALL_APPS" />
@@ -66,30 +54,36 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Camera.RecoverAutomaticService">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.DEFAULT" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".Camera.ControllerAndCamera">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.DEFAULT" />-->
+        <activity android:name=".ui.LabomaticCamera.RecoverAutomaticService">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <!-- <service -->
-        <!-- android:name=".ServUploadClientsBackgroundages" -->
-        <!-- android:label="Upload images service" -->
-        <!-- android:permission="android.permission.BIND_JOB_SERVICE"></service> -->
+        <activity android:name=".ui.LabomaticCamera.ControllerAndCamera">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
 
-        <activity android:name=".Debug.UploadDebug" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
-            android:name=".UI.DBManager"
-            android:label="@string/title_activity_dbmanager" />
+            android:name="ai.labomatic.ui.LabomaticCamera.DBManager"
+            android:label="DBManager" />
+
+        <activity
+            android:name="ai.labomatic.ui.BarcodeReader.BarcodeCaptureActivity"
+            android:label="BarcodeCapture">
+        </activity>
+
+        <activity
+            android:name="ai.labomatic.ui.SettingsActivity"
+            android:label="SettingsBarcode" />
+
     </application>
 
 </manifest>
