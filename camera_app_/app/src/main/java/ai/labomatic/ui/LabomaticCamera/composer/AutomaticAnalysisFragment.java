@@ -465,10 +465,8 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
     }
 
     /**
-     * The arrived messages follow a protocol defined as:
-     * TOPIC: /microscope
-     * MESSAGE:
-     *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
+     * MQTT receiver.
+     * The messages follow a protocol described in the documentation.
      * */
     private MQTTServiceReceiver receiver =
             new MQTTServiceReceiver() {
