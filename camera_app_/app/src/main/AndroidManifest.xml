@@ -46,7 +46,7 @@
 
         <activity android:name=".ui.NavigationMenu" />
 
-        <activity android:name=".ui.LabomaticCamera.AutomaticAnalysisActivity">
+        <activity android:name=".ui.LabomaticCamera.base.AutomaticAnalysisActivity">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -54,7 +54,7 @@
         </activity>
 
         <activity
-            android:name=".ui.LabomaticCamera.ManualAnalysisActivity"
+            android:name=".ui.LabomaticCamera.base.ManualAnalysisActivity"
             android:label="ManualAnalysis">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

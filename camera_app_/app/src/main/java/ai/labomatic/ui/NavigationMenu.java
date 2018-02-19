@@ -20,8 +20,8 @@ import android.widget.Toast;
 import ai.labomatic.R;
 import ai.labomatic.data.local.UsersDatabaseHandler;
 import ai.labomatic.data.model.User;
-import ai.labomatic.ui.LabomaticCamera.AutomaticAnalysisScreenFragment;
-import ai.labomatic.ui.LabomaticCamera.ManualAnalysisFragment;
+import ai.labomatic.ui.LabomaticCamera.base.AutomaticAnalysisScreenFragment;
+import ai.labomatic.ui.LabomaticCamera.base.ManualAnalysisFragment;
 import ai.labomatic.ui.Settings.SettingsFragment;
 
 public class NavigationMenu extends AppCompatActivity {

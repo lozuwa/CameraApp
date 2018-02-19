@@ -1,17 +1,8 @@
-/**
- * Log
- * 10/10/17 -> app crash on samsung devices has been fixed by:
- * closing the camera in the callback onSurfaceTextureViewDestroyed()
- mqtt reconnection thread now runs forever, there is no stopThread method called, it is not necessary
- * */
-
-package ai.labomatic.ui.LabomaticCamera;
+package ai.labomatic.ui.LabomaticCamera.composer;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
 //import android.app.Fragment;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.content.ComponentName;
 import android.content.Context;
@@ -33,8 +24,8 @@ import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
-import android.media.Image;
 import android.media.ImageReader;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -50,14 +41,16 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import ai.labomatic.data.local.SettingsDatabaseHandler;
 import ai.labomatic.data.model.Setting;
-import ai.labomatic.ui.NavigationMenu;
 import ai.labomatic.util.LabomaticCamera.AutoFitTextureView;
-import ai.labomatic.util.LabomaticCamera.OnSwipeTouchListener;
-
+import ai.labomatic.data.local.ClientsDatabaseHandler;
+import ai.labomatic.data.model.Image;
+import ai.labomatic.data.remote.UploadImages;
 import ai.labomatic.util.Initializer;
 import ai.labomatic.R;
 
@@ -79,16 +72,13 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-public class ManualAnalysisFragment extends Fragment implements View.OnClickListener,
-                                                        FragmentCompat.OnRequestPermissionsResultCallback {
+public class AutomaticAnalysisFragment extends Fragment implements View.OnClickListener,
+        FragmentCompat.OnRequestPermissionsResultCallback {
 
     /**
      * Conversion from screen rotation to JPEG orientation.
      */
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
-    private static final int REQUEST_CAMERA_PERMISSION = 1;
-    private static final String FRAGMENT_DIALOG = "dialog";
-
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
         ORIENTATIONS.append(Surface.ROTATION_90, 0);
@@ -99,7 +89,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     /**
      * Tag for the {@link Log}.
      */
-    private static final String TAG = "ContrAndCamFrag";
+    private static final String TAG = "RecoverAutSerFragment";
 
     /**
      * Camera state: Showing camera preview.
@@ -145,10 +135,8 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
 
         @Override
         public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {
-            /** Fix **/
             //Log.d(TAG, "TextureView.SurfaceTextureListener.onSurfaceTextureDestroyed called");
             closeCamera();
-            /*************/
             return true;
         }
 
@@ -238,12 +226,10 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
      */
     private final ImageReader.OnImageAvailableListener mOnImageAvailableListener
             = new ImageReader.OnImageAvailableListener() {
-
         @Override
         public void onImageAvailable(ImageReader reader) {
             mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
         }
-
     };
 
     /**
@@ -330,7 +316,8 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
      * @return The optimal {@code Size}, or an arbitrary one if none were big enough
      */
     private static Size chooseOptimalSize(Size[] choices, int textureViewWidth,
-                                          int textureViewHeight, int maxWidth, int maxHeight, Size aspectRatio) {
+                                          int textureViewHeight, int maxWidth,
+                                          int maxHeight, Size aspectRatio) {
 
         // Collect the supported resolutions that are at least as big as the preview Surface
         List<Size> bigEnough = new ArrayList<>();
@@ -357,114 +344,83 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
         } else if (notBigEnough.size() > 0) {
             return Collections.max(notBigEnough, new CompareSizesByArea());
         } else {
-            //Log.e(TAG, "Couldn't find any suitable preview size");
+            //Log.i(TAG, "Couldn't find any suitable preview size");
             return choices[0];
         }
     }
 
-    public static ManualAnalysisFragment newInstance() {
-        return new ManualAnalysisFragment();
+    public static AutomaticAnalysisFragment newInstance() {
+        return new AutomaticAnalysisFragment();
     }
 
-    // Image's variable to save
+    // File to save image
     private File mFile;
 
-    // Databases
-    public SettingsDatabaseHandler settingsDB;
-
-    // Folder name and image name
+    // Folder and image names
     public String FOLDER_NAME;
     public String IMG_NAME;
+    public String GLOBAL_CURRENT_IMAGE_NAME;
 
     // Image counter
     public int COUNTER_REMOTE_CONTROLLER = 0;
 
-    // Movement states
-    public boolean movingXRight = false;
-    public boolean movingXLeft = false;
-    public boolean movingYUp = false;
-    public boolean movingYDown = false;
-    public boolean blocked = false;
+    // Database
+    public ClientsDatabaseHandler clientsDB;
+    public SettingsDatabaseHandler settingsDB;
+
+    // Media player
+    public MediaPlayer mediaPlayer;
+
+    // UI elements
+    public TextView text;
+    public Button startButton;
+    public Button stopButton;
+
+    // Presenter class
+    //public AutomaticAnalysisFragmentPresenter automaticAnalysisFragmentPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_manual_analysis, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_recover_automatic, container, false);
     }
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        // Create presenter instance
+        //automaticAnalysisFragmentPresenter = new AutomaticAnalysisFragmentPresenter();
         // Databases
+        clientsDB = new ClientsDatabaseHandler(getActivity().getApplicationContext());
         settingsDB = new SettingsDatabaseHandler(getActivity().getApplicationContext());
         Setting setting = settingsDB.readSettingByName("tmpFolderName");
         FOLDER_NAME = setting.getValue();
         // UI elements
-        view.findViewById(R.id.info).setOnClickListener(this);
-        view.findViewById(R.id.exitButton).setOnClickListener(this);
-        view.findViewById(R.id.autofocusButton).setOnClickListener(this);
+        text = (TextView) view.findViewById(R.id.text);
+        startButton = (Button) view.findViewById(R.id.start_button);
+        stopButton = (Button) view.findViewById(R.id.stop_button);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-        mTextureView.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
-            public void onSwipeTop() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_START);
-                    movingYUp = true;
-                    blocked = true;
-                }
+        // Click listeneers
+        startButton.setOnClickListener(this);
+        stopButton.setOnClickListener(this);
+        // Media player
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.door);
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                // Stop media player
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                /**
+                 * Make sure to restart the variables. So we trigger twice this message.
+                 * This second message works for the listener script.
+                 * */
+                publishMessage(Initializer.CAMERA_APP_TOPIC,
+                        Initializer.EXIT_AUTOMATIC_CONTROLLER);
+                // Move to the CreatePatient activity
+                Intent intent = new Intent(getActivity(), UploadImages.class);
+                startActivity(intent);
             }
-            public void onSwipeBottom() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_START);
-                    movingYDown = true;
-                    blocked = true;
-                }
-            }
-            public void onSwipeRight() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_START);
-                    movingXRight = true;
-                    blocked = true;
-                }
-            }
-            public void onSwipeLeft() {
-                if (!blocked) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_START);
-                    movingXLeft = true;
-                    blocked = true;
-                }
-            }
-            public void onClick() {
-                if (movingYUp){
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_UP_PROCESS_END);
-                    movingYUp = false;
-                    blocked = false;
-                }
-                else if (movingYDown) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_Y_DOWN_PROCESS_END);
-                    movingYDown = false;
-                    blocked = false;
-                }
-                else if (movingXRight) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_RIGHT_PROCESS_END);
-                    movingXRight = false;
-                    blocked = false;
-                }
-                else if (movingXLeft) {
-                    publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.MOVE_X_LEFT_PROCESS_END);
-                    movingXLeft = false;
-                    blocked = false;
-                }
-            }
-
-            public void onDoubleClick() {
-            }
-
-            public void onLongClick() {
-            }
-
-
         });
     }
 
@@ -481,9 +437,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     @Override
     public void onResume(){
         super.onResume();
-        // Restart threads on resume
         startBackgroundThread();
-        // Register mqtt receiver
         receiver.register(getActivity());
         // When the screen is turned off and turned back on, the SurfaceTexture is already
         // available, and "onSurfaceTextureAvailable" will not be called. In that case, we can open
@@ -500,9 +454,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     @Override
     public void onPause(){
         super.onPause();
-        // Unregister mqtt receiver
         receiver.unregister(getActivity());
-        // Close camera and threads
         closeCamera();
         stopBackgroundThread();
     }
@@ -516,16 +468,16 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
      * The arrived messages follow a protocol defined as:
      * TOPIC: /microscope
      * MESSAGE:
-     *          - createFolder;FOLDER_NAME: The app must create a new folder to store new pictures
      *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
      * */
-    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
+    private MQTTServiceReceiver receiver =
+            new MQTTServiceReceiver() {
 
         private static final String TAG = "Receiver";
 
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            Log.i(TAG, "Subscribed to " + topic);
+            //MQTTServiceCommand.publish(context, "/cameraApp", payload);
         }
 
         @Override
@@ -540,8 +492,8 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
 
         @Override
         public void onMessageArrived(Context context, String topic, byte[] payload) {
-            //showToast(topic);
-            Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
+            // Feedback
+            Log.i(TAG, "New message on " + topic + ": " + new String(payload));
             // Parse string
             String[] paramsPayload = decodeMessage(new String(payload));
             String command = paramsPayload[0];
@@ -549,32 +501,33 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
             String action = paramsPayload[2];
             String specific = paramsPayload[3];
             String message = paramsPayload[4];
-            // Features
-            if (command.equals("takePictureRemoteController")) {
+            // Different modes have different behavior
+            if (command.equals("takePicture")){
                 IMG_NAME = message;
                 // Create file
                 String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
+                //String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + File.separator + FOLDER_NAME + File.separator + IMG_NAME + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                GLOBAL_CURRENT_IMAGE_NAME = IMG_NAME + "_" + timeStamp
+                        + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
-                        + File.separator + FOLDER_NAME + File.separator + IMG_NAME
-                        + "_" + timeStamp + String.valueOf(COUNTER_REMOTE_CONTROLLER) + ".jpg";
+                        + File.separator + FOLDER_NAME + File.separator + GLOBAL_CURRENT_IMAGE_NAME;
+                // Extract image number
+                String[] messageSplit = message.split("ple");
+                text.setText(FOLDER_NAME + "\n" + String.valueOf(messageSplit[1]) + "/700");
                 COUNTER_REMOTE_CONTROLLER++;
                 mFile = new File(path);
-                //Log.i(TAG, path);
                 // Take picture
                 takePicture();
-                // Display result
-                showToast(path);
-            } else if (command.equals("exit") && target.equals("ManualController") && action.equals("CreatePatient")) {
-                // Restart stage
+            } else if (command.equals("exit") && target.equals("AutomaticController")
+                    && action.equals("CreatePatient")) {
+                // Go home
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
-                // Go to menu screen
-                Intent intent = new Intent(getActivity(), NavigationMenu.class);
-                startActivity(intent);
+                // Play sound
+                mediaPlayer.start();
             }
-            /** Service (autofocus)
-             * "requestService;autofocus;ManualController;None;None"
-             * */
-            else if (command.equals("requestService") && target.equals("autofocus") && action.equals("ManualController")) {
+            // Service autofocus
+            else if (command.equals("requestService") && target.equals("autofocus") &&
+                    action.equals("AutomaticController")){
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setComponent(new ComponentName("com.example.root.autofocus_app",
                         "com.example.root.autofocus_app.AutofocusActivity"));
@@ -586,14 +539,13 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
 
         @Override
         public void onConnectionSuccessful(Context context, String requestId) {
-            showToast("Connected");
-            Log.e(TAG, "Connected!");
+            Log.i(TAG, "Connected!");
         }
 
         @Override
         public void onException(Context context, String requestId, Exception exception) {
             exception.printStackTrace();
-            Log.e(TAG, requestId + " exception");
+            Log.i(TAG, requestId + " exception");
         }
 
         @Override
@@ -602,28 +554,29 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
         }
     };
 
-    /** Unrolls a message
-     * @param pattern: input String
-     * return: a String vector with the message splitted
-     * */
-    public String[] decodeMessage(String pattern){
-       String[] messages = pattern.split(";");
-        return messages;
-    }
-
     /** Publish a message
      * @param topic: input String that defines the target topic of the mqtt client
      * @param message: input String that contains a message to be published
      * @return no return
      * */
     public void publishMessage(String topic, String message) {
+        final int qos = 2;
         byte[] encodedPayload = new byte[0];
         try {
             encodedPayload = message.getBytes("UTF-8");
-            MQTTServiceCommand.publish(getActivity(), topic, encodedPayload, 2);
+            MQTTServiceCommand.publish(getActivity(), topic, encodedPayload, qos);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
+
+    /** Unrolls a message
+     * @param pattern: input String
+     * return: a String vector with the message splitted
+     * */
+    public String[] decodeMessage(String pattern){
+        String[] messages = pattern.split(";");
+        return messages;
     }
 
     /**
@@ -680,7 +633,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                         }
                         break;
                     default:
-                        //Log.e(TAG, "Display rotation is invalid: " + displayRotation);
+                        //Log.i(TAG, "Display rotation is invalid: " + displayRotation);
                 }
 
                 Point displaySize = new Point();
@@ -738,12 +691,11 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     }
 
     /**
-     * Opens the camera specified by {@link ManualAnalysisFragment#mCameraId}.
+     * Opens the camera specified by {@link AutomaticAnalysisFragment#mCameraId}.
      */
     private void openCamera(int width, int height) {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            Log.e(TAG, "Camera permission has not been granted");
             return;
         }
         setUpCameraOutputs(width, height);
@@ -755,11 +707,13 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                 throw new RuntimeException("Time out waiting to lock camera opening.");
             }
             manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
+            /** Authenticate when camera has openned */
         } catch (CameraAccessException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             throw new RuntimeException("Interrupted while trying to lock camera opening.", e);
         }
+        publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
     }
 
     /**
@@ -791,7 +745,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
      * Starts a background thread and its {@link Handler}.
      */
     private void startBackgroundThread() {
-        // Camera thread
+        /** Camera Thread */
         mBackgroundThread = new HandlerThread("CameraBackground");
         mBackgroundThread.start();
         mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
@@ -801,7 +755,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
      * Stops the background thread and its {@link Handler}.
      */
     private void stopBackgroundThread() {
-        // Stop camera thread
+        /** Camera Thread */
         mBackgroundThread.quitSafely();
         try {
             mBackgroundThread.join();
@@ -939,7 +893,6 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
                     //showToast("Saved: " + mFile);
-                    //publishMessage(CAMERA_APP_TOPIC, "move;move");
                     //Log.i(TAG, "Saved: " + mFile.toString());
                     try {
                         mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
@@ -949,6 +902,8 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
+                    /** Keep moving microscope */
+                    //publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 }
             };
             mCaptureSession.stopRepeating();
@@ -973,15 +928,15 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     }
 
     /**
-     * Saves a JPEG {@link Image} into the specified {@link File}.
+     * Saves a JPEG {@link android.media.Image} into the specified {@link File}.
      */
-    private static class ImageSaver implements Runnable {
-        // Jpeg image
-        private final Image mImage;
-        // The file we save the image into
+    private class ImageSaver implements Runnable {
+        // The jpec image
+        private final android.media.Image mImage;
+        // The file where we save the image
         private final File mFile;
 
-        public ImageSaver(Image image, File file) {
+        public ImageSaver(android.media.Image image, File file) {
             mImage = image;
             mFile = file;
         }
@@ -999,6 +954,15 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                 e.printStackTrace();
             } finally {
                 mImage.close();
+                // The image is saved, so we can move on
+                // First annotate create the image in the db
+                Image image = new Image();
+                Log.d(TAG, "Writing image to db: " + GLOBAL_CURRENT_IMAGE_NAME);
+                image.setImageName(GLOBAL_CURRENT_IMAGE_NAME);
+                image.setFolderName(FOLDER_NAME);
+                clientsDB.createImage(image);
+                // Then, command the microscope to keep moving
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.KEEP_MOVING_MICROSCOPE);
                 if (null != output) {
                     try {
                         output.close();
@@ -1038,28 +1002,26 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
         }
     }
 
+    public void finishFragment(){
+        getActivity().finish();
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.autofocusButton: {
-                publishMessage(Initializer.CAMERA_APP_TOPIC,
-                        Initializer.REQUEST_SERVICE_AUTOFOCUS_MANUAL);
+            case R.id.start_button: {
+                // Re-initialize the service, in case internet connection drops.
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.AUTHENTICATE_CAMERA_ACTIVITY);
                 break;
             }
-            case R.id.exitButton: {
-                publishMessage(Initializer.CAMERA_APP_TOPIC,
-                        Initializer.EXIT_ACTIVITY_CREATE_PATIENT);
-                break;
-            }
-            case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage("Manual controller ::: " + FOLDER_NAME)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
-                break;
+            case R.id.stop_button: {
+                /** Exit app
+                 * Note this message also resets the automatic service variables. Nonetheless,
+                 * since this call is asynchronous, it may not take effect. Thus, we repeat this
+                 * message when the alarm finishes, which is enough time to let all the messages
+                 * arrive and be processes.
+                 * */
+                publishMessage(Initializer.CAMERA_APP_TOPIC, Initializer.EXIT_AUTOMATIC_CONTROLLER);
             }
         }
     }

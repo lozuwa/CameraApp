@@ -146,12 +146,14 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
                         // Create folder in folders table
                         Folder folderInstance = new Folder(folderName);
                         clientsDB.createFolder(folderInstance);
+                        // Remove temporal folder just in case
+                        settingsDB.deleteSettingByName("tmpFolderName");
                         // Save in temp setting the name of the folder
                         settingsDB.createSetting(new Setting("tmpFolderName", folderName));
                         // Tell hardware we want to enable automatic autofocus
                         publishMessage(Initializer.CAMERA_APP_TOPIC,
                                 Initializer.REQUEST_SERVICE_AUTOFOCUS_AUTOMATIC);
-                        // When sound completes, open the autofocus camera
+                        // Open the autofocus camera
                         Intent intent = new Intent(Intent.ACTION_MAIN);
                         intent.setComponent(new ComponentName("com.example.root.autofocus_app",
                                 "com.example.root.autofocus_app.AutofocusActivity"));

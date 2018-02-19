@@ -1,4 +1,4 @@
-package ai.labomatic.ui.LabomaticCamera;
+package ai.labomatic.ui.LabomaticCamera.base;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -29,7 +29,11 @@ import ai.labomatic.ui.BarcodeReader.BarcodeCaptureActivity;
 import ai.labomatic.util.Initializer;
 import ai.labomatic.util.LabomaticCamera.FileUtils;
 
-public class AutomaticAnalysisScreenFragment extends Fragment implements View.OnClickListener{
+/**
+ * Automatic analysis fragment
+ * */
+public class AutomaticAnalysisScreenFragment extends Fragment
+        implements View.OnClickListener{
 
     // TAG
     public static final String TAG = "AutAnalysisFragment:";
@@ -121,6 +125,8 @@ public class AutomaticAnalysisScreenFragment extends Fragment implements View.On
                 // Create folder in folders table
                 Folder folderInstance = new Folder(folderName);
                 clientsDB.createFolder(folderInstance);
+                // If there is one, remove the folder
+                settingsDB.deleteSettingByName("tmpFolderName");
                 // Save in temp setting the name of the folder
                 settingsDB.createSetting(new Setting("tmpFolderName",folderName));
                 // Start autofocus service
@@ -158,7 +164,8 @@ public class AutomaticAnalysisScreenFragment extends Fragment implements View.On
     /**
      * MQTT Receiver
      * */
-    private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
+    private MQTTServiceReceiver receiver =
+            new MQTTServiceReceiver() {
         private static final String TAG = "Receiver";
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {

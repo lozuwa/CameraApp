@@ -1,15 +1,18 @@
-package ai.labomatic.ui.LabomaticCamera;
+package ai.labomatic.ui.LabomaticCamera.base;
 
-import android.app.Activity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
 
 import ai.labomatic.R;
+import ai.labomatic.ui.LabomaticCamera.composer.AutomaticAnalysisFragment;
 
-public class ManualAnalysisActivity extends AppCompatActivity {
+/**
+ * Loads the automatic camera fragment.
+ * */
+public class AutomaticAnalysisActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class ManualAnalysisActivity extends AppCompatActivity {
         if (null == savedInstanceState) {
             Fragment myFragment = null;
             Class fragmentClass;
-            fragmentClass = ManualAnalysisFragment.class;
+            fragmentClass = AutomaticAnalysisFragment.class;
             try {
                 myFragment = (Fragment) fragmentClass.newInstance();
             } catch (Exception e) {
