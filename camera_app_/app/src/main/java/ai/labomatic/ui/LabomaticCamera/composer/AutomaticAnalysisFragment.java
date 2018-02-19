@@ -383,7 +383,7 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_recover_automatic, container, false);
+        return inflater.inflate(R.layout.fragment_manual_analysis_portrait, container, false);
     }
 
     @Override

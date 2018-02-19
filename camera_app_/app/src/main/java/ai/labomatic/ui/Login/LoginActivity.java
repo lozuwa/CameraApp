@@ -52,6 +52,7 @@ public class LoginActivity extends Activity {
     public Button logInButton;
     public Button reportProblemButton;
     private EditText usernameEditText;
+    private EditText usernameExtensionEditText;
     private EditText passwordEditText;
     private TextView signInTextView;
     private ProgressDialog progressDialog;
@@ -77,6 +78,7 @@ public class LoginActivity extends Activity {
         logInButton = (Button) findViewById(R.id.log_in_button);
         reportProblemButton = (Button) findViewById(R.id.report_problem_button);
         usernameEditText = (EditText) findViewById(R.id.username_edit_text);
+        usernameExtensionEditText = (EditText) findViewById(R.id.username_extension_edit_text);
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
         signInTextView = (TextView) findViewById(R.id.sign_in_text_view);
         progressDialog = new ProgressDialog(LoginActivity.this,
@@ -111,7 +113,8 @@ public class LoginActivity extends Activity {
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
                 // Validate username and password texts
-                String username = usernameEditText.getText().toString();
+                String username = usernameEditText.getText().toString()
+                        + usernameExtensionEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 // True if the editTexts are ok, otherwise false
                 boolean resultValidationUsername = validateUsername(username);
@@ -130,7 +133,8 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // Validate username and password texts
-                String username = usernameEditText.getText().toString();
+                String username = usernameEditText.getText().toString()
+                        + usernameExtensionEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 // True if the editTexts are ok, otherwise false
                 boolean resultValidationUsername = validateUsername(username);
@@ -161,6 +165,7 @@ public class LoginActivity extends Activity {
             public void onClick(View view) {
                 // Validate username and password texts
                 String username = usernameEditText.getText().toString();
+                String usernameExtension = usernameExtensionEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 // True if the editTexts are ok, otherwise false
                 boolean resultValidationUsername = validateUsername(username);
@@ -174,7 +179,7 @@ public class LoginActivity extends Activity {
                     List<User> allUsers= db.readAllUsers();
                     if (allUsers.size() == 0){
                         // Proceed to create user
-                        firebaseCreateuserWithEmailAndPassword(username, password);
+                        firebaseCreateuserWithEmailAndPassword(username, usernameExtension, password);
                     } else{
                         progressDialog.dismiss();
                         showToast("There is already an user, cannot create another one.");
@@ -337,8 +342,10 @@ public class LoginActivity extends Activity {
         });
     }
 
-    public void firebaseCreateuserWithEmailAndPassword(final String email, final String password){
-        mAuth.createUserWithEmailAndPassword(email, password)
+    public void firebaseCreateuserWithEmailAndPassword(final String email,
+                                                       final String emailExtension,
+                                                       final String password){
+        mAuth.createUserWithEmailAndPassword(email+emailExtension, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

@@ -9,7 +9,6 @@ package ai.labomatic.ui.LabomaticCamera.base;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
 //import android.app.Fragment;
 import android.support.v4.app.Fragment;
 import android.content.ComponentName;
@@ -55,6 +54,7 @@ import ai.labomatic.data.local.SettingsDatabaseHandler;
 import ai.labomatic.data.model.Setting;
 import ai.labomatic.ui.NavigationMenu;
 import ai.labomatic.util.LabomaticCamera.AutoFitTextureView;
+import ai.labomatic.util.LabomaticCamera.FileUtils;
 import ai.labomatic.util.LabomaticCamera.OnSwipeTouchListener;
 
 import ai.labomatic.util.Initializer;
@@ -398,13 +398,16 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // Databases
         settingsDB = new SettingsDatabaseHandler(getActivity().getApplicationContext());
+        // Delete temporal folder setting just in case
+        settingsDB.deleteSettingByName("tmpFolderName");
         // Create a folder name
         settingsDB.createSetting(new Setting("tmpFolderName", "tmp"));
         // Read tmp folder name
         Setting setting = settingsDB.readSettingByName("tmpFolderName");
         FOLDER_NAME = setting.getValue();
+        FileUtils.createFolder(FOLDER_NAME);
         // UI elements
-        view.findViewById(R.id.info).setOnClickListener(this);
+        view.findViewById(R.id.change_to_landscape_view).setOnClickListener(this);
         view.findViewById(R.id.exitButton).setOnClickListener(this);
         view.findViewById(R.id.autofocusButton).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
@@ -515,11 +518,8 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
     }
 
     /**
-     * The arrived messages follow a protocol defined as:
-     * TOPIC: /microscope
-     * MESSAGE:
-     *          - createFolder;FOLDER_NAME: The app must create a new folder to store new pictures
-     *          - takePicture;PARASITE_NAME: The app must capture a picture and store it
+     * MQTT receiver.
+     * The commands follow a protocol described in the documentation.
      * */
     private MQTTServiceReceiver receiver = new MQTTServiceReceiver() {
 
@@ -566,17 +566,15 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                 takePicture();
                 // Display result
                 showToast(path);
-            } else if (command.equals("exit") && target.equals("ManualController") && action.equals("CreatePatient")) {
+            } else if (command.equals("exit") && target.equals("ManualController") &&
+                    action.equals("CreatePatient")) {
                 // Restart stage
                 publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
                 // Go to menu screen
                 Intent intent = new Intent(getActivity(), NavigationMenu.class);
                 startActivity(intent);
-            }
-            /** Service (autofocus)
-             * "requestService;autofocus;ManualController;None;None"
-             * */
-            else if (command.equals("requestService") && target.equals("autofocus") && action.equals("ManualController")) {
+            } else if (command.equals("requestService") && target.equals("autofocus") &&
+                    action.equals("ManualController")) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setComponent(new ComponentName("com.example.root.autofocus_app",
                         "com.example.root.autofocus_app.AutofocusActivity"));
@@ -1053,14 +1051,10 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
                         Initializer.EXIT_ACTIVITY_CREATE_PATIENT);
                 break;
             }
-            case R.id.info: {
-                Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage("Manual controller ::: " + FOLDER_NAME)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
+            case R.id.change_to_landscape_view: {
+                Intent intent = new Intent(getActivity().getApplicationContext(),
+                        ManualAnalysisLandscapeActivity.class);
+                startActivity(intent);
                 break;
             }
         }

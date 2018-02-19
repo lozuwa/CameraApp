@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ai.labomatic.ui.NavigationMenu">
+
+    <android.support.v7.widget.FitWindowsFrameLayout
+        android:id="@+id/flcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header_drawer_layout"
+        app:itemTextColor="@color/primaryTextColor2"
+        app:itemIconTint="@color/darkGray"
+        app:menu="@menu/drawermenu"
+        android:layout_gravity="start" />
+
+</android.support.v4.widget.DrawerLayout>

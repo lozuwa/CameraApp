@@ -404,11 +404,6 @@ public class ControllerAndCameraFragment extends Fragment implements View.OnClic
                              ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_controller_and_camera, container, false);
-        Bundle bundle = this.getArguments();
-        // Extra info
-        String randomText = bundle.getString("folderName");
-        showToast(randomText);
-        Log.i(TAG, randomText);
         //return inflater.inflate(R.layout.fragment_controller_and_camera, container, false);
         return rootView;
     }

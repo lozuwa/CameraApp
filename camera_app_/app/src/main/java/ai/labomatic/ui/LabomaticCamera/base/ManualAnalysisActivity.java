@@ -1,5 +1,6 @@
 package ai.labomatic.ui.LabomaticCamera.base;
 
+import android.content.pm.ActivityInfo;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class ManualAnalysisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activities_require_camera);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         // Start fragment
         if (null == savedInstanceState) {
             Fragment myFragment = null;
@@ -42,9 +44,9 @@ public class ManualAnalysisActivity extends AppCompatActivity {
         super.onPause();
     }
 
-    @Override
-    public void onBackPressed() {
-        // Back operation is not allowed
-    }
+//    @Override
+//    public void onBackPressed() {
+//        // Back operation is not allowed
+//    }
 
 }

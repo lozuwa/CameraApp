@@ -417,10 +417,7 @@ public class RecoverAutomaticServiceFragment extends Fragment implements View.On
         // mydatabase = getActivity().openOrCreateDatabase(Auxiliar.TABLE_NAME, MODE_PRIVATE, null);
         // Clients database
         clientsDB = new ClientsDatabaseHandler(getActivity().getApplicationContext());
-        // Query info from the database
-        Cursor cursor = mydatabase.rawQuery("Select * from pfmDb", null);
-        cursor.moveToFirst();
-        FOLDER_NAME = cursor.getString(0);
+        FOLDER_NAME = "Nothing";
         // UI elements
         //view.findViewById(R.id.info).setOnClickListener(this);
         text = (TextView) getView().findViewById(R.id.text);

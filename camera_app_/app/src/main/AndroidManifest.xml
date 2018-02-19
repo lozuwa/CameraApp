@@ -37,6 +37,7 @@
         android:icon="@drawable/labomatic_icon"
         android:label="@string/original_app_name"
         android:theme="@style/MaterialTheme">
+
         <activity android:name=".ui.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +45,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.NavigationMenu" />
+        <activity
+            android:name=".ui.NavigationMenu"
+            android:label="NavigationMenu"/>
+
+        <activity
+            android:name=".ui.LabomaticCamera.base.ManualAnalysisLandscapeActivity"
+            android:label="ControllerAndCamera"/>
 
         <activity android:name=".ui.LabomaticCamera.base.AutomaticAnalysisActivity">
             <intent-filter>
@@ -55,7 +62,8 @@
 
         <activity
             android:name=".ui.LabomaticCamera.base.ManualAnalysisActivity"
-            android:label="ManualAnalysis">
+            android:label="ManualAnalysis"
+            android:configChanges="screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
