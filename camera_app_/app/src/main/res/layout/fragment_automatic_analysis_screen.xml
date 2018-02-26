@@ -5,6 +5,7 @@
     tools:context="ai.labomatic.ui.LabomaticCamera.base.AutomaticAnalysisScreenFragment">
 
     <LinearLayout
+        android:id="@+id/automatic_layout_container"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">

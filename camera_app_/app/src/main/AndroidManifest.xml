@@ -53,9 +53,12 @@
             android:name=".ui.LabomaticCamera.base.ManualAnalysisLandscapeActivity"
             android:label="ControllerAndCamera"/>
 
-        <activity android:name=".ui.LabomaticCamera.base.AutomaticAnalysisActivity">
+        <activity
+            android:name=".ui.LabomaticCamera.base.AutomaticAnalysisActivity"
+            android:label="AutomaticAnalysis"
+            android:configChanges="screenSize|orientation">
             <intent-filter>
-                <action android:name="android.intent.action.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

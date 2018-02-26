@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -26,8 +27,13 @@ import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import net.igenius.mqttservice.MQTTService;
+import net.igenius.mqttservice.MQTTServiceCommand;
+import net.igenius.mqttservice.MQTTServiceLogger;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import ai.labomatic.R;
 import ai.labomatic.data.local.ClientsDatabaseHandler;
@@ -38,6 +44,7 @@ import ai.labomatic.data.model.Image;
 import ai.labomatic.data.model.NameSettings;
 import ai.labomatic.data.model.Setting;
 import ai.labomatic.data.model.User;
+import ai.labomatic.util.Initializer;
 
 public class SettingsFragment extends Fragment implements AdapterView.OnItemSelectedListener,
         View.OnClickListener{
@@ -66,6 +73,8 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
     public RadioButton automaticUploadYesRadioButton;
     public RadioButton automaticUploadNoRadioButton;
     public Spinner dataSpinnerSetttings;
+    public EditText IPEditText;
+    public Button applyIPButton;
 
     // Databases
     public ClientsDatabaseHandler clientsDB;
@@ -114,6 +123,8 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
         automaticUploadSettingsRadioGroup = (RadioGroup) view.findViewById(R.id.radio_group_automatic_upload_settings);
         automaticUploadYesRadioButton = (RadioButton) view.findViewById(R.id.enable_automatic_upload_radio_button);
         automaticUploadNoRadioButton = (RadioButton) view.findViewById(R.id.disable_automatic_upload_radio_button);
+        applyIPButton = (Button) view.findViewById(R.id.apply_ip_button);
+        IPEditText = (EditText) view.findViewById(R.id.ip_edit_text);
 
         // Set onClick listeners
         applySettingsButton.setOnClickListener(this);
@@ -123,6 +134,7 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
         dropTableButton.setOnClickListener(this);
         dataSpinner.setOnItemSelectedListener(this);
         tablesSpinner.setOnItemSelectedListener(this);
+        applyIPButton.setOnClickListener(this);
 
         // Load initial states for UI elements
         Setting setting = settingsDB.readSettingByName(NameSettings.AUTOMATIC_START);
@@ -146,7 +158,9 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
             }
         }
         loadDataSpinner();
-
+        // Load EditText
+        Setting sett = settingsDB.readSettingByName(NameSettings.IP_ADDRESS_MQTT);
+        IPEditText.setText(sett.getValue());
     }
 
     @Override
@@ -184,6 +198,29 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataSpinnerSetttings.setAdapter(dataAdapter);
+    }
+
+    public void restartMQTTConnection(){
+        // Read ip on database
+        Setting setting = settingsDB.readSettingByName(NameSettings.IP_ADDRESS_MQTT);
+        String IPAdress = setting.getValue();
+        // MQTT configurations
+        MQTTService.NAMESPACE = "com.example.android.labomatic";
+        MQTTService.KEEP_ALIVE_INTERVAL = Initializer.KEEP_ALIVE_TIMING;
+        MQTTService.CONNECT_TIMEOUT = Initializer.CONNECT_TIMEOUT;
+        String username = "pfm";
+        String password = "161154029";
+        String clientId = UUID.randomUUID().toString();
+        int qos = 2;
+        MQTTServiceLogger.setLogLevel(MQTTServiceLogger.LogLevel.DEBUG);
+        MQTTServiceCommand.connectAndSubscribe(getActivity().getApplicationContext(),
+                IPAdress,
+                clientId,
+                username,
+                password,
+                qos,
+                true,
+                Initializer.CAMERA_APP_TOPIC);
     }
 
     @Override
@@ -318,7 +355,15 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
                 settingsDB.dropTable();
                 settingsDB.createSetting(new Setting(NameSettings.AUTOMATIC_START, "0"));
                 settingsDB.createSetting(new Setting(NameSettings.AUTOMATIC_UPLOAD, "0"));
+                settingsDB.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, "tcp://192.168.0.108:1883"));
                 loadDataSpinner();
+                break;
+            }
+            case R.id.apply_ip_button:{
+                String newIP = IPEditText.getText().toString();
+                newIP = "tcp://" + newIP + ":1883";
+                settingsDB.updateSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, newIP));
+                restartMQTTConnection();
                 break;
             }
             case R.id.apply_settings_button:{

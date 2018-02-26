@@ -3,6 +3,7 @@ package ai.labomatic.ui.LabomaticCamera.composer;
 import android.Manifest;
 import android.app.Activity;
 //import android.app.Fragment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.content.ComponentName;
 import android.content.Context;
@@ -389,8 +390,6 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        // Create presenter instance
-        //automaticAnalysisFragmentPresenter = new AutomaticAnalysisFragmentPresenter();
         // Databases
         clientsDB = new ClientsDatabaseHandler(getActivity().getApplicationContext());
         settingsDB = new SettingsDatabaseHandler(getActivity().getApplicationContext());
@@ -475,7 +474,6 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
 
         @Override
         public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
-            //MQTTServiceCommand.publish(context, "/cameraApp", payload);
         }
 
         @Override
@@ -530,14 +528,17 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
                 intent.setComponent(new ComponentName("com.example.root.autofocus_app",
                         "com.example.root.autofocus_app.AutofocusActivity"));
                 startActivity(intent);
-            } else {
+            } else if (command.equals("keepalive")){
 
+            } else{
+                // Do nothing
             }
         }
 
         @Override
         public void onConnectionSuccessful(Context context, String requestId) {
-            Log.i(TAG, "Connected!");
+            Log.i(TAG, "Connected from AutomaticAnalysis fragment!");
+            showSnackbar("MQTT Connected");
         }
 
         @Override
@@ -995,6 +996,23 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
                 @Override
                 public void run() {
                     Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+    /**
+     * Shows a snackbar on the UI thread.
+     * @param text String that contains the message to show
+     * */
+    private void showSnackbar(final String text){
+        final Activity activity = getActivity();
+        if (activity != null){
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Snackbar.make(getActivity().findViewById(R.id.automatic_layout_container),
+                            text, Snackbar.LENGTH_LONG).show();
                 }
             });
         }

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -85,6 +86,8 @@ public class AutomaticAnalysisScreenFragment extends Fragment
         // Initial states
         nameUserEditText.setText("");
         automaticAnalisisButton.setEnabled(true);
+        // Restart stage since this fragment is the entry point
+        publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
     }
 
     @Override
@@ -161,9 +164,7 @@ public class AutomaticAnalysisScreenFragment extends Fragment
         }
     }
 
-    /**
-     * MQTT Receiver
-     * */
+    // MQTT receiver
     private MQTTServiceReceiver receiver =
             new MQTTServiceReceiver() {
         private static final String TAG = "Receiver";
@@ -194,7 +195,7 @@ public class AutomaticAnalysisScreenFragment extends Fragment
                 // If the handshake is authenticated, then we can continue.
                 handshakeWithListener = true;
                 // Always restart home (XY), when opening QR activity.
-                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 // Start barcode activity
                 Intent intent = new Intent(getActivity(), BarcodeCaptureActivity.class);
                 startActivity(intent);
@@ -259,6 +260,23 @@ public class AutomaticAnalysisScreenFragment extends Fragment
                 @Override
                 public void run() {
                     Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
+    /**
+     * Shows a snackbar on the UI thread.
+     * @param text String that contains the message to show
+     * */
+    private void showSnackbar(final String text){
+        final Activity activity = getActivity();
+        if (activity != null){
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Snackbar.make(getActivity().findViewById(R.id.automatic_layout_container),
+                            text, Snackbar.LENGTH_LONG).show();
                 }
             });
         }

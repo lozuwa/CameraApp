@@ -8,6 +8,7 @@ public final class NameSettings {
     // Static setting names
     public static final String AUTOMATIC_START = "AutomaticStart";
     public static final String AUTOMATIC_UPLOAD = "AutomaticUpload";
+    public static final String IP_ADDRESS_MQTT = "IPAddress";
 
     public NameSettings(){
         // Nothing

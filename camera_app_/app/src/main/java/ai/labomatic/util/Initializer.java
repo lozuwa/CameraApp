@@ -24,9 +24,6 @@ public class Initializer extends Application {
     // TAGS
     public static final String TAG = "Initializer::";
 
-    // Broker
-    static public String BROKER = "tcp://192.168.0.107:1883";
-
     // MQTT topics
     static public String PREFIX = "/40X/2";
     static public String MICROSCOPE_TOPIC = "/microscope" + PREFIX;
@@ -94,10 +91,31 @@ public class Initializer extends Application {
     public static int KEEP_ALIVE_TIMING = 15;
     public static int CONNECT_TIMEOUT = 60;
 
+    // Database
+    private SettingsDatabaseHandler db;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        // Initialize the MQTT connection
+        // Barcode settings db
+        db = new SettingsDatabaseHandler(this);
+        List<Setting> allSettings = new ArrayList<Setting>();
+        allSettings = db.readAllSettings();
+        Log.i(TAG, "DB size: " + String.valueOf(allSettings.size()));
+        if (allSettings.size() == 0) {
+            db.createSetting(new Setting(NameSettings.AUTOMATIC_START, "0"));
+            db.createSetting(new Setting(NameSettings.AUTOMATIC_UPLOAD, "0"));
+            db.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, "tcp://192.168.3.174:1883"));
+        }
+        // Inialize mqtt connection
+        initMQTT();
+    }
+
+    public void initMQTT(){
+        // Read settings to get ip address to connect
+        Setting setting = db.readSettingByName(NameSettings.IP_ADDRESS_MQTT);
+        String IPAdress = setting.getValue();
+        // MQTT configurations
         MQTTService.NAMESPACE = "com.example.android.labomatic";
         MQTTService.KEEP_ALIVE_INTERVAL = Initializer.KEEP_ALIVE_TIMING;
         MQTTService.CONNECT_TIMEOUT = Initializer.CONNECT_TIMEOUT;
@@ -107,26 +125,13 @@ public class Initializer extends Application {
         int qos = 2;
         MQTTServiceLogger.setLogLevel(MQTTServiceLogger.LogLevel.DEBUG);
         MQTTServiceCommand.connectAndSubscribe(Initializer.this,
-                Initializer.BROKER,
+                IPAdress,
                 clientId,
                 username,
                 password,
                 qos,
                 true,
                 Initializer.CAMERA_APP_TOPIC);
-
-        // Barcode settings db
-        SettingsDatabaseHandler db = new SettingsDatabaseHandler(this);
-        List<Setting> allSettings = new ArrayList<Setting>();
-        allSettings = db.readAllSettings();
-        Log.i(TAG, "DB size: " + String.valueOf(allSettings.size()));
-        if (allSettings.size() == 0){
-            db.createSetting(new Setting(NameSettings.AUTOMATIC_START, "0"));
-            db.createSetting(new Setting(NameSettings.AUTOMATIC_UPLOAD, "0"));
-        } else{
-            // Do nothing
-        }
-
     }
 
 }

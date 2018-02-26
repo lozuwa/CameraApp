@@ -2,6 +2,7 @@ package ai.labomatic.ui.Login;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
@@ -23,7 +24,9 @@ import ai.labomatic.data.model.User;
 import ai.labomatic.data.local.UsersDatabaseHandler;
 
 import ai.labomatic.R;
+import ai.labomatic.ui.BarcodeReader.BarcodeCaptureActivity;
 import ai.labomatic.ui.NavigationMenu;
+import ai.labomatic.util.Initializer;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +34,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+
+import net.igenius.mqttservice.MQTTServiceReceiver;
 
 import java.util.List;
 
@@ -63,6 +68,10 @@ public class LoginActivity extends Activity {
 
     // Firebase
     private FirebaseAuth mAuth;
+
+    // Authentication states
+    private boolean firebaseAuthentication = false;
+    private boolean mqttAuthentication = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,10 +233,17 @@ public class LoginActivity extends Activity {
     }
 
     @Override
+    public void onResume(){
+        super.onResume();
+        receiver.register(this);
+    }
+
+    @Override
     public void onPause(){
         super.onPause();
         if (anim != null && anim.isRunning())
             anim.stop();
+        receiver.unregister(this);
     }
 
     public boolean validatePassword(String password){
@@ -325,10 +341,10 @@ public class LoginActivity extends Activity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.i(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            progressDialog.dismiss();
-                            Intent menuActivity = new Intent(LoginActivity.this,
-                                    NavigationMenu.class);
-                            startActivity(menuActivity);
+                            // Change firebase auth variable to true
+                            firebaseAuthentication = true;
+                            // try to start the next activity
+                            validateConnections();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.e(TAG, "signInWithEmail:failure", task.getException());
@@ -355,15 +371,15 @@ public class LoginActivity extends Activity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             // Save in local database
                             db.createUser(new User(email, password));
-                            // Kill progressDialog
-                            progressDialog.dismiss();
+                            // If creating user was successful, then sign in
+                            firebaseSignInWithEmailAndPassword(email+emailExtension, password);
                         } else {
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 showToast("User with this email already exist.");
                                 // Save in local database
                                 db.createUser(new User(email, password));
-                                // Kill progressDialog
-                                progressDialog.dismiss();
+                                // User already exists, so save in db and sign in
+                                firebaseSignInWithEmailAndPassword(email+emailExtension, password);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.e(TAG, "createUserWithEmail:failure", task.getException());
@@ -376,6 +392,64 @@ public class LoginActivity extends Activity {
                     }
                 });
     }
+
+    /**
+     * Check mqtt and firebase are connected and start the next activity.
+     * */
+    public void validateConnections(){
+        if (mqttAuthentication == true && firebaseAuthentication == true){
+            // If both variables are set to true, then start the next activity
+            progressDialog.dismiss();
+            Intent intent = new Intent(LoginActivity.this, NavigationMenu.class);
+            startActivity(intent);
+        } else{
+            Log.i(TAG, "both services are not connected yet");
+        }
+    }
+
+    // MQTT receiver
+    private MQTTServiceReceiver receiver =
+            new MQTTServiceReceiver() {
+                private static final String TAG = "Receiver";
+                @Override
+                public void onSubscriptionSuccessful(Context context, String requestId, String topic) {
+                    Log.i(TAG, "Subscribed to " + topic);
+                }
+                @Override
+                public void onSubscriptionError(Context context, String requestId, String topic, Exception exception) {
+                    Log.i(TAG, "Can't subscribe to " + topic, exception);
+                }
+                @Override
+                public void onPublishSuccessful(Context context, String requestId, String topic) {
+                    Log.i(TAG, "Successfully published on topic: " + topic);
+                }
+                @Override
+                public void onMessageArrived(Context context, String topic, byte[] payload) {
+                    Log.i(TAG, "New message on " + topic + ":  " + new String(payload));
+                }
+
+                @Override
+                public void onConnectionSuccessful(Context context, String requestId) {
+                    // Feedback
+                    showToast("Connected");
+                    Log.i(TAG, "Connected!");
+                    // Change mqtt auth variable to true
+                    mqttAuthentication = true;
+                    // Try to move to the next activity
+                    validateConnections();
+                }
+
+                @Override
+                public void onException(Context context, String requestId, Exception exception) {
+                    exception.printStackTrace();
+                    Log.i(TAG, requestId + " exception");
+                }
+
+                @Override
+                public void onConnectionStatus(Context context, boolean connected) {
+
+                }
+            };
 
     public void showToast(String message){
         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
