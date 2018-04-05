@@ -402,8 +402,14 @@ public class LoginActivity extends Activity {
             progressDialog.dismiss();
             Intent intent = new Intent(LoginActivity.this, NavigationMenu.class);
             startActivity(intent);
+        } else if (mqttAuthentication == false && firebaseAuthentication == true){
+            Log.i(TAG, "mqtt is not connected, firebase is connected.");
+            showToast("mqtt is not connected, firebase is connected.");
+        } else if (mqttAuthentication == true && firebaseAuthentication == false){
+            Log.i(TAG, "mqtt is connected, firebase is not connected.");
+            showToast("mqtt is connected, firebase is not connected.");
         } else{
-            Log.i(TAG, "both services are not connected yet");
+            Log.i(TAG, "Neither mqtt nor firebase are connected.");
         }
     }
 
@@ -431,7 +437,6 @@ public class LoginActivity extends Activity {
                 @Override
                 public void onConnectionSuccessful(Context context, String requestId) {
                     // Feedback
-                    showToast("Connected");
                     Log.i(TAG, "Connected!");
                     // Change mqtt auth variable to true
                     mqttAuthentication = true;

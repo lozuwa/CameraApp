@@ -25,7 +25,7 @@ public class Initializer extends Application {
     public static final String TAG = "Initializer::";
 
     // MQTT topics
-    static public String PREFIX = "/40X/2";
+    static public String PREFIX = "/40X/1";
     static public String MICROSCOPE_TOPIC = "/microscope" + PREFIX;
     static public String CAMERA_APP_TOPIC = "/cameraApp" + PREFIX;
     static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp" + PREFIX;
@@ -105,7 +105,7 @@ public class Initializer extends Application {
         if (allSettings.size() == 0) {
             db.createSetting(new Setting(NameSettings.AUTOMATIC_START, "0"));
             db.createSetting(new Setting(NameSettings.AUTOMATIC_UPLOAD, "0"));
-            db.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, "tcp://192.168.3.174:1883"));
+            db.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, "tcp://192.168.0.108:1883"));
         }
         // Inialize mqtt connection
         initMQTT();

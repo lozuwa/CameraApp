@@ -34,6 +34,8 @@ import net.igenius.mqttservice.MQTTServiceLogger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ai.labomatic.R;
 import ai.labomatic.data.local.ClientsDatabaseHandler;
@@ -160,7 +162,13 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
         loadDataSpinner();
         // Load EditText
         Setting sett = settingsDB.readSettingByName(NameSettings.IP_ADDRESS_MQTT);
-        IPEditText.setText(sett.getValue());
+        Pattern p = Pattern.compile("[0-9]+.[0-9]+.[0-9]+.[0-9]+");
+        Matcher m = p.matcher(sett.getValue());
+        String foundIP = "";
+        while (m.find()) {
+            foundIP += m.group();
+        }
+        IPEditText.setText(foundIP);
     }
 
     @Override
@@ -221,6 +229,7 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
                 qos,
                 true,
                 Initializer.CAMERA_APP_TOPIC);
+        getActivity().finish();
     }
 
     @Override
@@ -355,14 +364,17 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemSele
                 settingsDB.dropTable();
                 settingsDB.createSetting(new Setting(NameSettings.AUTOMATIC_START, "0"));
                 settingsDB.createSetting(new Setting(NameSettings.AUTOMATIC_UPLOAD, "0"));
-                settingsDB.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, "tcp://192.168.0.108:1883"));
+                settingsDB.createSetting(new Setting(NameSettings.IP_ADDRESS_MQTT,
+                        "tcp://192.168.0.108:1883"));
                 loadDataSpinner();
                 break;
             }
             case R.id.apply_ip_button:{
                 String newIP = IPEditText.getText().toString();
                 newIP = "tcp://" + newIP + ":1883";
-                settingsDB.updateSetting(new Setting(NameSettings.IP_ADDRESS_MQTT, newIP));
+                Setting setting = settingsDB.readSettingByName(NameSettings.IP_ADDRESS_MQTT);
+                setting.setValue(newIP);
+                settingsDB.updateSetting(setting);
                 restartMQTTConnection();
                 break;
             }
