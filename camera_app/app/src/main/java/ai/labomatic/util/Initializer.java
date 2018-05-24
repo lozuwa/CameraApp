@@ -30,7 +30,6 @@ public class Initializer extends Application {
     static public String CAMERA_APP_TOPIC = "/cameraApp" + PREFIX;
     static public String AUTOFOCUS_APP_TOPIC = "/autofocusApp" + PREFIX;
     static public String REMOTE_CONTROLLER_TOPIC = "/remoteController" + PREFIX;
-    static public String MACROS_TOPIC = "/macros" + PREFIX;
 
     /**
      * MQTT messages
@@ -62,15 +61,14 @@ public class Initializer extends Application {
     public static String HOME_Z_TOP = "home;z;top;None;None";
     public static String HOME_Z_BOTTOM = "home;z;bottom;None;None";
 
+    public static String STAGE_RESTART_HOME = "automatic;None;visum;restart;home";
+    public static String STAGE_RESTART_INITIAL = "automatic;None;visum;restart;initial";
+    public static String ACTIVATE_SMARTPHONE_CHARGER = "automatic;None;smartphone;charge;on";
+    public static String DEACTIVATE_SMARTPHONE_CHARGER = "automatic;None;smartphone;charge;off";
+
     // /cameraApp
     public static String EXIT_ACTIVITY_CREATE_PATIENT = "exit;ManualController;CreatePatient;None;None";
     public static String EXIT_AUTOMATIC_CONTROLLER = "exit;AutomaticController;CreatePatient;None;None";
-
-    // /macros
-    public static String STAGE_RESTART_HOME = "stage;restart;home;None;None";
-	public static String STAGE_RESTART_INITIAL = "stage;restart;initial;None;None";
-    public static String ACTIVATE_CHARGE = "charge;smartphone;activate;None;None";
-    public static String DEACTIVATE_CHARGE = "charge;smartphone;deactivate;None;None";
 
     // Autofocus service
     // Triggers

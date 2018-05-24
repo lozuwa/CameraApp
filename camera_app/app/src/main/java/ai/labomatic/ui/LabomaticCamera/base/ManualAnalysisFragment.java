@@ -569,7 +569,7 @@ public class ManualAnalysisFragment extends Fragment implements View.OnClickList
             } else if (command.equals("exit") && target.equals("ManualController") &&
                     action.equals("CreatePatient")) {
                 // Restart stage
-                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.STAGE_RESTART_HOME);
                 // Go to menu screen
                 Intent intent = new Intent(getActivity(), NavigationMenu.class);
                 startActivity(intent);

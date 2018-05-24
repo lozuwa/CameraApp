@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.os.BatteryManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -51,8 +54,8 @@ public class AutomaticAnalysisScreenFragment extends Fragment
     // State communication variable
     public boolean handshakeWithListener = false;
 
-    // Global variables
-    String folderName = null;
+    // Battery handler.
+    public Handler handlerBattery = new Handler();
 
     public AutomaticAnalysisScreenFragment() {
         // Required empty public constructor
@@ -87,18 +90,22 @@ public class AutomaticAnalysisScreenFragment extends Fragment
         nameUserEditText.setText("");
         automaticAnalisisButton.setEnabled(true);
         // Restart stage since this fragment is the entry point
-        publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+        publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.STAGE_RESTART_HOME);
+        // Start thread for battery checker.
+        handlerBattery.post(runnableBatteryChecker);
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
+        // Register mqtt receiver.
         receiver.register(getActivity());
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
+        // Unregister mqtt receiver.
         receiver.unregister(getActivity());
     }
 
@@ -113,11 +120,34 @@ public class AutomaticAnalysisScreenFragment extends Fragment
     }
 
     /**
+     * Background thread for battery level checker.
+     * */
+    public Runnable runnableBatteryChecker = new Runnable(){
+        @Override
+        public void run() {
+            // Battery broadcast receiver.
+            IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            Intent batteryStatus = getContext().registerReceiver(null, ifilter);
+            // Check battery.
+            int batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            if (batteryLevel < 90){
+                publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.ACTIVATE_SMARTPHONE_CHARGER);
+            } else {
+                publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.DEACTIVATE_SMARTPHONE_CHARGER);
+            }
+            // Log information to console.
+            Log.i(TAG, "Checking battery status: " + String.valueOf(batteryLevel));
+            // Check battery level in 30 seconds.
+            handlerBattery.postDelayed(this, 30000);
+        }
+    };
+
+    /**
      * Pipeline to start the automatic analysis
      * */
     public void startAutomaticAnalysis(){
         // Once the sample is prepared and locked, set to initial position
-        publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
+        publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.STAGE_RESTART_INITIAL);
         // Get folder name
         final String folderName = nameUserEditText.getText().toString();
         boolean result = FileUtils.validateFolderName(folderName);
@@ -195,7 +225,7 @@ public class AutomaticAnalysisScreenFragment extends Fragment
                 // If the handshake is authenticated, then we can continue.
                 handshakeWithListener = true;
                 // Always restart home (XY), when opening QR activity.
-                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_INITIAL);
+                publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.STAGE_RESTART_INITIAL);
                 // Start barcode activity
                 Intent intent = new Intent(getActivity(), BarcodeCaptureActivity.class);
                 startActivity(intent);

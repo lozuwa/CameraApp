@@ -517,7 +517,7 @@ public class AutomaticAnalysisFragment extends Fragment implements View.OnClickL
             } else if (command.equals("exit") && target.equals("AutomaticController")
                     && action.equals("CreatePatient")) {
                 // Go home
-                publishMessage(Initializer.MACROS_TOPIC, Initializer.STAGE_RESTART_HOME);
+                publishMessage(Initializer.MICROSCOPE_TOPIC, Initializer.STAGE_RESTART_HOME);
                 // Play sound
                 mediaPlayer.start();
             }
